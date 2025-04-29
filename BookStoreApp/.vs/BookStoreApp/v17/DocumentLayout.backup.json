@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\Project\\CSharpProject\\BookStoreApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|e:\\project\\csharpproject\\bookstoreapp\\bookstoreapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|e:\\project\\csharpproject\\bookstoreapp\\bookstoreapp\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Form1.cs",
-              "RelativeDocumentMoniker": "BookStoreApp\\Form1.cs",
-              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Form1.cs [Design]",
-              "RelativeToolTip": "BookStoreApp\\Form1.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "HomeFrm.cs [Design]",
+              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.cs",
+              "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.cs",
+              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.cs [Design]",
+              "RelativeToolTip": "BookStoreApp\\HomeFrm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:45:13.853Z",
+              "WhenOpened": "2025-04-29T04:34:25.065Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Program.cs",
+              "RelativeDocumentMoniker": "BookStoreApp\\Program.cs",
+              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Program.cs",
+              "RelativeToolTip": "BookStoreApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T18:53:19.539Z",
+              "EditorCaption": ""
             }
           ]
         }
