@@ -35,6 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeFrm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabItem = new System.Windows.Forms.TabPage();
@@ -43,6 +50,7 @@
             this.labelTimKiem = new System.Windows.Forms.Label();
             this.numericItemTo = new System.Windows.Forms.NumericUpDown();
             this.numericItemFrom = new System.Windows.Forms.NumericUpDown();
+            this.btnSearchItem = new System.Windows.Forms.Button();
             this.txtSearchItem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +64,10 @@
             this.radioSortItemByPriceDESC = new System.Windows.Forms.RadioButton();
             this.radioSortItemByPriceASC = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnSuaSP = new System.Windows.Forms.Button();
+            this.btnFreshItem = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
             this.labelPhanTrang = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
@@ -70,6 +82,7 @@
             this.txtSoTrang = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.btnAnh = new System.Windows.Forms.Button();
+            this.picAnh = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,23 +95,28 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tblDuLieu = new System.Windows.Forms.DataGridView();
             this.tabCustomer = new System.Windows.Forms.TabPage();
-            this.tabDiscount = new System.Windows.Forms.TabPage();
-            this.tabStat = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tblKhachHang = new System.Windows.Forms.DataGridView();
-            this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblCustomerEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tblCustomerRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label_phanTrang = new System.Windows.Forms.Label();
+            this.btnNextt = new System.Windows.Forms.Button();
+            this.btnPree = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
+            this.txtSearchCustomer = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboSearchCustomer = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btbBoLoc = new System.Windows.Forms.Button();
+            this.radioSortCustomerByBirthDate = new System.Windows.Forms.RadioButton();
+            this.radioSortCustomerByName = new System.Windows.Forms.RadioButton();
+            this.radioSortCustomerById = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnXoaKH = new System.Windows.Forms.Button();
+            this.btnSuaKH = new System.Windows.Forms.Button();
+            this.btnRefreshCustomer = new System.Windows.Forms.Button();
+            this.btnAddNewCustomer = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btnAnhKH = new System.Windows.Forms.Button();
+            this.pictureBoxKH = new System.Windows.Forms.PictureBox();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btnHienMatKhau = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -114,25 +132,31 @@
             this.label23 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btbBoLoc = new System.Windows.Forms.Button();
-            this.radioSortCustomerByBirthDate = new System.Windows.Forms.RadioButton();
-            this.radioSortCustomerByName = new System.Windows.Forms.RadioButton();
-            this.radioSortCustomerById = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtSearchCustomer = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboSearchCustomer = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label_phanTrang = new System.Windows.Forms.Label();
-            this.btnNextt = new System.Windows.Forms.Button();
-            this.btnPree = new System.Windows.Forms.Button();
-            this.tblKhuyenMai = new System.Windows.Forms.DataGridView();
-            this.NameDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblKhachHang = new System.Windows.Forms.DataGridView();
+            this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblCustomerEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tblCustomerRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabDiscount = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnSearchDiscount = new System.Windows.Forms.Button();
+            this.txtSearchDiscount = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboSearchDiscount = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoaKM = new System.Windows.Forms.Button();
+            this.btnSuaKM = new System.Windows.Forms.Button();
+            this.btnRefreshDiscount = new System.Windows.Forms.Button();
+            this.btnAddNewDiscount = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dateTimePickerTGKT = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
@@ -143,30 +167,41 @@
             this.txtKM = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btnSearchDiscount = new System.Windows.Forms.Button();
-            this.txtSearchDiscount = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboSearchDiscount = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnSearchItem = new System.Windows.Forms.Button();
-            this.btnXoaSP = new System.Windows.Forms.Button();
-            this.btnSuaSP = new System.Windows.Forms.Button();
-            this.btnFreshItem = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
-            this.picAnh = new System.Windows.Forms.PictureBox();
-            this.btnSearchCustomer = new System.Windows.Forms.Button();
-            this.btnXoaKH = new System.Windows.Forms.Button();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-            this.btnRefreshCustomer = new System.Windows.Forms.Button();
-            this.btnAddNewCustomer = new System.Windows.Forms.Button();
-            this.pictureBoxKH = new System.Windows.Forms.PictureBox();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoaKM = new System.Windows.Forms.Button();
-            this.btnSuaKM = new System.Windows.Forms.Button();
-            this.btnRefreshDiscount = new System.Windows.Forms.Button();
-            this.btnAddNewDiscount = new System.Windows.Forms.Button();
+            this.tblKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.NameDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabStat = new System.Windows.Forms.TabPage();
+            this.tblThongKe = new System.Windows.Forms.DataGridView();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.checkBoxTime = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.denNgay = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tuNgay = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.btnStatResult = new System.Windows.Forms.Button();
+            this.comboStat = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TuNgayPicker = new System.Windows.Forms.DateTimePicker();
+            this.label40 = new System.Windows.Forms.Label();
+            this.denNgayPicker = new System.Windows.Forms.DateTimePicker();
+            this.btnTaoBaoCao = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTop = new System.Windows.Forms.TextBox();
+            this.LoaiBieuDoCB = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.tblBaoCao = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabItem.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -174,20 +209,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).BeginInit();
             this.tabCustomer.SuspendLayout();
-            this.tabDiscount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).BeginInit();
-            this.groupBox12.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).BeginInit();
-            this.groupBox13.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).BeginInit();
+            this.tabDiscount.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).BeginInit();
+            this.tabStat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblThongKe)).BeginInit();
+            this.groupBox11.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -314,6 +358,18 @@
             this.numericItemFrom.Name = "numericItemFrom";
             this.numericItemFrom.Size = new System.Drawing.Size(66, 26);
             this.numericItemFrom.TabIndex = 7;
+            // 
+            // btnSearchItem
+            // 
+            this.btnSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchItem.Image = global::BookStoreApp.Properties.Resources.search;
+            this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchItem.Location = new System.Drawing.Point(97, 117);
+            this.btnSearchItem.Name = "btnSearchItem";
+            this.btnSearchItem.Size = new System.Drawing.Size(142, 36);
+            this.btnSearchItem.TabIndex = 6;
+            this.btnSearchItem.Text = "Tìm kiếm";
+            this.btnSearchItem.UseVisualStyleBackColor = true;
             // 
             // txtSearchItem
             // 
@@ -466,20 +522,68 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hành động";
             // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaSP.Location = new System.Drawing.Point(172, 26);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(131, 44);
+            this.btnXoaSP.TabIndex = 3;
+            this.btnXoaSP.Text = "Xoá";
+            this.btnXoaSP.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaSP
+            // 
+            this.btnSuaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaSP.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaSP.Location = new System.Drawing.Point(26, 26);
+            this.btnSuaSP.Name = "btnSuaSP";
+            this.btnSuaSP.Size = new System.Drawing.Size(131, 44);
+            this.btnSuaSP.TabIndex = 2;
+            this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.UseVisualStyleBackColor = true;
+            // 
+            // btnFreshItem
+            // 
+            this.btnFreshItem.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFreshItem.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnFreshItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFreshItem.Location = new System.Drawing.Point(172, 90);
+            this.btnFreshItem.Name = "btnFreshItem";
+            this.btnFreshItem.Size = new System.Drawing.Size(131, 47);
+            this.btnFreshItem.TabIndex = 1;
+            this.btnFreshItem.Text = "   Làm mới";
+            this.btnFreshItem.UseVisualStyleBackColor = true;
+            // 
+            // btnThemSP
+            // 
+            this.btnThemSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemSP.Location = new System.Drawing.Point(26, 90);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(131, 47);
+            this.btnThemSP.TabIndex = 0;
+            this.btnThemSP.Text = "     Thêm mới";
+            this.btnThemSP.UseVisualStyleBackColor = true;
+            // 
             // labelPhanTrang
             // 
             this.labelPhanTrang.AutoSize = true;
-            this.labelPhanTrang.Location = new System.Drawing.Point(497, 312);
+            this.labelPhanTrang.Location = new System.Drawing.Point(495, 318);
             this.labelPhanTrang.Name = "labelPhanTrang";
-            this.labelPhanTrang.Size = new System.Drawing.Size(51, 16);
+            this.labelPhanTrang.Size = new System.Drawing.Size(25, 16);
             this.labelPhanTrang.TabIndex = 56;
-            this.labelPhanTrang.Text = "label35";
+            this.labelPhanTrang.Text = "0/0";
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(568, 309);
+            this.btnNext.Location = new System.Drawing.Point(574, 310);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(74, 21);
+            this.btnNext.Size = new System.Drawing.Size(74, 28);
             this.btnNext.TabIndex = 55;
             this.btnNext.Text = "Sau";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -488,7 +592,7 @@
             // 
             this.btnPrevious.Location = new System.Drawing.Point(390, 309);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(74, 21);
+            this.btnPrevious.Size = new System.Drawing.Size(74, 30);
             this.btnPrevious.TabIndex = 54;
             this.btnPrevious.Text = "Trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -594,6 +698,14 @@
             this.btnAnh.TabIndex = 43;
             this.btnAnh.Text = "Ảnh";
             this.btnAnh.UseVisualStyleBackColor = true;
+            // 
+            // picAnh
+            // 
+            this.picAnh.Location = new System.Drawing.Point(895, 345);
+            this.picAnh.Name = "picAnh";
+            this.picAnh.Size = new System.Drawing.Size(100, 109);
+            this.picAnh.TabIndex = 42;
+            this.picAnh.TabStop = false;
             // 
             // label20
             // 
@@ -721,168 +833,220 @@
             this.tabCustomer.Text = "QL Khách Hàng";
             this.tabCustomer.UseVisualStyleBackColor = true;
             // 
-            // tabDiscount
+            // label_phanTrang
             // 
-            this.tabDiscount.Controls.Add(this.groupBox7);
-            this.tabDiscount.Controls.Add(this.groupBox9);
-            this.tabDiscount.Controls.Add(this.groupBox13);
-            this.tabDiscount.Controls.Add(this.tblKhuyenMai);
-            this.tabDiscount.Location = new System.Drawing.Point(4, 25);
-            this.tabDiscount.Name = "tabDiscount";
-            this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiscount.Size = new System.Drawing.Size(1039, 659);
-            this.tabDiscount.TabIndex = 2;
-            this.tabDiscount.Text = "QL Khuyến mãi";
-            this.tabDiscount.UseVisualStyleBackColor = true;
+            this.label_phanTrang.AutoSize = true;
+            this.label_phanTrang.Location = new System.Drawing.Point(492, 314);
+            this.label_phanTrang.Name = "label_phanTrang";
+            this.label_phanTrang.Size = new System.Drawing.Size(25, 16);
+            this.label_phanTrang.TabIndex = 15;
+            this.label_phanTrang.Text = "0/0";
             // 
-            // tabStat
+            // btnNextt
             // 
-            this.tabStat.Location = new System.Drawing.Point(4, 25);
-            this.tabStat.Name = "tabStat";
-            this.tabStat.Size = new System.Drawing.Size(1039, 659);
-            this.tabStat.TabIndex = 3;
-            this.tabStat.Text = "Thống kê";
-            this.tabStat.UseVisualStyleBackColor = true;
+            this.btnNextt.Location = new System.Drawing.Point(553, 307);
+            this.btnNextt.Name = "btnNextt";
+            this.btnNextt.Size = new System.Drawing.Size(75, 29);
+            this.btnNextt.TabIndex = 14;
+            this.btnNextt.Text = "Sau";
+            this.btnNextt.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // btnPree
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1039, 659);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Báo cáo";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.btnPree.Location = new System.Drawing.Point(383, 307);
+            this.btnPree.Name = "btnPree";
+            this.btnPree.Size = new System.Drawing.Size(75, 29);
+            this.btnPree.TabIndex = 13;
+            this.btnPree.Text = "Trước";
+            this.btnPree.UseVisualStyleBackColor = true;
             // 
-            // tblKhachHang
+            // groupBox4
             // 
-            this.tblKhachHang.AllowUserToAddRows = false;
-            this.tblKhachHang.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tblKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tblKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Customer_ID,
-            this.FullName,
-            this.BirthDate,
-            this.Address,
-            this.PhoneNumber,
-            this.CustomerType,
-            this.Point,
-            this.CreateTime,
-            this.Email,
-            this.tblCustomerEdit,
-            this.tblCustomerRemove});
-            this.tblKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblKhachHang.Location = new System.Drawing.Point(3, 3);
-            this.tblKhachHang.Name = "tblKhachHang";
-            this.tblKhachHang.ReadOnly = true;
-            this.tblKhachHang.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.tblKhachHang.RowTemplate.Height = 24;
-            this.tblKhachHang.ShowCellToolTips = false;
-            this.tblKhachHang.Size = new System.Drawing.Size(1033, 300);
-            this.tblKhachHang.TabIndex = 5;
+            this.groupBox4.Controls.Add(this.btnSearchCustomer);
+            this.groupBox4.Controls.Add(this.txtSearchCustomer);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.comboSearchCustomer);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Location = new System.Drawing.Point(685, 511);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(351, 138);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm kiếm";
             // 
-            // Customer_ID
+            // btnSearchCustomer
             // 
-            this.Customer_ID.HeaderText = "Ma KH";
-            this.Customer_ID.MinimumWidth = 6;
-            this.Customer_ID.Name = "Customer_ID";
-            this.Customer_ID.ReadOnly = true;
-            this.Customer_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.btnSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCustomer.Image = global::BookStoreApp.Properties.Resources.search;
+            this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchCustomer.Location = new System.Drawing.Point(124, 97);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 35);
+            this.btnSearchCustomer.TabIndex = 6;
+            this.btnSearchCustomer.Text = "Tìm kiếm";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
             // 
-            // FullName
+            // txtSearchCustomer
             // 
-            this.FullName.HeaderText = "Họ tên KH";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCustomer.Location = new System.Drawing.Point(155, 66);
+            this.txtSearchCustomer.Name = "txtSearchCustomer";
+            this.txtSearchCustomer.Size = new System.Drawing.Size(180, 26);
+            this.txtSearchCustomer.TabIndex = 5;
             // 
-            // BirthDate
+            // label7
             // 
-            this.BirthDate.HeaderText = "Ngày sinh";
-            this.BirthDate.MinimumWidth = 6;
-            this.BirthDate.Name = "BirthDate";
-            this.BirthDate.ReadOnly = true;
-            this.BirthDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(42, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 19);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Nội dung";
             // 
-            // Address
+            // comboSearchCustomer
             // 
-            this.Address.HeaderText = "Địa chỉ";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.comboSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSearchCustomer.FormattingEnabled = true;
+            this.comboSearchCustomer.Items.AddRange(new object[] {
+            "Tên khách hàng gần đúng",
+            "Mã khách hàng",
+            "Địa chỉ",
+            "Số điện thoại"});
+            this.comboSearchCustomer.Location = new System.Drawing.Point(155, 33);
+            this.comboSearchCustomer.Name = "comboSearchCustomer";
+            this.comboSearchCustomer.Size = new System.Drawing.Size(180, 27);
+            this.comboSearchCustomer.TabIndex = 1;
             // 
-            // PhoneNumber
+            // label8
             // 
-            this.PhoneNumber.HeaderText = "Số ĐT";
-            this.PhoneNumber.MinimumWidth = 6;
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.ReadOnly = true;
-            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(42, 33);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tiêu chí";
             // 
-            // CustomerType
+            // groupBox5
             // 
-            this.CustomerType.HeaderText = "Loại KH";
-            this.CustomerType.MinimumWidth = 6;
-            this.CustomerType.Name = "CustomerType";
-            this.CustomerType.ReadOnly = true;
-            this.CustomerType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.groupBox5.Controls.Add(this.btbBoLoc);
+            this.groupBox5.Controls.Add(this.radioSortCustomerByBirthDate);
+            this.groupBox5.Controls.Add(this.radioSortCustomerByName);
+            this.groupBox5.Controls.Add(this.radioSortCustomerById);
+            this.groupBox5.Location = new System.Drawing.Point(329, 511);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(350, 138);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Sắp xếp theo";
             // 
-            // Point
+            // btbBoLoc
             // 
-            this.Point.HeaderText = "Điểm TL";
-            this.Point.MinimumWidth = 6;
-            this.Point.Name = "Point";
-            this.Point.ReadOnly = true;
-            this.Point.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.btbBoLoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbBoLoc.Location = new System.Drawing.Point(28, 109);
+            this.btbBoLoc.Name = "btbBoLoc";
+            this.btbBoLoc.Size = new System.Drawing.Size(75, 23);
+            this.btbBoLoc.TabIndex = 3;
+            this.btbBoLoc.Text = "Bỏ lọc";
+            this.btbBoLoc.UseVisualStyleBackColor = true;
             // 
-            // CreateTime
+            // radioSortCustomerByBirthDate
             // 
-            this.CreateTime.HeaderText = "Ngày tạo TK";
-            this.CreateTime.MinimumWidth = 6;
-            this.CreateTime.Name = "CreateTime";
-            this.CreateTime.ReadOnly = true;
-            this.CreateTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.radioSortCustomerByBirthDate.AutoSize = true;
+            this.radioSortCustomerByBirthDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSortCustomerByBirthDate.Location = new System.Drawing.Point(28, 83);
+            this.radioSortCustomerByBirthDate.Name = "radioSortCustomerByBirthDate";
+            this.radioSortCustomerByBirthDate.Size = new System.Drawing.Size(156, 23);
+            this.radioSortCustomerByBirthDate.TabIndex = 2;
+            this.radioSortCustomerByBirthDate.TabStop = true;
+            this.radioSortCustomerByBirthDate.Text = "Ngày sinh tăng dần";
+            this.radioSortCustomerByBirthDate.UseVisualStyleBackColor = true;
             // 
-            // Email
+            // radioSortCustomerByName
             // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.radioSortCustomerByName.AutoSize = true;
+            this.radioSortCustomerByName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSortCustomerByName.Location = new System.Drawing.Point(28, 54);
+            this.radioSortCustomerByName.Name = "radioSortCustomerByName";
+            this.radioSortCustomerByName.Size = new System.Drawing.Size(192, 23);
+            this.radioSortCustomerByName.TabIndex = 1;
+            this.radioSortCustomerByName.TabStop = true;
+            this.radioSortCustomerByName.Text = "Tên khách hàng tăng dần";
+            this.radioSortCustomerByName.UseVisualStyleBackColor = true;
             // 
-            // tblCustomerEdit
+            // radioSortCustomerById
             // 
-            this.tblCustomerEdit.HeaderText = "Sửa";
-            this.tblCustomerEdit.MinimumWidth = 6;
-            this.tblCustomerEdit.Name = "tblCustomerEdit";
-            this.tblCustomerEdit.ReadOnly = true;
-            this.tblCustomerEdit.Text = "Sửa";
-            this.tblCustomerEdit.UseColumnTextForButtonValue = true;
+            this.radioSortCustomerById.AutoSize = true;
+            this.radioSortCustomerById.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSortCustomerById.Location = new System.Drawing.Point(28, 25);
+            this.radioSortCustomerById.Name = "radioSortCustomerById";
+            this.radioSortCustomerById.Size = new System.Drawing.Size(189, 23);
+            this.radioSortCustomerById.TabIndex = 0;
+            this.radioSortCustomerById.TabStop = true;
+            this.radioSortCustomerById.Text = "Mã khách hàng tăng dần";
+            this.radioSortCustomerById.UseVisualStyleBackColor = true;
             // 
-            // tblCustomerRemove
+            // groupBox6
             // 
-            this.tblCustomerRemove.HeaderText = "Xóa";
-            this.tblCustomerRemove.MinimumWidth = 6;
-            this.tblCustomerRemove.Name = "tblCustomerRemove";
-            this.tblCustomerRemove.ReadOnly = true;
-            this.tblCustomerRemove.Text = "Xóa";
-            this.tblCustomerRemove.UseColumnTextForButtonValue = true;
+            this.groupBox6.Controls.Add(this.btnXoaKH);
+            this.groupBox6.Controls.Add(this.btnSuaKH);
+            this.groupBox6.Controls.Add(this.btnRefreshCustomer);
+            this.groupBox6.Controls.Add(this.btnAddNewCustomer);
+            this.groupBox6.Location = new System.Drawing.Point(6, 511);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(317, 138);
+            this.groupBox6.TabIndex = 10;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Hành động";
+            // 
+            // btnXoaKH
+            // 
+            this.btnXoaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaKH.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaKH.Location = new System.Drawing.Point(155, 25);
+            this.btnXoaKH.Name = "btnXoaKH";
+            this.btnXoaKH.Size = new System.Drawing.Size(131, 52);
+            this.btnXoaKH.TabIndex = 5;
+            this.btnXoaKH.Text = "Xoá";
+            this.btnXoaKH.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaKH
+            // 
+            this.btnSuaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaKH.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaKH.Location = new System.Drawing.Point(18, 25);
+            this.btnSuaKH.Name = "btnSuaKH";
+            this.btnSuaKH.Size = new System.Drawing.Size(131, 52);
+            this.btnSuaKH.TabIndex = 4;
+            this.btnSuaKH.Text = "Sửa";
+            this.btnSuaKH.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshCustomer
+            // 
+            this.btnRefreshCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshCustomer.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnRefreshCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshCustomer.Location = new System.Drawing.Point(155, 83);
+            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
+            this.btnRefreshCustomer.Size = new System.Drawing.Size(131, 49);
+            this.btnRefreshCustomer.TabIndex = 1;
+            this.btnRefreshCustomer.Text = "    Làm mới";
+            this.btnRefreshCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNewCustomer
+            // 
+            this.btnAddNewCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewCustomer.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnAddNewCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewCustomer.Location = new System.Drawing.Point(18, 83);
+            this.btnAddNewCustomer.Name = "btnAddNewCustomer";
+            this.btnAddNewCustomer.Size = new System.Drawing.Size(131, 49);
+            this.btnAddNewCustomer.TabIndex = 0;
+            this.btnAddNewCustomer.Text = "       Thêm mới";
+            this.btnAddNewCustomer.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
@@ -919,6 +1083,14 @@
             this.btnAnhKH.TabIndex = 27;
             this.btnAnhKH.Text = "Ảnh";
             this.btnAnhKH.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxKH
+            // 
+            this.pictureBoxKH.Location = new System.Drawing.Point(881, 11);
+            this.pictureBoxKH.Name = "pictureBoxKH";
+            this.pictureBoxKH.Size = new System.Drawing.Size(116, 111);
+            this.pictureBoxKH.TabIndex = 26;
+            this.pictureBoxKH.TabStop = false;
             // 
             // dateTimePickerNgaySinh
             // 
@@ -1062,223 +1234,283 @@
             this.label22.TabIndex = 7;
             this.label22.Text = "Mã khách hàng";
             // 
-            // groupBox6
+            // tblKhachHang
             // 
-            this.groupBox6.Controls.Add(this.btnXoaKH);
-            this.groupBox6.Controls.Add(this.btnSuaKH);
-            this.groupBox6.Controls.Add(this.btnRefreshCustomer);
-            this.groupBox6.Controls.Add(this.btnAddNewCustomer);
-            this.groupBox6.Location = new System.Drawing.Point(6, 511);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(317, 138);
-            this.groupBox6.TabIndex = 10;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Hành động";
+            this.tblKhachHang.AllowUserToAddRows = false;
+            this.tblKhachHang.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tblKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.tblKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Customer_ID,
+            this.FullName,
+            this.BirthDate,
+            this.Address,
+            this.PhoneNumber,
+            this.CustomerType,
+            this.Point,
+            this.CreateTime,
+            this.Email,
+            this.tblCustomerEdit,
+            this.tblCustomerRemove});
+            this.tblKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblKhachHang.Location = new System.Drawing.Point(3, 3);
+            this.tblKhachHang.Name = "tblKhachHang";
+            this.tblKhachHang.ReadOnly = true;
+            this.tblKhachHang.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tblKhachHang.RowTemplate.Height = 24;
+            this.tblKhachHang.ShowCellToolTips = false;
+            this.tblKhachHang.Size = new System.Drawing.Size(1033, 300);
+            this.tblKhachHang.TabIndex = 5;
             // 
-            // groupBox5
+            // Customer_ID
             // 
-            this.groupBox5.Controls.Add(this.btbBoLoc);
-            this.groupBox5.Controls.Add(this.radioSortCustomerByBirthDate);
-            this.groupBox5.Controls.Add(this.radioSortCustomerByName);
-            this.groupBox5.Controls.Add(this.radioSortCustomerById);
-            this.groupBox5.Location = new System.Drawing.Point(329, 511);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(350, 138);
-            this.groupBox5.TabIndex = 11;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Sắp xếp theo";
+            this.Customer_ID.HeaderText = "Ma KH";
+            this.Customer_ID.MinimumWidth = 6;
+            this.Customer_ID.Name = "Customer_ID";
+            this.Customer_ID.ReadOnly = true;
+            this.Customer_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // btbBoLoc
+            // FullName
             // 
-            this.btbBoLoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btbBoLoc.Location = new System.Drawing.Point(28, 109);
-            this.btbBoLoc.Name = "btbBoLoc";
-            this.btbBoLoc.Size = new System.Drawing.Size(75, 23);
-            this.btbBoLoc.TabIndex = 3;
-            this.btbBoLoc.Text = "Bỏ lọc";
-            this.btbBoLoc.UseVisualStyleBackColor = true;
+            this.FullName.HeaderText = "Họ tên KH";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // radioSortCustomerByBirthDate
+            // BirthDate
             // 
-            this.radioSortCustomerByBirthDate.AutoSize = true;
-            this.radioSortCustomerByBirthDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortCustomerByBirthDate.Location = new System.Drawing.Point(28, 83);
-            this.radioSortCustomerByBirthDate.Name = "radioSortCustomerByBirthDate";
-            this.radioSortCustomerByBirthDate.Size = new System.Drawing.Size(156, 23);
-            this.radioSortCustomerByBirthDate.TabIndex = 2;
-            this.radioSortCustomerByBirthDate.TabStop = true;
-            this.radioSortCustomerByBirthDate.Text = "Ngày sinh tăng dần";
-            this.radioSortCustomerByBirthDate.UseVisualStyleBackColor = true;
+            this.BirthDate.HeaderText = "Ngày sinh";
+            this.BirthDate.MinimumWidth = 6;
+            this.BirthDate.Name = "BirthDate";
+            this.BirthDate.ReadOnly = true;
+            this.BirthDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // radioSortCustomerByName
+            // Address
             // 
-            this.radioSortCustomerByName.AutoSize = true;
-            this.radioSortCustomerByName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortCustomerByName.Location = new System.Drawing.Point(28, 54);
-            this.radioSortCustomerByName.Name = "radioSortCustomerByName";
-            this.radioSortCustomerByName.Size = new System.Drawing.Size(192, 23);
-            this.radioSortCustomerByName.TabIndex = 1;
-            this.radioSortCustomerByName.TabStop = true;
-            this.radioSortCustomerByName.Text = "Tên khách hàng tăng dần";
-            this.radioSortCustomerByName.UseVisualStyleBackColor = true;
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // radioSortCustomerById
+            // PhoneNumber
             // 
-            this.radioSortCustomerById.AutoSize = true;
-            this.radioSortCustomerById.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortCustomerById.Location = new System.Drawing.Point(28, 25);
-            this.radioSortCustomerById.Name = "radioSortCustomerById";
-            this.radioSortCustomerById.Size = new System.Drawing.Size(189, 23);
-            this.radioSortCustomerById.TabIndex = 0;
-            this.radioSortCustomerById.TabStop = true;
-            this.radioSortCustomerById.Text = "Mã khách hàng tăng dần";
-            this.radioSortCustomerById.UseVisualStyleBackColor = true;
+            this.PhoneNumber.HeaderText = "Số ĐT";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // groupBox4
+            // CustomerType
             // 
-            this.groupBox4.Controls.Add(this.btnSearchCustomer);
-            this.groupBox4.Controls.Add(this.txtSearchCustomer);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.comboSearchCustomer);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(685, 511);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(351, 138);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tìm kiếm";
+            this.CustomerType.HeaderText = "Loại KH";
+            this.CustomerType.MinimumWidth = 6;
+            this.CustomerType.Name = "CustomerType";
+            this.CustomerType.ReadOnly = true;
+            this.CustomerType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtSearchCustomer
+            // Point
             // 
-            this.txtSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCustomer.Location = new System.Drawing.Point(155, 66);
-            this.txtSearchCustomer.Name = "txtSearchCustomer";
-            this.txtSearchCustomer.Size = new System.Drawing.Size(180, 26);
-            this.txtSearchCustomer.TabIndex = 5;
+            this.Point.HeaderText = "Điểm TL";
+            this.Point.MinimumWidth = 6;
+            this.Point.Name = "Point";
+            this.Point.ReadOnly = true;
+            this.Point.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label7
+            // CreateTime
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 19);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Nội dung";
+            this.CreateTime.HeaderText = "Ngày tạo TK";
+            this.CreateTime.MinimumWidth = 6;
+            this.CreateTime.Name = "CreateTime";
+            this.CreateTime.ReadOnly = true;
+            this.CreateTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // comboSearchCustomer
+            // Email
             // 
-            this.comboSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSearchCustomer.FormattingEnabled = true;
-            this.comboSearchCustomer.Items.AddRange(new object[] {
-            "Tên khách hàng gần đúng",
-            "Mã khách hàng",
-            "Địa chỉ",
-            "Số điện thoại"});
-            this.comboSearchCustomer.Location = new System.Drawing.Point(155, 33);
-            this.comboSearchCustomer.Name = "comboSearchCustomer";
-            this.comboSearchCustomer.Size = new System.Drawing.Size(180, 27);
-            this.comboSearchCustomer.TabIndex = 1;
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label8
+            // tblCustomerEdit
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(42, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 19);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tiêu chí";
+            this.tblCustomerEdit.HeaderText = "Sửa";
+            this.tblCustomerEdit.MinimumWidth = 6;
+            this.tblCustomerEdit.Name = "tblCustomerEdit";
+            this.tblCustomerEdit.ReadOnly = true;
+            this.tblCustomerEdit.Text = "Sửa";
+            this.tblCustomerEdit.UseColumnTextForButtonValue = true;
             // 
-            // label_phanTrang
+            // tblCustomerRemove
             // 
-            this.label_phanTrang.AutoSize = true;
-            this.label_phanTrang.Location = new System.Drawing.Point(492, 314);
-            this.label_phanTrang.Name = "label_phanTrang";
-            this.label_phanTrang.Size = new System.Drawing.Size(25, 16);
-            this.label_phanTrang.TabIndex = 15;
-            this.label_phanTrang.Text = "0/0";
+            this.tblCustomerRemove.HeaderText = "Xóa";
+            this.tblCustomerRemove.MinimumWidth = 6;
+            this.tblCustomerRemove.Name = "tblCustomerRemove";
+            this.tblCustomerRemove.ReadOnly = true;
+            this.tblCustomerRemove.Text = "Xóa";
+            this.tblCustomerRemove.UseColumnTextForButtonValue = true;
             // 
-            // btnNextt
+            // tabDiscount
             // 
-            this.btnNextt.Location = new System.Drawing.Point(556, 310);
-            this.btnNextt.Name = "btnNextt";
-            this.btnNextt.Size = new System.Drawing.Size(75, 23);
-            this.btnNextt.TabIndex = 14;
-            this.btnNextt.Text = "Sau";
-            this.btnNextt.UseVisualStyleBackColor = true;
+            this.tabDiscount.Controls.Add(this.groupBox7);
+            this.tabDiscount.Controls.Add(this.groupBox9);
+            this.tabDiscount.Controls.Add(this.groupBox13);
+            this.tabDiscount.Controls.Add(this.tblKhuyenMai);
+            this.tabDiscount.Location = new System.Drawing.Point(4, 25);
+            this.tabDiscount.Name = "tabDiscount";
+            this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDiscount.Size = new System.Drawing.Size(1039, 659);
+            this.tabDiscount.TabIndex = 2;
+            this.tabDiscount.Text = "QL Khuyến mãi";
+            this.tabDiscount.UseVisualStyleBackColor = true;
             // 
-            // btnPree
+            // groupBox7
             // 
-            this.btnPree.Location = new System.Drawing.Point(385, 310);
-            this.btnPree.Name = "btnPree";
-            this.btnPree.Size = new System.Drawing.Size(75, 23);
-            this.btnPree.TabIndex = 13;
-            this.btnPree.Text = "Trước";
-            this.btnPree.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.btnSearchDiscount);
+            this.groupBox7.Controls.Add(this.txtSearchDiscount);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Controls.Add(this.comboSearchDiscount);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Location = new System.Drawing.Point(519, 451);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(517, 198);
+            this.groupBox7.TabIndex = 15;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Tìm kiếm";
             // 
-            // tblKhuyenMai
+            // btnSearchDiscount
             // 
-            this.tblKhuyenMai.AllowUserToAddRows = false;
-            this.tblKhuyenMai.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhuyenMai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.tblKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblKhuyenMai.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.tblKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NameDiscount,
-            this.StartTime,
-            this.EndTime,
-            this.DiscountPercent});
-            this.tblKhuyenMai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblKhuyenMai.Location = new System.Drawing.Point(3, 3);
-            this.tblKhuyenMai.Name = "tblKhuyenMai";
-            this.tblKhuyenMai.ReadOnly = true;
-            this.tblKhuyenMai.RowHeadersWidth = 51;
-            this.tblKhuyenMai.RowTemplate.Height = 24;
-            this.tblKhuyenMai.Size = new System.Drawing.Size(1033, 300);
-            this.tblKhuyenMai.TabIndex = 9;
+            this.btnSearchDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchDiscount.Location = new System.Drawing.Point(144, 132);
+            this.btnSearchDiscount.Name = "btnSearchDiscount";
+            this.btnSearchDiscount.Size = new System.Drawing.Size(131, 41);
+            this.btnSearchDiscount.TabIndex = 6;
+            this.btnSearchDiscount.Text = "Tìm kiếm";
+            this.btnSearchDiscount.UseVisualStyleBackColor = true;
             // 
-            // NameDiscount
+            // txtSearchDiscount
             // 
-            this.NameDiscount.HeaderText = "Tên KM";
-            this.NameDiscount.MinimumWidth = 6;
-            this.NameDiscount.Name = "NameDiscount";
-            this.NameDiscount.ReadOnly = true;
-            this.NameDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtSearchDiscount.Location = new System.Drawing.Point(144, 85);
+            this.txtSearchDiscount.Name = "txtSearchDiscount";
+            this.txtSearchDiscount.Size = new System.Drawing.Size(240, 22);
+            this.txtSearchDiscount.TabIndex = 5;
             // 
-            // StartTime
+            // label5
             // 
-            this.StartTime.HeaderText = "TG bắt đầu";
-            this.StartTime.MinimumWidth = 6;
-            this.StartTime.Name = "StartTime";
-            this.StartTime.ReadOnly = true;
-            this.StartTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(71, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 18);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Nội dung";
             // 
-            // EndTime
+            // comboSearchDiscount
             // 
-            this.EndTime.HeaderText = "TG kết thúc";
-            this.EndTime.MinimumWidth = 6;
-            this.EndTime.Name = "EndTime";
-            this.EndTime.ReadOnly = true;
-            this.EndTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.comboSearchDiscount.FormattingEnabled = true;
+            this.comboSearchDiscount.Items.AddRange(new object[] {
+            "Sách trong thời gian khuyến mãi",
+            "",
+            "Sách hết thời gian khuyến mãi"});
+            this.comboSearchDiscount.Location = new System.Drawing.Point(144, 47);
+            this.comboSearchDiscount.Name = "comboSearchDiscount";
+            this.comboSearchDiscount.Size = new System.Drawing.Size(240, 24);
+            this.comboSearchDiscount.TabIndex = 1;
             // 
-            // DiscountPercent
+            // label6
             // 
-            this.DiscountPercent.HeaderText = "% KM";
-            this.DiscountPercent.MinimumWidth = 6;
-            this.DiscountPercent.Name = "DiscountPercent";
-            this.DiscountPercent.ReadOnly = true;
-            this.DiscountPercent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(69, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 18);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tiêu chí";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btnLuu);
+            this.groupBox9.Controls.Add(this.btnXoaKM);
+            this.groupBox9.Controls.Add(this.btnSuaKM);
+            this.groupBox9.Controls.Add(this.btnRefreshDiscount);
+            this.groupBox9.Controls.Add(this.btnAddNewDiscount);
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(3, 451);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(510, 198);
+            this.groupBox9.TabIndex = 14;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Hành động";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(140, 145);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(183, 42);
+            this.btnLuu.TabIndex = 6;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaKM
+            // 
+            this.btnXoaKM.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaKM.Location = new System.Drawing.Point(262, 47);
+            this.btnXoaKM.Name = "btnXoaKM";
+            this.btnXoaKM.Size = new System.Drawing.Size(185, 42);
+            this.btnXoaKM.TabIndex = 5;
+            this.btnXoaKM.Text = "Xoá";
+            this.btnXoaKM.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaKM
+            // 
+            this.btnSuaKM.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaKM.Location = new System.Drawing.Point(35, 47);
+            this.btnSuaKM.Name = "btnSuaKM";
+            this.btnSuaKM.Size = new System.Drawing.Size(183, 42);
+            this.btnSuaKM.TabIndex = 4;
+            this.btnSuaKM.Text = "Sửa";
+            this.btnSuaKM.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshDiscount
+            // 
+            this.btnRefreshDiscount.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnRefreshDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshDiscount.Location = new System.Drawing.Point(262, 97);
+            this.btnRefreshDiscount.Name = "btnRefreshDiscount";
+            this.btnRefreshDiscount.Size = new System.Drawing.Size(185, 42);
+            this.btnRefreshDiscount.TabIndex = 1;
+            this.btnRefreshDiscount.Text = "Làm mới";
+            this.btnRefreshDiscount.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNewDiscount
+            // 
+            this.btnAddNewDiscount.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnAddNewDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewDiscount.Location = new System.Drawing.Point(33, 97);
+            this.btnAddNewDiscount.Name = "btnAddNewDiscount";
+            this.btnAddNewDiscount.Size = new System.Drawing.Size(185, 42);
+            this.btnAddNewDiscount.TabIndex = 0;
+            this.btnAddNewDiscount.Text = "Thêm mới";
+            this.btnAddNewDiscount.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
@@ -1380,274 +1612,429 @@
             this.label30.TabIndex = 11;
             this.label30.Text = "Tên sách";
             // 
-            // groupBox9
+            // tblKhuyenMai
             // 
-            this.groupBox9.Controls.Add(this.btnLuu);
-            this.groupBox9.Controls.Add(this.btnXoaKM);
-            this.groupBox9.Controls.Add(this.btnSuaKM);
-            this.groupBox9.Controls.Add(this.btnRefreshDiscount);
-            this.groupBox9.Controls.Add(this.btnAddNewDiscount);
-            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(3, 451);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(510, 198);
-            this.groupBox9.TabIndex = 14;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Hành động";
+            this.tblKhuyenMai.AllowUserToAddRows = false;
+            this.tblKhuyenMai.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhuyenMai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tblKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblKhuyenMai.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.tblKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameDiscount,
+            this.StartTime,
+            this.EndTime,
+            this.DiscountPercent});
+            this.tblKhuyenMai.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblKhuyenMai.Location = new System.Drawing.Point(3, 3);
+            this.tblKhuyenMai.Name = "tblKhuyenMai";
+            this.tblKhuyenMai.ReadOnly = true;
+            this.tblKhuyenMai.RowHeadersWidth = 51;
+            this.tblKhuyenMai.RowTemplate.Height = 24;
+            this.tblKhuyenMai.Size = new System.Drawing.Size(1033, 300);
+            this.tblKhuyenMai.TabIndex = 9;
             // 
-            // groupBox7
+            // NameDiscount
             // 
-            this.groupBox7.Controls.Add(this.btnSearchDiscount);
-            this.groupBox7.Controls.Add(this.txtSearchDiscount);
-            this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Controls.Add(this.comboSearchDiscount);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Location = new System.Drawing.Point(519, 451);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(517, 198);
-            this.groupBox7.TabIndex = 15;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Tìm kiếm";
+            this.NameDiscount.HeaderText = "Tên KM";
+            this.NameDiscount.MinimumWidth = 6;
+            this.NameDiscount.Name = "NameDiscount";
+            this.NameDiscount.ReadOnly = true;
+            this.NameDiscount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // btnSearchDiscount
+            // StartTime
             // 
-            this.btnSearchDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchDiscount.Location = new System.Drawing.Point(144, 132);
-            this.btnSearchDiscount.Name = "btnSearchDiscount";
-            this.btnSearchDiscount.Size = new System.Drawing.Size(131, 41);
-            this.btnSearchDiscount.TabIndex = 6;
-            this.btnSearchDiscount.Text = "Tìm kiếm";
-            this.btnSearchDiscount.UseVisualStyleBackColor = true;
+            this.StartTime.HeaderText = "TG bắt đầu";
+            this.StartTime.MinimumWidth = 6;
+            this.StartTime.Name = "StartTime";
+            this.StartTime.ReadOnly = true;
+            this.StartTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // txtSearchDiscount
+            // EndTime
             // 
-            this.txtSearchDiscount.Location = new System.Drawing.Point(144, 85);
-            this.txtSearchDiscount.Name = "txtSearchDiscount";
-            this.txtSearchDiscount.Size = new System.Drawing.Size(240, 22);
-            this.txtSearchDiscount.TabIndex = 5;
+            this.EndTime.HeaderText = "TG kết thúc";
+            this.EndTime.MinimumWidth = 6;
+            this.EndTime.Name = "EndTime";
+            this.EndTime.ReadOnly = true;
+            this.EndTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label5
+            // DiscountPercent
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 18);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Nội dung";
+            this.DiscountPercent.HeaderText = "% KM";
+            this.DiscountPercent.MinimumWidth = 6;
+            this.DiscountPercent.Name = "DiscountPercent";
+            this.DiscountPercent.ReadOnly = true;
+            this.DiscountPercent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // comboSearchDiscount
+            // tabStat
             // 
-            this.comboSearchDiscount.FormattingEnabled = true;
-            this.comboSearchDiscount.Items.AddRange(new object[] {
-            "Sách trong thời gian khuyến mãi",
-            "",
-            "Sách hết thời gian khuyến mãi"});
-            this.comboSearchDiscount.Location = new System.Drawing.Point(144, 47);
-            this.comboSearchDiscount.Name = "comboSearchDiscount";
-            this.comboSearchDiscount.Size = new System.Drawing.Size(240, 24);
-            this.comboSearchDiscount.TabIndex = 1;
+            this.tabStat.Controls.Add(this.tblThongKe);
+            this.tabStat.Controls.Add(this.groupBox11);
+            this.tabStat.Location = new System.Drawing.Point(4, 25);
+            this.tabStat.Name = "tabStat";
+            this.tabStat.Size = new System.Drawing.Size(1039, 659);
+            this.tabStat.TabIndex = 3;
+            this.tabStat.Text = "Thống kê";
+            this.tabStat.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // tblThongKe
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 18);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tiêu chí";
+            this.tblThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblThongKe.BackgroundColor = System.Drawing.Color.White;
+            this.tblThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblThongKe.DefaultCellStyle = dataGridViewCellStyle7;
+            this.tblThongKe.Location = new System.Drawing.Point(3, 123);
+            this.tblThongKe.Name = "tblThongKe";
+            this.tblThongKe.RowHeadersWidth = 51;
+            this.tblThongKe.RowTemplate.Height = 40;
+            this.tblThongKe.Size = new System.Drawing.Size(1033, 499);
+            this.tblThongKe.TabIndex = 0;
             // 
-            // btnSearchItem
+            // groupBox11
             // 
-            this.btnSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchItem.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchItem.Location = new System.Drawing.Point(97, 117);
-            this.btnSearchItem.Name = "btnSearchItem";
-            this.btnSearchItem.Size = new System.Drawing.Size(142, 36);
-            this.btnSearchItem.TabIndex = 6;
-            this.btnSearchItem.Text = "Tìm kiếm";
-            this.btnSearchItem.UseVisualStyleBackColor = true;
+            this.groupBox11.Controls.Add(this.checkBoxTime);
+            this.groupBox11.Controls.Add(this.button1);
+            this.groupBox11.Controls.Add(this.denNgay);
+            this.groupBox11.Controls.Add(this.label11);
+            this.groupBox11.Controls.Add(this.tuNgay);
+            this.groupBox11.Controls.Add(this.label28);
+            this.groupBox11.Controls.Add(this.btnStatResult);
+            this.groupBox11.Controls.Add(this.comboStat);
+            this.groupBox11.Controls.Add(this.label12);
+            this.groupBox11.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Location = new System.Drawing.Point(3, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(1033, 114);
+            this.groupBox11.TabIndex = 15;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Thống kê theo tiêu chí";
             // 
-            // btnXoaSP
+            // checkBoxTime
             // 
-            this.btnXoaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSP.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaSP.Location = new System.Drawing.Point(163, 43);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(131, 35);
-            this.btnXoaSP.TabIndex = 3;
-            this.btnXoaSP.Text = "Xoá";
-            this.btnXoaSP.UseVisualStyleBackColor = true;
+            this.checkBoxTime.AutoSize = true;
+            this.checkBoxTime.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTime.Location = new System.Drawing.Point(488, 72);
+            this.checkBoxTime.Name = "checkBoxTime";
+            this.checkBoxTime.Size = new System.Drawing.Size(194, 23);
+            this.checkBoxTime.TabIndex = 13;
+            this.checkBoxTime.Text = "Không áp dụng thời gian";
+            this.checkBoxTime.UseVisualStyleBackColor = true;
             // 
-            // btnSuaSP
+            // button1
             // 
-            this.btnSuaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaSP.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaSP.Location = new System.Drawing.Point(11, 43);
-            this.btnSuaSP.Name = "btnSuaSP";
-            this.btnSuaSP.Size = new System.Drawing.Size(131, 35);
-            this.btnSuaSP.TabIndex = 2;
-            this.btnSuaSP.Text = "Sửa";
-            this.btnSuaSP.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(869, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 40);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Lưu file";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnFreshItem
+            // denNgay
             // 
-            this.btnFreshItem.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFreshItem.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnFreshItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFreshItem.Location = new System.Drawing.Point(163, 93);
-            this.btnFreshItem.Name = "btnFreshItem";
-            this.btnFreshItem.Size = new System.Drawing.Size(131, 35);
-            this.btnFreshItem.TabIndex = 1;
-            this.btnFreshItem.Text = "Làm mới";
-            this.btnFreshItem.UseVisualStyleBackColor = true;
+            this.denNgay.CalendarFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.denNgay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.denNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.denNgay.Location = new System.Drawing.Point(349, 69);
+            this.denNgay.Name = "denNgay";
+            this.denNgay.Size = new System.Drawing.Size(124, 26);
+            this.denNgay.TabIndex = 11;
             // 
-            // btnThemSP
+            // label11
             // 
-            this.btnThemSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSP.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSP.Location = new System.Drawing.Point(11, 93);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(131, 35);
-            this.btnThemSP.TabIndex = 0;
-            this.btnThemSP.Text = "    Thêm mới";
-            this.btnThemSP.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(271, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 19);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Đến ngày";
             // 
-            // picAnh
+            // tuNgay
             // 
-            this.picAnh.Location = new System.Drawing.Point(895, 345);
-            this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(100, 109);
-            this.picAnh.TabIndex = 42;
-            this.picAnh.TabStop = false;
+            this.tuNgay.CalendarFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tuNgay.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tuNgay.Location = new System.Drawing.Point(132, 69);
+            this.tuNgay.Name = "tuNgay";
+            this.tuNgay.Size = new System.Drawing.Size(124, 26);
+            this.tuNgay.TabIndex = 9;
             // 
-            // btnSearchCustomer
+            // label28
             // 
-            this.btnSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCustomer.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(124, 97);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 35);
-            this.btnSearchCustomer.TabIndex = 6;
-            this.btnSearchCustomer.Text = "Tìm kiếm";
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(52, 75);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(62, 19);
+            this.label28.TabIndex = 8;
+            this.label28.Text = "Từ ngày";
             // 
-            // btnXoaKH
+            // btnStatResult
             // 
-            this.btnXoaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaKH.Location = new System.Drawing.Point(155, 25);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(131, 35);
-            this.btnXoaKH.TabIndex = 5;
-            this.btnXoaKH.Text = "Xoá";
-            this.btnXoaKH.UseVisualStyleBackColor = true;
+            this.btnStatResult.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatResult.Location = new System.Drawing.Point(726, 57);
+            this.btnStatResult.Name = "btnStatResult";
+            this.btnStatResult.Size = new System.Drawing.Size(112, 38);
+            this.btnStatResult.TabIndex = 7;
+            this.btnStatResult.Text = "Thống kê";
+            this.btnStatResult.UseVisualStyleBackColor = true;
             // 
-            // btnSuaKH
+            // comboStat
             // 
-            this.btnSuaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaKH.Location = new System.Drawing.Point(18, 25);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(131, 35);
-            this.btnSuaKH.TabIndex = 4;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = true;
+            this.comboStat.FormattingEnabled = true;
+            this.comboStat.Items.AddRange(new object[] {
+            "Các sách có danh thu tốt nhất",
+            "Các sách có nhiều lượt mua nhất",
+            "Các khách hàng mua nhiều hàng nhất",
+            "Các khách hàng chi nhiều tiền nhất",
+            "Doanh thu theo từng tháng ",
+            "Danh thu theo từng ngày",
+            "Danh thu theo từng năm"});
+            this.comboStat.Location = new System.Drawing.Point(132, 28);
+            this.comboStat.Name = "comboStat";
+            this.comboStat.Size = new System.Drawing.Size(550, 27);
+            this.comboStat.TabIndex = 1;
             // 
-            // btnRefreshCustomer
+            // label12
             // 
-            this.btnRefreshCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshCustomer.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnRefreshCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshCustomer.Location = new System.Drawing.Point(155, 71);
-            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
-            this.btnRefreshCustomer.Size = new System.Drawing.Size(131, 35);
-            this.btnRefreshCustomer.TabIndex = 1;
-            this.btnRefreshCustomer.Text = "Làm mới";
-            this.btnRefreshCustomer.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(51, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 19);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Tiêu chí";
             // 
-            // btnAddNewCustomer
+            // tabPage1
             // 
-            this.btnAddNewCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCustomer.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnAddNewCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewCustomer.Location = new System.Drawing.Point(18, 71);
-            this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.Size = new System.Drawing.Size(131, 35);
-            this.btnAddNewCustomer.TabIndex = 0;
-            this.btnAddNewCustomer.Text = "   Thêm mới";
-            this.btnAddNewCustomer.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.groupBox8);
+            this.tabPage1.Controls.Add(this.groupBox14);
+            this.tabPage1.Controls.Add(this.btnIn);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.LoaiBieuDoCB);
+            this.tabPage1.Controls.Add(this.txtTop);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.btnTaoBaoCao);
+            this.tabPage1.Controls.Add(this.denNgayPicker);
+            this.tabPage1.Controls.Add(this.label40);
+            this.tabPage1.Controls.Add(this.TuNgayPicker);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.label39);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1039, 659);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Báo cáo";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxKH
+            // label14
             // 
-            this.pictureBoxKH.Location = new System.Drawing.Point(881, 11);
-            this.pictureBoxKH.Name = "pictureBoxKH";
-            this.pictureBoxKH.Size = new System.Drawing.Size(116, 111);
-            this.pictureBoxKH.TabIndex = 26;
-            this.pictureBoxKH.TabStop = false;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(28, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(158, 22);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "BÁO CÁO THEO";
             // 
-            // btnLuu
+            // label39
             // 
-            this.btnLuu.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(140, 145);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(183, 42);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(447, 28);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 19);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Từ ngày";
             // 
-            // btnXoaKM
+            // comboBox1
             // 
-            this.btnXoaKM.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaKM.Location = new System.Drawing.Point(262, 47);
-            this.btnXoaKM.Name = "btnXoaKM";
-            this.btnXoaKM.Size = new System.Drawing.Size(185, 42);
-            this.btnXoaKM.TabIndex = 5;
-            this.btnXoaKM.Text = "Xoá";
-            this.btnXoaKM.UseVisualStyleBackColor = true;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Báo cáo hàng bán chạy",
+            "Báo cáo khách hàng theo chi tiêu"});
+            this.comboBox1.Location = new System.Drawing.Point(32, 50);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 27);
+            this.comboBox1.TabIndex = 17;
             // 
-            // btnSuaKM
+            // TuNgayPicker
             // 
-            this.btnSuaKM.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaKM.Location = new System.Drawing.Point(35, 47);
-            this.btnSuaKM.Name = "btnSuaKM";
-            this.btnSuaKM.Size = new System.Drawing.Size(183, 42);
-            this.btnSuaKM.TabIndex = 4;
-            this.btnSuaKM.Text = "Sửa";
-            this.btnSuaKM.UseVisualStyleBackColor = true;
+            this.TuNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TuNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TuNgayPicker.Location = new System.Drawing.Point(451, 51);
+            this.TuNgayPicker.Name = "TuNgayPicker";
+            this.TuNgayPicker.Size = new System.Drawing.Size(124, 26);
+            this.TuNgayPicker.TabIndex = 18;
             // 
-            // btnRefreshDiscount
+            // label40
             // 
-            this.btnRefreshDiscount.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnRefreshDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshDiscount.Location = new System.Drawing.Point(262, 97);
-            this.btnRefreshDiscount.Name = "btnRefreshDiscount";
-            this.btnRefreshDiscount.Size = new System.Drawing.Size(185, 42);
-            this.btnRefreshDiscount.TabIndex = 1;
-            this.btnRefreshDiscount.Text = "Làm mới";
-            this.btnRefreshDiscount.UseVisualStyleBackColor = true;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(604, 25);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(72, 19);
+            this.label40.TabIndex = 19;
+            this.label40.Text = "Đến ngày";
             // 
-            // btnAddNewDiscount
+            // denNgayPicker
             // 
-            this.btnAddNewDiscount.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnAddNewDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewDiscount.Location = new System.Drawing.Point(33, 97);
-            this.btnAddNewDiscount.Name = "btnAddNewDiscount";
-            this.btnAddNewDiscount.Size = new System.Drawing.Size(185, 42);
-            this.btnAddNewDiscount.TabIndex = 0;
-            this.btnAddNewDiscount.Text = "Thêm mới";
-            this.btnAddNewDiscount.UseVisualStyleBackColor = true;
+            this.denNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.denNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.denNgayPicker.Location = new System.Drawing.Point(608, 51);
+            this.denNgayPicker.Name = "denNgayPicker";
+            this.denNgayPicker.Size = new System.Drawing.Size(124, 26);
+            this.denNgayPicker.TabIndex = 20;
+            // 
+            // btnTaoBaoCao
+            // 
+            this.btnTaoBaoCao.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoBaoCao.Location = new System.Drawing.Point(760, 43);
+            this.btnTaoBaoCao.Name = "btnTaoBaoCao";
+            this.btnTaoBaoCao.Size = new System.Drawing.Size(123, 40);
+            this.btnTaoBaoCao.TabIndex = 21;
+            this.btnTaoBaoCao.Text = "Tạo báo cáo";
+            this.btnTaoBaoCao.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(293, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 19);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Top";
+            // 
+            // txtTop
+            // 
+            this.txtTop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTop.Location = new System.Drawing.Point(297, 51);
+            this.txtTop.Name = "txtTop";
+            this.txtTop.Size = new System.Drawing.Size(100, 26);
+            this.txtTop.TabIndex = 23;
+            // 
+            // LoaiBieuDoCB
+            // 
+            this.LoaiBieuDoCB.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoaiBieuDoCB.FormattingEnabled = true;
+            this.LoaiBieuDoCB.Items.AddRange(new object[] {
+            "Cột",
+            "Tròn"});
+            this.LoaiBieuDoCB.Location = new System.Drawing.Point(297, 115);
+            this.LoaiBieuDoCB.Name = "LoaiBieuDoCB";
+            this.LoaiBieuDoCB.Size = new System.Drawing.Size(100, 27);
+            this.LoaiBieuDoCB.TabIndex = 24;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(293, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 19);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Loại biểu đồ";
+            // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(889, 43);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(141, 40);
+            this.btnIn.TabIndex = 26;
+            this.btnIn.Text = "       Lưu biểu đồ";
+            this.btnIn.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.BackColor = System.Drawing.Color.White;
+            this.groupBox14.Controls.Add(this.tblBaoCao);
+            this.groupBox14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.Location = new System.Drawing.Point(4, 157);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(445, 492);
+            this.groupBox14.TabIndex = 27;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Bảng chi tiết";
+            // 
+            // tblBaoCao
+            // 
+            this.tblBaoCao.BackgroundColor = System.Drawing.Color.White;
+            this.tblBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblBaoCao.Location = new System.Drawing.Point(6, 26);
+            this.tblBaoCao.Name = "tblBaoCao";
+            this.tblBaoCao.RowHeadersWidth = 51;
+            this.tblBaoCao.Size = new System.Drawing.Size(433, 460);
+            this.tblBaoCao.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.chart2);
+            this.groupBox8.Controls.Add(this.chart1);
+            this.groupBox8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(455, 157);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(575, 486);
+            this.groupBox8.TabIndex = 28;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Biểu đồ";
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(7, 27);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(562, 370);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(7, 27);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(562, 370);
+            this.chart2.TabIndex = 1;
+            this.chart2.Text = "chart2";
             // 
             // HomeFrm
             // 
@@ -1668,26 +2055,37 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).EndInit();
             this.tabCustomer.ResumeLayout(false);
             this.tabCustomer.PerformLayout();
-            this.tabDiscount.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).EndInit();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).EndInit();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).EndInit();
+            this.tabDiscount.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).EndInit();
+            this.tabStat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblThongKe)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1825,5 +2223,33 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscountPercent;
+        private System.Windows.Forms.DataGridView tblThongKe;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.CheckBox checkBoxTime;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker denNgay;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker tuNgay;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button btnStatResult;
+        private System.Windows.Forms.ComboBox comboStat;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.DataGridView tblBaoCao;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox LoaiBieuDoCB;
+        private System.Windows.Forms.TextBox txtTop;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnTaoBaoCao;
+        private System.Windows.Forms.DateTimePicker denNgayPicker;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DateTimePicker TuNgayPicker;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
