@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|e:\\project\\csharpproject\\bookstoreapp\\bookstoreapp\\homeadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homeadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\homeadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homeadmin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\homeadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homeadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,32 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeAdmin.Designer.cs",
-              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.Designer.cs",
-              "RelativeDocumentMoniker": "BookStoreApp\\HomeAdmin.Designer.cs",
-              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.Designer.cs*",
-              "RelativeToolTip": "BookStoreApp\\HomeAdmin.Designer.cs*",
-              "ViewState": "AgIAAKAHAAAAAAAAAAAIwK0HAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T08:28:13.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeAdmin.cs [Design]",
-              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.cs",
-              "RelativeDocumentMoniker": "BookStoreApp\\HomeAdmin.cs",
-              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.cs [Design]",
-              "RelativeToolTip": "BookStoreApp\\HomeAdmin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T08:27:56.026Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomeFrm.cs [Design]",
               "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.cs",
               "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.cs",
@@ -94,7 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "HomeFrm.Designer.cs",
               "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.Designer.cs",
               "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.Designer.cs",
@@ -106,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "HomeFrm.resx",
               "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.resx",
               "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.resx",
@@ -121,9 +84,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Program.cs",
               "RelativeDocumentMoniker": "BookStoreApp\\Program.cs",
-              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Program.cs*",
-              "RelativeToolTip": "BookStoreApp\\Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\Program.cs",
+              "RelativeToolTip": "BookStoreApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-28T18:53:19.539Z",
               "EditorCaption": ""
@@ -131,19 +94,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HomeAdmin.cs",
-              "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.cs",
-              "RelativeDocumentMoniker": "BookStoreApp\\HomeAdmin.cs",
-              "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeAdmin.cs",
-              "RelativeToolTip": "BookStoreApp\\HomeAdmin.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T08:28:05.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "HomeFrm.cs",
               "DocumentMoniker": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.cs",
               "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.cs",
