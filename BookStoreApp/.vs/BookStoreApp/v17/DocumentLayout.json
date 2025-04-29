@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|E:\\Project\\CSharpProject\\BookStoreApp\\bookstoreapp\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|e:\\project\\csharpproject\\bookstoreapp\\bookstoreapp\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC76E785-23AE-4332-85A7-CEA61EBF6464}|BookStoreApp\\BookStoreApp.csproj|solutionrelative:bookstoreapp\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -53,7 +53,7 @@
               "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.cs [Design]",
               "RelativeToolTip": "BookStoreApp\\HomeFrm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T04:34:25.065Z",
+              "WhenOpened": "2025-04-29T14:51:08.419Z",
               "EditorCaption": " [Design]"
             },
             {
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "BookStoreApp\\HomeFrm.Designer.cs",
               "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.Designer.cs",
               "RelativeToolTip": "BookStoreApp\\HomeFrm.Designer.cs",
-              "ViewState": "AgIAAMgHAAAAAAAAAAAYwPQHAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T04:56:22.32Z",
               "EditorCaption": ""
@@ -78,7 +78,8 @@
               "ToolTip": "E:\\Project\\CSharpProject\\BookStoreApp\\BookStoreApp\\HomeFrm.resx",
               "RelativeToolTip": "BookStoreApp\\HomeFrm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-04-29T04:56:21.353Z"
+              "WhenOpened": "2025-04-29T04:56:21.353Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

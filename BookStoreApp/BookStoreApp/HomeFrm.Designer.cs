@@ -36,12 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeFrm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabItem = new System.Windows.Forms.TabPage();
@@ -185,23 +179,20 @@
             this.comboStat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.TuNgayPicker = new System.Windows.Forms.DateTimePicker();
-            this.label40 = new System.Windows.Forms.Label();
-            this.denNgayPicker = new System.Windows.Forms.DateTimePicker();
-            this.btnTaoBaoCao = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTop = new System.Windows.Forms.TextBox();
-            this.LoaiBieuDoCB = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnIn = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tblBaoCao = new System.Windows.Forms.DataGridView();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.LoaiBieuDoCB = new System.Windows.Forms.ComboBox();
+            this.txtTop = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnTaoBaoCao = new System.Windows.Forms.Button();
+            this.denNgayPicker = new System.Windows.Forms.DateTimePicker();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TuNgayPicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabItem.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -229,9 +220,6 @@
             this.tabPage1.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1826,7 +1814,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox8);
             this.tabPage1.Controls.Add(this.groupBox14);
             this.tabPage1.Controls.Add(this.btnIn);
             this.tabPage1.Controls.Add(this.label10);
@@ -1847,128 +1834,6 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Báo cáo";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(28, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(158, 22);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "BÁO CÁO THEO";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(447, 28);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(62, 19);
-            this.label39.TabIndex = 16;
-            this.label39.Text = "Từ ngày";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Báo cáo hàng bán chạy",
-            "Báo cáo khách hàng theo chi tiêu"});
-            this.comboBox1.Location = new System.Drawing.Point(32, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 27);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // TuNgayPicker
-            // 
-            this.TuNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TuNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TuNgayPicker.Location = new System.Drawing.Point(451, 51);
-            this.TuNgayPicker.Name = "TuNgayPicker";
-            this.TuNgayPicker.Size = new System.Drawing.Size(124, 26);
-            this.TuNgayPicker.TabIndex = 18;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(604, 25);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(72, 19);
-            this.label40.TabIndex = 19;
-            this.label40.Text = "Đến ngày";
-            // 
-            // denNgayPicker
-            // 
-            this.denNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.denNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.denNgayPicker.Location = new System.Drawing.Point(608, 51);
-            this.denNgayPicker.Name = "denNgayPicker";
-            this.denNgayPicker.Size = new System.Drawing.Size(124, 26);
-            this.denNgayPicker.TabIndex = 20;
-            // 
-            // btnTaoBaoCao
-            // 
-            this.btnTaoBaoCao.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoBaoCao.Location = new System.Drawing.Point(760, 43);
-            this.btnTaoBaoCao.Name = "btnTaoBaoCao";
-            this.btnTaoBaoCao.Size = new System.Drawing.Size(123, 40);
-            this.btnTaoBaoCao.TabIndex = 21;
-            this.btnTaoBaoCao.Text = "Tạo báo cáo";
-            this.btnTaoBaoCao.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(293, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 19);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Top";
-            // 
-            // txtTop
-            // 
-            this.txtTop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTop.Location = new System.Drawing.Point(297, 51);
-            this.txtTop.Name = "txtTop";
-            this.txtTop.Size = new System.Drawing.Size(100, 26);
-            this.txtTop.TabIndex = 23;
-            // 
-            // LoaiBieuDoCB
-            // 
-            this.LoaiBieuDoCB.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoaiBieuDoCB.FormattingEnabled = true;
-            this.LoaiBieuDoCB.Items.AddRange(new object[] {
-            "Cột",
-            "Tròn"});
-            this.LoaiBieuDoCB.Location = new System.Drawing.Point(297, 115);
-            this.LoaiBieuDoCB.Name = "LoaiBieuDoCB";
-            this.LoaiBieuDoCB.Size = new System.Drawing.Size(100, 27);
-            this.LoaiBieuDoCB.TabIndex = 24;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(293, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 19);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Loại biểu đồ";
-            // 
-            // btnIn
-            // 
-            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
-            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(889, 43);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(141, 40);
-            this.btnIn.TabIndex = 26;
-            this.btnIn.Text = "       Lưu biểu đồ";
-            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
@@ -1992,49 +1857,127 @@
             this.tblBaoCao.Size = new System.Drawing.Size(433, 460);
             this.tblBaoCao.TabIndex = 0;
             // 
-            // groupBox8
+            // btnIn
             // 
-            this.groupBox8.Controls.Add(this.chart2);
-            this.groupBox8.Controls.Add(this.chart1);
-            this.groupBox8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(455, 157);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(575, 486);
-            this.groupBox8.TabIndex = 28;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Biểu đồ";
+            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(889, 43);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(141, 40);
+            this.btnIn.TabIndex = 26;
+            this.btnIn.Text = "       Lưu biểu đồ";
+            this.btnIn.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // label10
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(7, 27);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(562, 370);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(293, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 19);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Loại biểu đồ";
             // 
-            // chart2
+            // LoaiBieuDoCB
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(7, 27);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(562, 370);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
+            this.LoaiBieuDoCB.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoaiBieuDoCB.FormattingEnabled = true;
+            this.LoaiBieuDoCB.Items.AddRange(new object[] {
+            "Cột",
+            "Tròn"});
+            this.LoaiBieuDoCB.Location = new System.Drawing.Point(297, 115);
+            this.LoaiBieuDoCB.Name = "LoaiBieuDoCB";
+            this.LoaiBieuDoCB.Size = new System.Drawing.Size(100, 27);
+            this.LoaiBieuDoCB.TabIndex = 24;
+            // 
+            // txtTop
+            // 
+            this.txtTop.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTop.Location = new System.Drawing.Point(297, 51);
+            this.txtTop.Name = "txtTop";
+            this.txtTop.Size = new System.Drawing.Size(100, 26);
+            this.txtTop.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(293, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 19);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Top";
+            // 
+            // btnTaoBaoCao
+            // 
+            this.btnTaoBaoCao.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoBaoCao.Location = new System.Drawing.Point(760, 43);
+            this.btnTaoBaoCao.Name = "btnTaoBaoCao";
+            this.btnTaoBaoCao.Size = new System.Drawing.Size(123, 40);
+            this.btnTaoBaoCao.TabIndex = 21;
+            this.btnTaoBaoCao.Text = "Tạo báo cáo";
+            this.btnTaoBaoCao.UseVisualStyleBackColor = true;
+            // 
+            // denNgayPicker
+            // 
+            this.denNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.denNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.denNgayPicker.Location = new System.Drawing.Point(608, 51);
+            this.denNgayPicker.Name = "denNgayPicker";
+            this.denNgayPicker.Size = new System.Drawing.Size(124, 26);
+            this.denNgayPicker.TabIndex = 20;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(604, 25);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(72, 19);
+            this.label40.TabIndex = 19;
+            this.label40.Text = "Đến ngày";
+            // 
+            // TuNgayPicker
+            // 
+            this.TuNgayPicker.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TuNgayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TuNgayPicker.Location = new System.Drawing.Point(451, 51);
+            this.TuNgayPicker.Name = "TuNgayPicker";
+            this.TuNgayPicker.Size = new System.Drawing.Size(124, 26);
+            this.TuNgayPicker.TabIndex = 18;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Báo cáo hàng bán chạy",
+            "Báo cáo khách hàng theo chi tiêu"});
+            this.comboBox1.Location = new System.Drawing.Point(32, 50);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 27);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(447, 28);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 19);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Từ ngày";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(28, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(158, 22);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "BÁO CÁO THEO";
             // 
             // HomeFrm
             // 
@@ -2083,9 +2026,6 @@
             this.tabPage1.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2234,7 +2174,6 @@
         private System.Windows.Forms.Button btnStatResult;
         private System.Windows.Forms.ComboBox comboStat;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.DataGridView tblBaoCao;
         private System.Windows.Forms.Button btnIn;
@@ -2249,7 +2188,5 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
