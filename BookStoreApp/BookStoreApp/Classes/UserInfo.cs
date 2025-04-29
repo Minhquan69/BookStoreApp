@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpCounterFinalProject.Classes
+namespace BookStoreApp.Classes.Classes
 {
     internal class UserInfo
     {
