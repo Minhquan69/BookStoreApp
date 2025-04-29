@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharpCounterFinalProject\Properties.cs" />
     <Compile Include="HomeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,7 +55,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\Windows\Forms\DataVisualization.cs" />
     <EmbeddedResource Include="HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </EmbeddedResource>
