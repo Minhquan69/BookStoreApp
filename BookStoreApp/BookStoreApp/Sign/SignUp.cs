@@ -313,5 +313,10 @@ namespace BookStoreApp.Sign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

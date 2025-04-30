@@ -172,9 +172,6 @@ namespace BookStoreApp.Sign
         }
 
 
-        private void SignIn_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

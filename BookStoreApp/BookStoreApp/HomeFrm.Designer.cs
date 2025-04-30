@@ -47,7 +47,6 @@
             this.labelTimKiem = new System.Windows.Forms.Label();
             this.numericItemTo = new System.Windows.Forms.NumericUpDown();
             this.numericItemFrom = new System.Windows.Forms.NumericUpDown();
-            this.btnSearchItem = new System.Windows.Forms.Button();
             this.txtSearchItem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,13 +60,8 @@
             this.radioSortItemByPriceDESC = new System.Windows.Forms.RadioButton();
             this.radioSortItemByPriceASC = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnXoaSP = new System.Windows.Forms.Button();
-            this.btnSuaSP = new System.Windows.Forms.Button();
-            this.btnFreshItem = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
             this.labelPhanTrang = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
             this.comboBoxNXB = new System.Windows.Forms.ComboBox();
             this.txtFileXemThu = new System.Windows.Forms.TextBox();
             this.btnFileXemThu = new System.Windows.Forms.Button();
@@ -79,7 +73,6 @@
             this.txtSoTrang = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.btnAnh = new System.Windows.Forms.Button();
-            this.picAnh = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -96,7 +89,6 @@
             this.btnNextt = new System.Windows.Forms.Button();
             this.btnPree = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboSearchCustomer = new System.Windows.Forms.ComboBox();
@@ -107,13 +99,8 @@
             this.radioSortCustomerByName = new System.Windows.Forms.RadioButton();
             this.radioSortCustomerById = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnXoaKH = new System.Windows.Forms.Button();
-            this.btnSuaKH = new System.Windows.Forms.Button();
-            this.btnRefreshCustomer = new System.Windows.Forms.Button();
-            this.btnAddNewCustomer = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btnAnhKH = new System.Windows.Forms.Button();
-            this.pictureBoxKH = new System.Windows.Forms.PictureBox();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btnHienMatKhau = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
@@ -149,11 +136,6 @@
             this.comboSearchDiscount = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoaKM = new System.Windows.Forms.Button();
-            this.btnSuaKM = new System.Windows.Forms.Button();
-            this.btnRefreshDiscount = new System.Windows.Forms.Button();
-            this.btnAddNewDiscount = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dateTimePickerTGKT = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
@@ -182,9 +164,9 @@
             this.comboStat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tblBaoCao = new System.Windows.Forms.DataGridView();
-            this.btnIn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.LoaiBieuDoCB = new System.Windows.Forms.ComboBox();
             this.txtTop = new System.Windows.Forms.TextBox();
@@ -196,7 +178,25 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnSearchItem = new System.Windows.Forms.Button();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnSuaSP = new System.Windows.Forms.Button();
+            this.btnFreshItem = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.picAnh = new System.Windows.Forms.PictureBox();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
+            this.btnXoaKH = new System.Windows.Forms.Button();
+            this.btnSuaKH = new System.Windows.Forms.Button();
+            this.btnRefreshCustomer = new System.Windows.Forms.Button();
+            this.btnAddNewCustomer = new System.Windows.Forms.Button();
+            this.pictureBoxKH = new System.Windows.Forms.PictureBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoaKM = new System.Windows.Forms.Button();
+            this.btnSuaKM = new System.Windows.Forms.Button();
+            this.btnRefreshDiscount = new System.Windows.Forms.Button();
+            this.btnAddNewDiscount = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabItem.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -204,14 +204,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).BeginInit();
             this.tabCustomer.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).BeginInit();
             this.tabDiscount.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -222,9 +220,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblThongKe)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -351,18 +351,6 @@
             this.numericItemFrom.Name = "numericItemFrom";
             this.numericItemFrom.Size = new System.Drawing.Size(66, 26);
             this.numericItemFrom.TabIndex = 7;
-            // 
-            // btnSearchItem
-            // 
-            this.btnSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchItem.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchItem.Location = new System.Drawing.Point(97, 117);
-            this.btnSearchItem.Name = "btnSearchItem";
-            this.btnSearchItem.Size = new System.Drawing.Size(142, 36);
-            this.btnSearchItem.TabIndex = 6;
-            this.btnSearchItem.Text = "Tìm kiếm";
-            this.btnSearchItem.UseVisualStyleBackColor = true;
             // 
             // txtSearchItem
             // 
@@ -515,54 +503,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hành động";
             // 
-            // btnXoaSP
-            // 
-            this.btnXoaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaSP.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaSP.Location = new System.Drawing.Point(172, 26);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(131, 44);
-            this.btnXoaSP.TabIndex = 3;
-            this.btnXoaSP.Text = "Xoá";
-            this.btnXoaSP.UseVisualStyleBackColor = true;
-            // 
-            // btnSuaSP
-            // 
-            this.btnSuaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaSP.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaSP.Location = new System.Drawing.Point(26, 26);
-            this.btnSuaSP.Name = "btnSuaSP";
-            this.btnSuaSP.Size = new System.Drawing.Size(131, 44);
-            this.btnSuaSP.TabIndex = 2;
-            this.btnSuaSP.Text = "Sửa";
-            this.btnSuaSP.UseVisualStyleBackColor = true;
-            // 
-            // btnFreshItem
-            // 
-            this.btnFreshItem.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFreshItem.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnFreshItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFreshItem.Location = new System.Drawing.Point(172, 90);
-            this.btnFreshItem.Name = "btnFreshItem";
-            this.btnFreshItem.Size = new System.Drawing.Size(131, 47);
-            this.btnFreshItem.TabIndex = 1;
-            this.btnFreshItem.Text = "   Làm mới";
-            this.btnFreshItem.UseVisualStyleBackColor = true;
-            // 
-            // btnThemSP
-            // 
-            this.btnThemSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemSP.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSP.Location = new System.Drawing.Point(26, 90);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(131, 47);
-            this.btnThemSP.TabIndex = 0;
-            this.btnThemSP.Text = "     Thêm mới";
-            this.btnThemSP.UseVisualStyleBackColor = true;
-            // 
             // labelPhanTrang
             // 
             this.labelPhanTrang.AutoSize = true;
@@ -580,15 +520,6 @@
             this.btnNext.TabIndex = 55;
             this.btnNext.Text = "Sau";
             this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Location = new System.Drawing.Point(390, 309);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(74, 30);
-            this.btnPrevious.TabIndex = 54;
-            this.btnPrevious.Text = "Trước";
-            this.btnPrevious.UseVisualStyleBackColor = true;
             // 
             // comboBoxNXB
             // 
@@ -691,14 +622,6 @@
             this.btnAnh.TabIndex = 43;
             this.btnAnh.Text = "Ảnh";
             this.btnAnh.UseVisualStyleBackColor = true;
-            // 
-            // picAnh
-            // 
-            this.picAnh.Location = new System.Drawing.Point(895, 345);
-            this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(100, 109);
-            this.picAnh.TabIndex = 42;
-            this.picAnh.TabStop = false;
             // 
             // label20
             // 
@@ -867,18 +790,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
             // 
-            // btnSearchCustomer
-            // 
-            this.btnSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCustomer.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(124, 97);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 35);
-            this.btnSearchCustomer.TabIndex = 6;
-            this.btnSearchCustomer.Text = "Tìm kiếm";
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
-            // 
             // txtSearchCustomer
             // 
             this.txtSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -993,54 +904,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hành động";
             // 
-            // btnXoaKH
-            // 
-            this.btnXoaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaKH.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaKH.Location = new System.Drawing.Point(155, 25);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(131, 52);
-            this.btnXoaKH.TabIndex = 5;
-            this.btnXoaKH.Text = "Xoá";
-            this.btnXoaKH.UseVisualStyleBackColor = true;
-            // 
-            // btnSuaKH
-            // 
-            this.btnSuaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaKH.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaKH.Location = new System.Drawing.Point(18, 25);
-            this.btnSuaKH.Name = "btnSuaKH";
-            this.btnSuaKH.Size = new System.Drawing.Size(131, 52);
-            this.btnSuaKH.TabIndex = 4;
-            this.btnSuaKH.Text = "Sửa";
-            this.btnSuaKH.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshCustomer
-            // 
-            this.btnRefreshCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshCustomer.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnRefreshCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshCustomer.Location = new System.Drawing.Point(155, 83);
-            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
-            this.btnRefreshCustomer.Size = new System.Drawing.Size(131, 49);
-            this.btnRefreshCustomer.TabIndex = 1;
-            this.btnRefreshCustomer.Text = "    Làm mới";
-            this.btnRefreshCustomer.UseVisualStyleBackColor = true;
-            // 
-            // btnAddNewCustomer
-            // 
-            this.btnAddNewCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewCustomer.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnAddNewCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewCustomer.Location = new System.Drawing.Point(18, 83);
-            this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.Size = new System.Drawing.Size(131, 49);
-            this.btnAddNewCustomer.TabIndex = 0;
-            this.btnAddNewCustomer.Text = "       Thêm mới";
-            this.btnAddNewCustomer.UseVisualStyleBackColor = true;
-            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.btnAnhKH);
@@ -1076,14 +939,6 @@
             this.btnAnhKH.TabIndex = 27;
             this.btnAnhKH.Text = "Ảnh";
             this.btnAnhKH.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxKH
-            // 
-            this.pictureBoxKH.Location = new System.Drawing.Point(881, 11);
-            this.pictureBoxKH.Name = "pictureBoxKH";
-            this.pictureBoxKH.Size = new System.Drawing.Size(116, 111);
-            this.pictureBoxKH.TabIndex = 26;
-            this.pictureBoxKH.TabStop = false;
             // 
             // dateTimePickerNgaySinh
             // 
@@ -1450,61 +1305,6 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Hành động";
             // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(140, 145);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(183, 42);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaKM
-            // 
-            this.btnXoaKM.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaKM.Location = new System.Drawing.Point(262, 47);
-            this.btnXoaKM.Name = "btnXoaKM";
-            this.btnXoaKM.Size = new System.Drawing.Size(185, 42);
-            this.btnXoaKM.TabIndex = 5;
-            this.btnXoaKM.Text = "Xoá";
-            this.btnXoaKM.UseVisualStyleBackColor = true;
-            // 
-            // btnSuaKM
-            // 
-            this.btnSuaKM.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaKM.Location = new System.Drawing.Point(35, 47);
-            this.btnSuaKM.Name = "btnSuaKM";
-            this.btnSuaKM.Size = new System.Drawing.Size(183, 42);
-            this.btnSuaKM.TabIndex = 4;
-            this.btnSuaKM.Text = "Sửa";
-            this.btnSuaKM.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshDiscount
-            // 
-            this.btnRefreshDiscount.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnRefreshDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshDiscount.Location = new System.Drawing.Point(262, 97);
-            this.btnRefreshDiscount.Name = "btnRefreshDiscount";
-            this.btnRefreshDiscount.Size = new System.Drawing.Size(185, 42);
-            this.btnRefreshDiscount.TabIndex = 1;
-            this.btnRefreshDiscount.Text = "Làm mới";
-            this.btnRefreshDiscount.UseVisualStyleBackColor = true;
-            // 
-            // btnAddNewDiscount
-            // 
-            this.btnAddNewDiscount.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnAddNewDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewDiscount.Location = new System.Drawing.Point(33, 97);
-            this.btnAddNewDiscount.Name = "btnAddNewDiscount";
-            this.btnAddNewDiscount.Size = new System.Drawing.Size(185, 42);
-            this.btnAddNewDiscount.TabIndex = 0;
-            this.btnAddNewDiscount.Text = "Thêm mới";
-            this.btnAddNewDiscount.UseVisualStyleBackColor = true;
-            // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.dateTimePickerTGKT);
@@ -1821,7 +1621,6 @@
             // 
             this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.groupBox14);
-            this.tabPage1.Controls.Add(this.btnIn);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.LoaiBieuDoCB);
             this.tabPage1.Controls.Add(this.txtTop);
@@ -1833,6 +1632,7 @@
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label39);
             this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.btnIn);
             this.tabPage1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -1840,6 +1640,22 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Báo cáo";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(512, 213);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(304, 238);
+            this.chart1.TabIndex = 28;
+            this.chart1.Text = "chart1";
             // 
             // groupBox14
             // 
@@ -1862,18 +1678,6 @@
             this.tblBaoCao.RowHeadersWidth = 51;
             this.tblBaoCao.Size = new System.Drawing.Size(433, 460);
             this.tblBaoCao.TabIndex = 0;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
-            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(889, 43);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(141, 40);
-            this.btnIn.TabIndex = 26;
-            this.btnIn.Text = "       Lưu biểu đồ";
-            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -1985,21 +1789,217 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "BÁO CÁO THEO";
             // 
-            // chart1
+            // btnSearchItem
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(512, 213);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(304, 238);
-            this.chart1.TabIndex = 28;
-            this.chart1.Text = "chart1";
+            this.btnSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchItem.Image = global::BookStoreApp.Properties.Resources.search;
+            this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchItem.Location = new System.Drawing.Point(97, 117);
+            this.btnSearchItem.Name = "btnSearchItem";
+            this.btnSearchItem.Size = new System.Drawing.Size(142, 36);
+            this.btnSearchItem.TabIndex = 6;
+            this.btnSearchItem.Text = "Tìm kiếm";
+            this.btnSearchItem.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaSP.Location = new System.Drawing.Point(172, 26);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(131, 44);
+            this.btnXoaSP.TabIndex = 3;
+            this.btnXoaSP.Text = "Xoá";
+            this.btnXoaSP.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaSP
+            // 
+            this.btnSuaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaSP.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaSP.Location = new System.Drawing.Point(26, 26);
+            this.btnSuaSP.Name = "btnSuaSP";
+            this.btnSuaSP.Size = new System.Drawing.Size(131, 44);
+            this.btnSuaSP.TabIndex = 2;
+            this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.UseVisualStyleBackColor = true;
+            // 
+            // btnFreshItem
+            // 
+            this.btnFreshItem.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFreshItem.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnFreshItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFreshItem.Location = new System.Drawing.Point(172, 90);
+            this.btnFreshItem.Name = "btnFreshItem";
+            this.btnFreshItem.Size = new System.Drawing.Size(131, 47);
+            this.btnFreshItem.TabIndex = 1;
+            this.btnFreshItem.Text = "   Làm mới";
+            this.btnFreshItem.UseVisualStyleBackColor = true;
+            // 
+            // btnThemSP
+            // 
+            this.btnThemSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemSP.Location = new System.Drawing.Point(26, 90);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(131, 47);
+            this.btnThemSP.TabIndex = 0;
+            this.btnThemSP.Text = "     Thêm mới";
+            this.btnThemSP.UseVisualStyleBackColor = true;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(390, 309);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(74, 30);
+            this.btnPrevious.TabIndex = 54;
+            this.btnPrevious.Text = "Trước";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // picAnh
+            // 
+            this.picAnh.Location = new System.Drawing.Point(895, 345);
+            this.picAnh.Name = "picAnh";
+            this.picAnh.Size = new System.Drawing.Size(100, 109);
+            this.picAnh.TabIndex = 42;
+            this.picAnh.TabStop = false;
+            // 
+            // btnSearchCustomer
+            // 
+            this.btnSearchCustomer.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCustomer.Image = global::BookStoreApp.Properties.Resources.search;
+            this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchCustomer.Location = new System.Drawing.Point(124, 97);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 35);
+            this.btnSearchCustomer.TabIndex = 6;
+            this.btnSearchCustomer.Text = "Tìm kiếm";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaKH
+            // 
+            this.btnXoaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaKH.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaKH.Location = new System.Drawing.Point(155, 25);
+            this.btnXoaKH.Name = "btnXoaKH";
+            this.btnXoaKH.Size = new System.Drawing.Size(131, 52);
+            this.btnXoaKH.TabIndex = 5;
+            this.btnXoaKH.Text = "Xoá";
+            this.btnXoaKH.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaKH
+            // 
+            this.btnSuaKH.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaKH.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaKH.Location = new System.Drawing.Point(18, 25);
+            this.btnSuaKH.Name = "btnSuaKH";
+            this.btnSuaKH.Size = new System.Drawing.Size(131, 52);
+            this.btnSuaKH.TabIndex = 4;
+            this.btnSuaKH.Text = "Sửa";
+            this.btnSuaKH.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshCustomer
+            // 
+            this.btnRefreshCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshCustomer.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnRefreshCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshCustomer.Location = new System.Drawing.Point(155, 83);
+            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
+            this.btnRefreshCustomer.Size = new System.Drawing.Size(131, 49);
+            this.btnRefreshCustomer.TabIndex = 1;
+            this.btnRefreshCustomer.Text = "    Làm mới";
+            this.btnRefreshCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNewCustomer
+            // 
+            this.btnAddNewCustomer.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewCustomer.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnAddNewCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewCustomer.Location = new System.Drawing.Point(18, 83);
+            this.btnAddNewCustomer.Name = "btnAddNewCustomer";
+            this.btnAddNewCustomer.Size = new System.Drawing.Size(131, 49);
+            this.btnAddNewCustomer.TabIndex = 0;
+            this.btnAddNewCustomer.Text = "       Thêm mới";
+            this.btnAddNewCustomer.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxKH
+            // 
+            this.pictureBoxKH.Location = new System.Drawing.Point(881, 11);
+            this.pictureBoxKH.Name = "pictureBoxKH";
+            this.pictureBoxKH.Size = new System.Drawing.Size(116, 111);
+            this.pictureBoxKH.TabIndex = 26;
+            this.pictureBoxKH.TabStop = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(140, 145);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(183, 42);
+            this.btnLuu.TabIndex = 6;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaKM
+            // 
+            this.btnXoaKM.Image = global::BookStoreApp.Properties.Resources.remove;
+            this.btnXoaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaKM.Location = new System.Drawing.Point(262, 47);
+            this.btnXoaKM.Name = "btnXoaKM";
+            this.btnXoaKM.Size = new System.Drawing.Size(185, 42);
+            this.btnXoaKM.TabIndex = 5;
+            this.btnXoaKM.Text = "Xoá";
+            this.btnXoaKM.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaKM
+            // 
+            this.btnSuaKM.Image = global::BookStoreApp.Properties.Resources.loop;
+            this.btnSuaKM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaKM.Location = new System.Drawing.Point(35, 47);
+            this.btnSuaKM.Name = "btnSuaKM";
+            this.btnSuaKM.Size = new System.Drawing.Size(183, 42);
+            this.btnSuaKM.TabIndex = 4;
+            this.btnSuaKM.Text = "Sửa";
+            this.btnSuaKM.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshDiscount
+            // 
+            this.btnRefreshDiscount.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.btnRefreshDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshDiscount.Location = new System.Drawing.Point(262, 97);
+            this.btnRefreshDiscount.Name = "btnRefreshDiscount";
+            this.btnRefreshDiscount.Size = new System.Drawing.Size(185, 42);
+            this.btnRefreshDiscount.TabIndex = 1;
+            this.btnRefreshDiscount.Text = "Làm mới";
+            this.btnRefreshDiscount.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNewDiscount
+            // 
+            this.btnAddNewDiscount.Image = global::BookStoreApp.Properties.Resources.plus;
+            this.btnAddNewDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewDiscount.Location = new System.Drawing.Point(33, 97);
+            this.btnAddNewDiscount.Name = "btnAddNewDiscount";
+            this.btnAddNewDiscount.Size = new System.Drawing.Size(185, 42);
+            this.btnAddNewDiscount.TabIndex = 0;
+            this.btnAddNewDiscount.Text = "Thêm mới";
+            this.btnAddNewDiscount.UseVisualStyleBackColor = true;
+            // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(889, 43);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(141, 40);
+            this.btnIn.TabIndex = 26;
+            this.btnIn.Text = "       Lưu biểu đồ";
+            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // HomeFrm
             // 
@@ -2020,7 +2020,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).EndInit();
             this.tabCustomer.ResumeLayout(false);
             this.tabCustomer.PerformLayout();
@@ -2031,7 +2030,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).EndInit();
             this.tabDiscount.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
@@ -2046,9 +2044,11 @@
             this.groupBox11.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).EndInit();
             this.ResumeLayout(false);
 
         }
