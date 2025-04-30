@@ -98,14 +98,12 @@ namespace BookStoreApp.Sign
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(283, 36);
             this.txtPassword.TabIndex = 3;
-            // 
             // btnSignIn
-            // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.btnSignIn.BorderRadius = 10;
-            this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignIn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSignIn.AutoRoundedCorners = true;
+            this.btnSignIn.BorderRadius = 21; // Chiều cao = 43 => BorderRadius = 21
             this.btnSignIn.FillColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.btnSignIn.Font = new System.Drawing.Font("Time New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSignIn.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 85, 153);
             this.btnSignIn.Location = new System.Drawing.Point(140, 313);
@@ -129,11 +127,11 @@ namespace BookStoreApp.Sign
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.button1.BorderRadius = 10;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.button1.AutoRoundedCorners = true;
+            this.button1.BorderRadius = 21; // Chiều cao = 43 => BorderRadius = 21
             this.button1.FillColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.button1.Font = new System.Drawing.Font("Time New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.HoverState.FillColor = System.Drawing.Color.FromArgb(0, 85, 153);
             this.button1.Location = new System.Drawing.Point(287, 313);
