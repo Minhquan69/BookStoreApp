@@ -368,6 +368,7 @@ namespace BookStoreApp
             this.btnSearchItem.TabIndex = 6;
             this.btnSearchItem.Text = "Tìm kiếm";
             this.btnSearchItem.UseVisualStyleBackColor = true;
+            this.btnSearchItem.Click += new System.EventHandler(this.BtnSearchItemClick);
             // 
             // txtSearchItem
             // 
@@ -423,6 +424,7 @@ namespace BookStoreApp
             this.comboSearchItem.Name = "comboSearchItem";
             this.comboSearchItem.Size = new System.Drawing.Size(180, 27);
             this.comboSearchItem.TabIndex = 1;
+            this.comboSearchItem.SelectedIndexChanged += new System.EventHandler(this.ComboSearchItemSelectefIndexChanged);
             // 
             // label1
             // 
@@ -457,6 +459,7 @@ namespace BookStoreApp
             this.btnBoLoc.TabIndex = 4;
             this.btnBoLoc.Text = "Bỏ lọc";
             this.btnBoLoc.UseVisualStyleBackColor = true;
+            this.btnBoLoc.Click += new System.EventHandler(this.btnBoLoc_Click);
             // 
             // radioSortItemByTonKho
             // 
@@ -469,6 +472,7 @@ namespace BookStoreApp
             this.radioSortItemByTonKho.TabStop = true;
             this.radioSortItemByTonKho.Text = "Tồn kho giảm dần";
             this.radioSortItemByTonKho.UseVisualStyleBackColor = true;
+            this.radioSortItemByTonKho.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByName
             // 
@@ -481,6 +485,7 @@ namespace BookStoreApp
             this.radioSortItemByName.TabStop = true;
             this.radioSortItemByName.Text = "Tên mặt hàng a-z";
             this.radioSortItemByName.UseVisualStyleBackColor = true;
+            this.radioSortItemByName.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByPriceDESC
             // 
@@ -493,6 +498,7 @@ namespace BookStoreApp
             this.radioSortItemByPriceDESC.TabStop = true;
             this.radioSortItemByPriceDESC.Text = "Giá niêm yếu giảm dần";
             this.radioSortItemByPriceDESC.UseVisualStyleBackColor = true;
+            this.radioSortItemByPriceDESC.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByPriceASC
             // 
@@ -505,6 +511,7 @@ namespace BookStoreApp
             this.radioSortItemByPriceASC.TabStop = true;
             this.radioSortItemByPriceASC.Text = "Giá niêm yết tăng dần";
             this.radioSortItemByPriceASC.UseVisualStyleBackColor = true;
+            this.radioSortItemByPriceASC.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // groupBox1
             // 

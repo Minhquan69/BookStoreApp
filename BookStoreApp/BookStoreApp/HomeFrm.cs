@@ -705,5 +705,184 @@ namespace BookStoreApp
             btnSuaSP.Enabled = false;
             btnXoaSP.Enabled = false;
         }
+
+        private void SortItemHandler(object sender, EventArgs e)
+        {
+
+            if (radioSortItemByPriceASC.Checked)
+            {
+                tblDuLieu.Sort(tblDuLieu.Columns["DonGia"], ListSortDirection.Ascending);
+            }
+            else if (radioSortItemByPriceDESC.Checked)
+            {
+                tblDuLieu.Sort(tblDuLieu.Columns["DonGia"], ListSortDirection.Descending);
+            }
+            else if (radioSortItemByTonKho.Checked)
+            {
+
+            }
+            else if (radioSortItemByName.Checked)
+            {
+                tblDuLieu.Sort(tblDuLieu.Columns["TenSach"], ListSortDirection.Ascending);
+            }
+        }
+
+        private void btnBoLoc_Click(object sender, EventArgs e)
+        {
+            radioSortItemByPriceASC.Checked = false;
+            radioSortItemByPriceDESC.Checked = false;
+            radioSortItemByTonKho.Checked = false;
+            radioSortItemByName.Checked = false;
+            LoadLaiSach();
+        }
+
+        private void ComboSearchItemSelectefIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (comboSearchItem.SelectedIndex)
+            {
+                case 0:
+                case 1:
+                    txtSearchItem.Enabled = true;
+                    numericItemFrom.Enabled = false;
+                    numericItemTo.Enabled = false;
+                    LocPhanLoai.Enabled = false;
+                    break;
+                case 2:
+                    txtSearchItem.Enabled = false;
+                    numericItemFrom.Enabled = false;
+                    numericItemTo.Enabled = false;
+                    LocPhanLoai.Enabled = true;
+                    labelTimKiem.Text = "Phân loại";
+                    DataTable dt = dtBase.DataReader("select TheLoai.TenTheLoai from TheLoai");
+                    LocPhanLoai.DataSource = dt;
+                    LocPhanLoai.DisplayMember = "TenTheLoai";
+                    break;
+                case 3:
+                    txtSearchItem.Enabled = false;
+                    numericItemFrom.Enabled = false;
+                    numericItemTo.Enabled = false;
+                    LocPhanLoai.Enabled = true;
+                    labelTimKiem.Text = "NXB";
+                    DataTable tbl = dtBase.DataReader("select NhaXuatBan.TenNXB from NhaXuatBan");
+                    LocPhanLoai.DataSource = tbl;
+                    LocPhanLoai.DisplayMember = "TenNXB";
+                    break;
+                case 4:
+                case 5:
+                    txtSearchItem.Enabled = false;
+                    numericItemFrom.Enabled = true;
+                    numericItemTo.Enabled = true;
+                    LocPhanLoai.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void BtnSearchItemClick(object sender, EventArgs e)
+        {
+            string sql = "";
+            string name = "";
+            if (comboSearchItem.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboSearchItem.SelectedIndex == 0)//theo ten sach
+            {
+                name = txtSearchItem.Text;
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere s.TenSach like N'%{name}%'";
+
+            }
+            else if (comboSearchItem.SelectedIndex == 1)//ten tg
+            {
+                name = txtSearchItem.Text;
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere s.TacGia like N'%{name}%'";
+            }
+            else if (comboSearchItem.SelectedIndex == 2)//the loai
+            {
+                name = LocPhanLoai.Text;
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere tl.TenTheLoai =N'{name}'";
+            }
+            else if (comboSearchItem.SelectedIndex == 3)//nxb
+            {
+                name = LocPhanLoai.Text;
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere nxb.TenNXB = N'{name}'";
+            }
+            else if (comboSearchItem.SelectedIndex == 4)//soluong 
+            {
+                int from = (int)numericItemFrom.Value;
+                int to = (int)numericItemTo.Value;
+                if (from > to)
+                {
+                    MessageBox.Show($"{from} không nhỏ hơn {to}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere s.SoLuong between {from} and {to}";
+
+            }
+            else if (comboSearchItem.SelectedIndex == 5)//khoang gia 
+            {
+                int from = (int)numericItemFrom.Value;
+                int to = (int)numericItemTo.Value;
+                if (from > to)
+                {
+                    MessageBox.Show($"{from} không nhỏ hơn {to}", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                sql = $"select * from sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai\r\njoin NhaXuatBan nxb on s.MaNXB = nxb.MaNXB\r\nwhere s.DonGia between {from} and {to}";
+
+            }
+
+            LoadSPCoQuery(sql);
+            if (radioSortItemByName.Checked || radioSortItemByPriceASC.Checked || radioSortItemByPriceDESC.Checked || radioSortItemByTonKho.Checked)
+            {
+                SortItemHandler(sender, new EventArgs());
+            }
+        }
+
+        private void LoadSPCoQuery(string query)
+        {
+            tblDuLieu.Columns.Clear();
+            tblDuLieu.Rows.Clear();
+            tblDuLieu.Columns.Add("MaSach", "Mã Sách");
+            tblDuLieu.Columns.Add("TenSach", "Tên Sách");
+            tblDuLieu.Columns.Add("TacGia", "Tác giả");
+            tblDuLieu.Columns.Add("TenTheLoai", "Thể loại");
+            tblDuLieu.Columns.Add("TenNXB", "Nhà xuất bản");
+            tblDuLieu.Columns.Add("DonGia", "Giá bán");
+            tblDuLieu.Columns.Add("GioiThieu", "Số lượng");
+            tblDuLieu.Columns["GioiThieu"].Visible = false;
+            tblDuLieu.Columns.Add("SoTrang", "Số trang");
+            tblDuLieu.Columns["SoTrang"].Visible = false;
+            tblDuLieu.Columns.Add("Anh", "Anh");
+            tblDuLieu.Columns["Anh"].Visible = false;
+            tblDuLieu.Columns.Add("FileSach", "FileSach");
+            tblDuLieu.Columns["FileSach"].Visible = false;
+            tblDuLieu.Columns.Add("FileXemThu", "File Xem thử");
+            tblDuLieu.Columns["FileXemThu"].Visible = false;
+
+            DataTable dtItems = new DataTable();
+            dtItems = dtBase.DataReader(query);
+            if (dtItems != null && dtItems.Rows.Count > 0)
+            {
+                foreach (DataRow row in dtItems.Rows)
+                {
+                    int rowIndex = tblDuLieu.Rows.Add(row["MaSach"],
+                        row["TenSach"],
+                        row["TacGia"],
+                        row["TenTheLoai"], row["TenNXB"],
+                        row["DonGia"], row["GioiThieu"], row["SoTrang"], row["Anh"],
+                        row["FileSach"], row["FileXemThu"]
+                        );
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có sản phẩm nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
