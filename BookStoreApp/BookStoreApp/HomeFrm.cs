@@ -301,5 +301,124 @@ namespace BookStoreApp
             btnLuu.Enabled = isEditing;
         }
 
+        private void tblDuLieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = tblDuLieu.Rows[e.RowIndex];
+                txtTenSach.Text = row.Cells["TenSach"].Value.ToString();
+                txtMaSach.Text = row.Cells["MaSach"].Value.ToString();
+                txtMaSach.Enabled = false;
+                txtTenTG.Text = row.Cells["TacGia"].Value.ToString();
+                string phanLoai = row.Cells["TenTheLoai"].Value.ToString();
+
+                for (int i = 0; i < comboBoxPhanLoai.Items.Count; i++)
+                {
+                    // Chuyển mục hiện tại sang DataRowView
+                    var item = comboBoxPhanLoai.Items[i] as DataRowView;
+                    if (item != null && item["TenTheLoai"].ToString() == phanLoai)
+                    {
+                        comboBoxPhanLoai.SelectedIndex = i; // Chọn mục tương ứng
+                        break;
+                    }
+                }
+
+
+                string nxb = row.Cells["TenNXB"].Value.ToString();
+                for (int i = 0; i < comboBoxNXB.Items.Count; i++)
+                {
+                    // Chuyển mục hiện tại sang DataRowView
+                    var item = comboBoxNXB.Items[i] as DataRowView;
+                    if (item != null && item["TenNXB"].ToString() == nxb)
+                    {
+                        comboBoxNXB.SelectedIndex = i; // Chọn mục tương ứng
+                        break;
+                    }
+                }
+                Console.WriteLine(nxb);
+
+                txtGia.Text = row.Cells["DonGia"].Value.ToString();
+                txtSoTrang.Text = row.Cells["SoTrang"].Value.ToString();
+                txtMoTa.Text = row.Cells["GioiThieu"].Value.ToString();
+                string file = row.Cells["FileSach"].Value.ToString();
+                txtFileSach.Text = file.Split('/').Last();
+                string fileXemThu = row.Cells["FileXemThu"].Value.ToString();
+                txtFileXemThu.Text = Path.GetFileName(fileXemThu);
+
+                string fileAnh = row.Cells["Anh"].Value.ToString();
+                string imgPath = "";
+                if (fileAnh.StartsWith("/files/"))
+                {
+                    imgPath = fileAnh.Substring(7); // Cắt bỏ "/files/"
+                }
+                else if (fileAnh.StartsWith("/images/"))
+                {
+                    imgPath = fileAnh.Substring(8);
+                }
+                else
+                {
+                    imgPath = fileAnh;
+                }
+                Console.WriteLine(imgPath);
+                try
+                {
+                    picAnh.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + imgPath);
+                }
+                catch (Exception ex)
+                {
+                    picAnh.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + "bia.jpg");
+                }
+
+                picAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                btnXoaSP.Enabled = true;
+                btnSuaSP.Enabled = true;
+            }
+
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                DataTable dtItems = dtBase.DataReader("SELECT * FROM Sach s JOIN TheLoai tl ON s.MaTheLoai = tl.MaTheLoai " +
+                                                      "JOIN NhaXuatBan nxb ON s.MaNXB = nxb.MaNXB");
+                PaginateDataGridView(tblDuLieu, dtItems, pageSize, currentPage);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            DataTable dtItems = dtBase.DataReader("SELECT * FROM Sach s JOIN TheLoai tl ON s.MaTheLoai = tl.MaTheLoai " +
+                                                  "JOIN NhaXuatBan nxb ON s.MaNXB = nxb.MaNXB");
+            int totalPages = (int)Math.Ceiling((double)dtItems.Rows.Count / pageSize);
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                PaginateDataGridView(tblDuLieu, dtItems, pageSize, currentPage);
+            }
+        }
+        private void btnNextt_Click(object sender, EventArgs e)
+        {
+            DataTable dtCustomers = dtBase.DataReader("SELECT * FROM KhachHang");
+            int totalPages = (int)Math.Ceiling((double)dtCustomers.Rows.Count / pageSizeKH);
+
+            if (currentPageKH < totalPages)
+            {
+                currentPageKH++;
+                PaginateDataGridViewForCustomers(tblKhachHang, dtCustomers, pageSizeKH, currentPageKH, label_phanTrang);
+            }
+        }
+
+        private void btnPree_Click(object sender, EventArgs e)
+        {
+            if (currentPageKH > 1)
+            {
+                currentPageKH--;
+                DataTable dtCustomers = dtBase.DataReader("SELECT * FROM KhachHang");
+                PaginateDataGridViewForCustomers(tblKhachHang, dtCustomers, pageSizeKH, currentPageKH, label_phanTrang);
+            }
+        }
+
     }
 }

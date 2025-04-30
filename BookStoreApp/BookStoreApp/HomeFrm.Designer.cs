@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -197,6 +198,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabControl1.SuspendLayout();
             this.tabItem.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -580,6 +582,7 @@
             this.btnNext.TabIndex = 55;
             this.btnNext.Text = "Sau";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -589,6 +592,7 @@
             this.btnPrevious.TabIndex = 54;
             this.btnPrevious.Text = "Trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // comboBoxNXB
             // 
@@ -596,23 +600,23 @@
             this.comboBoxNXB.FormattingEnabled = true;
             this.comboBoxNXB.Location = new System.Drawing.Point(392, 345);
             this.comboBoxNXB.Name = "comboBoxNXB";
-            this.comboBoxNXB.Size = new System.Drawing.Size(210, 27);
+            this.comboBoxNXB.Size = new System.Drawing.Size(233, 27);
             this.comboBoxNXB.TabIndex = 53;
             // 
             // txtFileXemThu
             // 
             this.txtFileXemThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileXemThu.Location = new System.Drawing.Point(642, 464);
+            this.txtFileXemThu.Location = new System.Drawing.Point(664, 464);
             this.txtFileXemThu.Name = "txtFileXemThu";
-            this.txtFileXemThu.Size = new System.Drawing.Size(203, 26);
+            this.txtFileXemThu.Size = new System.Drawing.Size(205, 26);
             this.txtFileXemThu.TabIndex = 52;
             // 
             // btnFileXemThu
             // 
             this.btnFileXemThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileXemThu.Location = new System.Drawing.Point(642, 425);
+            this.btnFileXemThu.Location = new System.Drawing.Point(664, 420);
             this.btnFileXemThu.Name = "btnFileXemThu";
-            this.btnFileXemThu.Size = new System.Drawing.Size(113, 23);
+            this.btnFileXemThu.Size = new System.Drawing.Size(115, 34);
             this.btnFileXemThu.TabIndex = 51;
             this.btnFileXemThu.Text = "File xem thử";
             this.btnFileXemThu.UseVisualStyleBackColor = true;
@@ -620,17 +624,17 @@
             // txtFileSach
             // 
             this.txtFileSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileSach.Location = new System.Drawing.Point(642, 382);
+            this.txtFileSach.Location = new System.Drawing.Point(664, 382);
             this.txtFileSach.Name = "txtFileSach";
-            this.txtFileSach.Size = new System.Drawing.Size(203, 26);
+            this.txtFileSach.Size = new System.Drawing.Size(205, 26);
             this.txtFileSach.TabIndex = 50;
             // 
             // btnFileSach
             // 
             this.btnFileSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileSach.Location = new System.Drawing.Point(642, 346);
+            this.btnFileSach.Location = new System.Drawing.Point(664, 341);
             this.btnFileSach.Name = "btnFileSach";
-            this.btnFileSach.Size = new System.Drawing.Size(113, 23);
+            this.btnFileSach.Size = new System.Drawing.Size(115, 31);
             this.btnFileSach.TabIndex = 49;
             this.btnFileSach.Text = "File sách";
             this.btnFileSach.UseVisualStyleBackColor = true;
@@ -642,7 +646,7 @@
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMoTa.Size = new System.Drawing.Size(210, 64);
+            this.txtMoTa.Size = new System.Drawing.Size(233, 64);
             this.txtMoTa.TabIndex = 48;
             // 
             // label13
@@ -715,7 +719,7 @@
             this.txtGia.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(511, 382);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(91, 26);
+            this.txtGia.Size = new System.Drawing.Size(114, 26);
             this.txtGia.TabIndex = 40;
             // 
             // label19
@@ -807,6 +811,7 @@
             this.tblDuLieu.RowTemplate.Height = 37;
             this.tblDuLieu.Size = new System.Drawing.Size(1033, 300);
             this.tblDuLieu.TabIndex = 5;
+            this.tblDuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDuLieu_CellDoubleClick);
             // 
             // tabCustomer
             // 
@@ -843,6 +848,7 @@
             this.btnNextt.TabIndex = 14;
             this.btnNextt.Text = "Sau";
             this.btnNextt.UseVisualStyleBackColor = true;
+            this.btnNextt.Click += new System.EventHandler(this.btnNextt_Click);
             // 
             // btnPree
             // 
@@ -852,6 +858,7 @@
             this.btnPree.TabIndex = 13;
             this.btnPree.Text = "Trước";
             this.btnPree.UseVisualStyleBackColor = true;
+            this.btnPree.Click += new System.EventHandler(this.btnPree_Click);
             // 
             // groupBox4
             // 
@@ -2213,5 +2220,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }
