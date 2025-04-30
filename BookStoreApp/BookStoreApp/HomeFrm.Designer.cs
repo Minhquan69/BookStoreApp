@@ -1,4 +1,6 @@
-﻿namespace BookStoreApp
+﻿using System.Windows.Forms;
+
+namespace BookStoreApp
 {
     partial class HomeFrm
     {
@@ -198,6 +200,7 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabControl1.SuspendLayout();
             this.tabItem.SuspendLayout();
@@ -528,6 +531,7 @@
             this.btnXoaSP.TabIndex = 3;
             this.btnXoaSP.Text = "Xoá";
             this.btnXoaSP.UseVisualStyleBackColor = true;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // btnSuaSP
             // 
@@ -540,6 +544,7 @@
             this.btnSuaSP.TabIndex = 2;
             this.btnSuaSP.Text = "Sửa";
             this.btnSuaSP.UseVisualStyleBackColor = true;
+            this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
             // btnFreshItem
             // 
@@ -552,6 +557,7 @@
             this.btnFreshItem.TabIndex = 1;
             this.btnFreshItem.Text = "   Làm mới";
             this.btnFreshItem.UseVisualStyleBackColor = true;
+            this.btnFreshItem.Click += new System.EventHandler(this.btnFresh_Click);
             // 
             // btnThemSP
             // 
@@ -564,6 +570,7 @@
             this.btnThemSP.TabIndex = 0;
             this.btnThemSP.Text = "     Thêm mới";
             this.btnThemSP.UseVisualStyleBackColor = true;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // labelPhanTrang
             // 
@@ -620,6 +627,7 @@
             this.btnFileXemThu.TabIndex = 51;
             this.btnFileXemThu.Text = "File xem thử";
             this.btnFileXemThu.UseVisualStyleBackColor = true;
+            this.btnFileXemThu.Click += new System.EventHandler(this.btnFileSach_Click);
             // 
             // txtFileSach
             // 
@@ -638,6 +646,7 @@
             this.btnFileSach.TabIndex = 49;
             this.btnFileSach.Text = "File sách";
             this.btnFileSach.UseVisualStyleBackColor = true;
+            this.btnFileSach.Click += new System.EventHandler(this.btnFileSach_Click);
             // 
             // txtMoTa
             // 
@@ -695,6 +704,7 @@
             this.btnAnh.TabIndex = 43;
             this.btnAnh.Text = "Ảnh";
             this.btnAnh.UseVisualStyleBackColor = true;
+            this.btnAnh.Click += new System.EventHandler(this.btnAnh_Click);
             // 
             // picAnh
             // 
@@ -2008,6 +2018,10 @@
             this.btnIn.Text = "       Lưu biểu đồ";
             this.btnIn.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // HomeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2081,6 +2095,7 @@
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBoxPhanLoai;
+        private OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox txtSoTrang;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnAnh;

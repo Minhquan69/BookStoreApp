@@ -420,5 +420,290 @@ namespace BookStoreApp
             }
         }
 
+        private void btnFileSach_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "PDF Files|*.pdf|All Files|*.*";
+            openFileDialog.InitialDirectory = System.Windows.Forms.Application.StartupPath + "\\pdf\\";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Hiển thị tên file PDF đã chọn trong txtFileSach
+                string link = openFileDialog.FileName;
+                if (sender == btnFileSach)
+                {
+                    txtFileSach.Text = link.Split('\\').Last(); // Chia bằng dấu \ thay vì /
+                    return;
+                }
+                if (sender == btnFileXemThu)
+                {
+                    txtFileXemThu.Text = link.Split('\\').Last(); // Chia bằng dấu \ thay vì /
+                }
+
+            }
+        }
+        private void btnAnh_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\";
+
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+            openFileDialog1.Title = "Chọn hình ảnh";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Đặt hình ảnh đã chọn vào PictureBox
+                picAnh.Image = Image.FromFile(openFileDialog1.FileName);
+                picAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+            anhSachDaThayDoi = true;
+            currentPathImage = openFileDialog1.SafeFileName;
+
+        }
+
+        // close app
+        private void BtnCloseApp(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSuaSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string masach = txtMaSach.Text;
+                string tenSP = txtTenSach.Text;
+                string tg = txtTenTG.Text;
+                string nxb = comboBoxNXB.Text;
+                string gia = txtGia.Text;
+                string sotrang = txtSoTrang.Text;
+                string theloai = comboBoxPhanLoai.Text;
+
+                string mota = txtMoTa.Text;
+                string filesach = txtFileSach.Text;
+                string filexemthu = txtFileXemThu.Text;
+
+
+                if (tenSP == "" || tg == "" || sotrang == "" || gia == "" || theloai == "" || filesach == "" || filexemthu == "" || nxb == "" || mota == "" || picAnh.Image == null)
+                {
+                    MessageBox.Show("Bạn không được để trống trường thông tin của sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!int.TryParse(sotrang, out int soTrangValue) || soTrangValue <= 0)
+                {
+                    MessageBox.Show("Số trang phải là số nguyên dương.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!decimal.TryParse(gia, out decimal giaTri) || giaTri <= 0)
+                {
+                    MessageBox.Show("Đơn giá phải là số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+                // Thực hiện cập nhật trong cơ sở dữ liệu
+                string anh = "";
+                if (anhSachDaThayDoi)
+                {
+                    anh = currentPathImage.ToString();
+                }
+                else
+                {
+                    DataGridViewRow selectedRow = tblKhachHang.SelectedRows[0];
+
+                    // Lấy dữ liệu từ ô trong cột "MaKH"
+                    anh = selectedRow.Cells["Anh"].Value.ToString();
+                }
+                string query = $@"
+    UPDATE Sach
+    SET
+        TenSach = N'{tenSP}',
+        TacGia = N'{tg}',
+        MaTheLoai = (SELECT MaTheLoai FROM TheLoai WHERE TenTheLoai = N'{theloai}'),
+        MaNXB = (SELECT MaNXB FROM NhaXuatBan WHERE TenNXB = N'{nxb}'),
+        DonGia = {gia},
+        GioiThieu = N'{mota}',
+        SoTrang = {sotrang},
+        Anh = '{anh}',
+        FileSach = N'{filesach}',
+        FileXemThu = N'{filexemthu}'
+    WHERE MaSach = '{masach}'";
+
+
+
+                dtBase.DataChange(query);
+                DisplayItems();
+                MessageBox.Show("Sản phẩm này đã sửa thành công !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string maSP = txtMaSach.Text;
+
+                // Thực hiện xóa trong cơ sở dữ liệu
+                string query = $"DELETE FROM Sach WHERE MaSach = '{maSP}'";
+                dtBase.DataChange(query); // Thực thi truy vấn
+
+                string truyvan = $"Select *  FROM Sach WHERE MaSach = '{maSP}'";
+                if (!dtBase.Exist(truyvan))
+                {
+                    MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadLaiSach(); // Load lại dữ liệu vào DataGridView
+
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy thông tin từ các ô nhập liệu
+
+                string tenSP = txtTenSach.Text;
+                string tg = txtTenTG.Text;
+                string nxb = comboBoxNXB.Text;
+                string gia = txtGia.Text;
+                string sotrang = txtSoTrang.Text;
+                string theloai = comboBoxPhanLoai.Text;
+
+                string mota = txtMoTa.Text;
+                string filesach = txtFileSach.Text;
+                string filexemthu = txtFileXemThu.Text;
+
+
+
+                if (tenSP == "" || tg == "" || sotrang == "" || gia == "" || theloai == "" || filesach == "" || filexemthu == "" || nxb == "" || mota == "" || currentPathImage == "" || picAnh.Image == null)
+                {
+                    MessageBox.Show("Bạn không được để trống trường thông tin của sản phẩm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                string query = $"INSERT INTO Sach ( TenSach, TacGia," +
+                    $" MaTheLoai, MaNXB, DonGia, GioiThieu, SoTrang, Anh," +
+                    $" FileSach, FileXemThu)\r\n" +
+                    $"VALUES (   N'{tenSP}', N'{tg}'," +
+                    $"(SELECT MaTheLoai FROM TheLoai WHERE TenTheLoai = N'{theloai}'), " +
+                    $"(SELECT MaNXB FROM NhaXuatBan WHERE TenNXB = N'{nxb}'),{gia},N'{mota}'," +
+                    $"{sotrang},'{currentPathImage}', -- Đường dẫn ảnh\r\n " +
+                    $"'{filesach}', -- File sách\r\n    " +
+                    $"'{filexemthu}' -- File xem thử\r\n);\r\n";
+
+                // Thực thi query
+                dtBase.DataChange(query);
+
+                // Thông báo thành công
+                MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadLaiSach();
+                return;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnFresh_Click(object sender, EventArgs e)
+        {
+            if (sender.Equals(btnFreshItem))
+            {
+                LoadLaiSach();
+
+            }
+            if (sender.Equals(btnRefreshCustomer))
+            {
+                txtMaKH.Text = "";
+                txtTenKH.Text = "";
+                txtSDTKH.Text = "";
+                txtDiaChiKH.Text = "";
+                txtMatKhau.Text = "";
+                dateTimePickerNgaySinh.Format = DateTimePickerFormat.Custom;
+                dateTimePickerNgaySinh.CustomFormat = "dd/MM/yyyy"; // Chỉ hiển thị ngày/tháng/năm
+                dateTimePickerNgaySinh.Value = DateTime.Now;
+
+                btnHienMatKhau.Enabled = true;
+                DisplayCustomers();
+            }
+            if (sender.Equals(btnRefreshDiscount))
+            {
+                //LoadLaiKM();
+            }
+        }
+
+        private void LoadLaiSach()
+        {
+            try
+            {
+                tblDuLieu.Columns.Clear();
+                tblDuLieu.Rows.Clear();
+
+                txtMaSach.Text = "";
+                txtTenSach.Text = "";
+                txtTenTG.Text = "";
+                comboBoxPhanLoai.Text = "";
+                comboBoxNXB.Text = "";
+                txtMoTa.Text = "";
+                txtSoTrang.Text = "";
+                txtGia.Text = "";
+                txtFileSach.Text = "";
+                txtFileXemThu.Text = "";
+                picAnh.Image = null;
+
+                tblDuLieu.Columns.Add("MaSach", "Mã Sách");
+                tblDuLieu.Columns.Add("TenSach", "Tên Sách");
+                tblDuLieu.Columns.Add("TacGia", "Tác giả");
+                tblDuLieu.Columns.Add("TenTheLoai", "Thể loại");
+                tblDuLieu.Columns.Add("TenNXB", "Nhà xuất bản");
+                tblDuLieu.Columns.Add("DonGia", "Giá bán");
+                tblDuLieu.Columns.Add("GioiThieu", "Số lượng");
+                tblDuLieu.Columns["GioiThieu"].Visible = false;
+                tblDuLieu.Columns.Add("SoTrang", "Số trang");
+                tblDuLieu.Columns.Add("Anh", "Anh");
+                tblDuLieu.Columns["Anh"].Visible = false;
+                tblDuLieu.Columns["SoTrang"].Visible = false;
+                tblDuLieu.Columns.Add("FileSach", "FileSach");
+                tblDuLieu.Columns["FileSach"].Visible = false;
+                tblDuLieu.Columns.Add("FileXemThu", "File Xem thử");
+                tblDuLieu.Columns["FileXemThu"].Visible = false;
+
+
+                // Lấy dữ liệu từ cơ sở dữ liệu
+                DataTable dtItems = dtBase.DataReader("select * from Sach s join TheLoai tl on s.MaTheLoai = tl.MaTheLoai" +
+                                                      " join NhaXuatBan nxb\r\non s.MaNXB = nxb.MaNXB");
+                if (dtItems != null && dtItems.Rows.Count > 0)
+                {
+                    PaginateDataGridView(tblDuLieu, dtItems, pageSize, currentPage);
+                }
+                else
+                {
+                    MessageBox.Show("Không có sản phẩm nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            btnSuaSP.Enabled = false;
+            btnXoaSP.Enabled = false;
+        }
     }
 }
