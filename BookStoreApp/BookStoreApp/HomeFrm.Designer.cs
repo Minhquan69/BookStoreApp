@@ -119,13 +119,13 @@ namespace BookStoreApp
             this.pictureBoxKH = new System.Windows.Forms.PictureBox();
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.btnHienMatKhau = new System.Windows.Forms.Button();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
             this.comboBoxGioiTinh = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtDiaChiKH = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.txtSDTKH = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtTenKH = new System.Windows.Forms.TextBox();
@@ -142,8 +142,6 @@ namespace BookStoreApp
             this.Point = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblCustomerEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tblCustomerRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabDiscount = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnSearchDiscount = new System.Windows.Forms.Button();
@@ -200,6 +198,7 @@ namespace BookStoreApp
             this.label39 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnIn = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabControl1.SuspendLayout();
@@ -230,6 +229,7 @@ namespace BookStoreApp
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -620,7 +620,7 @@ namespace BookStoreApp
             // txtFileXemThu
             // 
             this.txtFileXemThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileXemThu.Location = new System.Drawing.Point(664, 464);
+            this.txtFileXemThu.Location = new System.Drawing.Point(664, 462);
             this.txtFileXemThu.Name = "txtFileXemThu";
             this.txtFileXemThu.Size = new System.Drawing.Size(205, 26);
             this.txtFileXemThu.TabIndex = 52;
@@ -884,9 +884,9 @@ namespace BookStoreApp
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.comboSearchCustomer);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Location = new System.Drawing.Point(685, 511);
+            this.groupBox4.Location = new System.Drawing.Point(685, 502);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(351, 138);
+            this.groupBox4.Size = new System.Drawing.Size(351, 147);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
@@ -898,10 +898,11 @@ namespace BookStoreApp
             this.btnSearchCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchCustomer.Location = new System.Drawing.Point(124, 97);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 35);
+            this.btnSearchCustomer.Size = new System.Drawing.Size(132, 44);
             this.btnSearchCustomer.TabIndex = 6;
             this.btnSearchCustomer.Text = "Tìm kiếm";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.BtnSearchCustomerClick);
             // 
             // txtSearchCustomer
             // 
@@ -951,9 +952,9 @@ namespace BookStoreApp
             this.groupBox5.Controls.Add(this.radioSortCustomerByBirthDate);
             this.groupBox5.Controls.Add(this.radioSortCustomerByName);
             this.groupBox5.Controls.Add(this.radioSortCustomerById);
-            this.groupBox5.Location = new System.Drawing.Point(329, 511);
+            this.groupBox5.Location = new System.Drawing.Point(329, 502);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(350, 138);
+            this.groupBox5.Size = new System.Drawing.Size(350, 147);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sắp xếp theo";
@@ -963,10 +964,11 @@ namespace BookStoreApp
             this.btbBoLoc.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btbBoLoc.Location = new System.Drawing.Point(28, 109);
             this.btbBoLoc.Name = "btbBoLoc";
-            this.btbBoLoc.Size = new System.Drawing.Size(75, 23);
+            this.btbBoLoc.Size = new System.Drawing.Size(75, 32);
             this.btbBoLoc.TabIndex = 3;
             this.btbBoLoc.Text = "Bỏ lọc";
             this.btbBoLoc.UseVisualStyleBackColor = true;
+            this.btbBoLoc.Click += new System.EventHandler(this.btbBoLoc_Click);
             // 
             // radioSortCustomerByBirthDate
             // 
@@ -979,6 +981,7 @@ namespace BookStoreApp
             this.radioSortCustomerByBirthDate.TabStop = true;
             this.radioSortCustomerByBirthDate.Text = "Ngày sinh tăng dần";
             this.radioSortCustomerByBirthDate.UseVisualStyleBackColor = true;
+            this.radioSortCustomerByBirthDate.CheckedChanged += new System.EventHandler(this.RadioSortCustomerCheckedChanged);
             // 
             // radioSortCustomerByName
             // 
@@ -991,6 +994,7 @@ namespace BookStoreApp
             this.radioSortCustomerByName.TabStop = true;
             this.radioSortCustomerByName.Text = "Tên khách hàng tăng dần";
             this.radioSortCustomerByName.UseVisualStyleBackColor = true;
+            this.radioSortCustomerByName.CheckedChanged += new System.EventHandler(this.RadioSortCustomerCheckedChanged);
             // 
             // radioSortCustomerById
             // 
@@ -1003,6 +1007,7 @@ namespace BookStoreApp
             this.radioSortCustomerById.TabStop = true;
             this.radioSortCustomerById.Text = "Mã khách hàng tăng dần";
             this.radioSortCustomerById.UseVisualStyleBackColor = true;
+            this.radioSortCustomerById.CheckedChanged += new System.EventHandler(this.RadioSortCustomerCheckedChanged);
             // 
             // groupBox6
             // 
@@ -1010,9 +1015,9 @@ namespace BookStoreApp
             this.groupBox6.Controls.Add(this.btnSuaKH);
             this.groupBox6.Controls.Add(this.btnRefreshCustomer);
             this.groupBox6.Controls.Add(this.btnAddNewCustomer);
-            this.groupBox6.Location = new System.Drawing.Point(6, 511);
+            this.groupBox6.Location = new System.Drawing.Point(6, 502);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(317, 138);
+            this.groupBox6.Size = new System.Drawing.Size(317, 147);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hành động";
@@ -1028,6 +1033,7 @@ namespace BookStoreApp
             this.btnXoaKH.TabIndex = 5;
             this.btnXoaKH.Text = "Xoá";
             this.btnXoaKH.UseVisualStyleBackColor = true;
+            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // btnSuaKH
             // 
@@ -1040,6 +1046,7 @@ namespace BookStoreApp
             this.btnSuaKH.TabIndex = 4;
             this.btnSuaKH.Text = "Sửa";
             this.btnSuaKH.UseVisualStyleBackColor = true;
+            this.btnSuaKH.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // btnRefreshCustomer
             // 
@@ -1052,6 +1059,7 @@ namespace BookStoreApp
             this.btnRefreshCustomer.TabIndex = 1;
             this.btnRefreshCustomer.Text = "    Làm mới";
             this.btnRefreshCustomer.UseVisualStyleBackColor = true;
+            this.btnRefreshCustomer.Click += new System.EventHandler(this.btnFresh_Click);
             // 
             // btnAddNewCustomer
             // 
@@ -1064,6 +1072,7 @@ namespace BookStoreApp
             this.btnAddNewCustomer.TabIndex = 0;
             this.btnAddNewCustomer.Text = "       Thêm mới";
             this.btnAddNewCustomer.UseVisualStyleBackColor = true;
+            this.btnAddNewCustomer.Click += new System.EventHandler(this.BtnAddNewCustomerClick);
             // 
             // groupBox12
             // 
@@ -1071,13 +1080,13 @@ namespace BookStoreApp
             this.groupBox12.Controls.Add(this.pictureBoxKH);
             this.groupBox12.Controls.Add(this.dateTimePickerNgaySinh);
             this.groupBox12.Controls.Add(this.btnHienMatKhau);
-            this.groupBox12.Controls.Add(this.txtMatKhau);
-            this.groupBox12.Controls.Add(this.label38);
             this.groupBox12.Controls.Add(this.comboBoxGioiTinh);
             this.groupBox12.Controls.Add(this.label27);
-            this.groupBox12.Controls.Add(this.label26);
+            this.groupBox12.Controls.Add(this.txtMatKhau);
             this.groupBox12.Controls.Add(this.txtDiaChiKH);
+            this.groupBox12.Controls.Add(this.label38);
             this.groupBox12.Controls.Add(this.label25);
+            this.groupBox12.Controls.Add(this.label26);
             this.groupBox12.Controls.Add(this.txtSDTKH);
             this.groupBox12.Controls.Add(this.label24);
             this.groupBox12.Controls.Add(this.txtTenKH);
@@ -1086,7 +1095,7 @@ namespace BookStoreApp
             this.groupBox12.Controls.Add(this.label22);
             this.groupBox12.Location = new System.Drawing.Point(6, 333);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(1030, 172);
+            this.groupBox12.Size = new System.Drawing.Size(1030, 163);
             this.groupBox12.TabIndex = 9;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Thông tin chung";
@@ -1094,16 +1103,17 @@ namespace BookStoreApp
             // btnAnhKH
             // 
             this.btnAnhKH.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnhKH.Location = new System.Drawing.Point(898, 128);
+            this.btnAnhKH.Location = new System.Drawing.Point(915, 128);
             this.btnAnhKH.Name = "btnAnhKH";
             this.btnAnhKH.Size = new System.Drawing.Size(80, 29);
             this.btnAnhKH.TabIndex = 27;
             this.btnAnhKH.Text = "Ảnh";
             this.btnAnhKH.UseVisualStyleBackColor = true;
+            this.btnAnhKH.Click += new System.EventHandler(this.btnAnhKH_Click);
             // 
             // pictureBoxKH
             // 
-            this.pictureBoxKH.Location = new System.Drawing.Point(881, 11);
+            this.pictureBoxKH.Location = new System.Drawing.Point(898, 11);
             this.pictureBoxKH.Name = "pictureBoxKH";
             this.pictureBoxKH.Size = new System.Drawing.Size(116, 111);
             this.pictureBoxKH.TabIndex = 26;
@@ -1113,38 +1123,21 @@ namespace BookStoreApp
             // 
             this.dateTimePickerNgaySinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(409, 78);
+            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(404, 37);
             this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
             this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(167, 26);
             this.dateTimePickerNgaySinh.TabIndex = 25;
             // 
             // btnHienMatKhau
             // 
-            this.btnHienMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHienMatKhau.Location = new System.Drawing.Point(757, 114);
+            this.btnHienMatKhau.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHienMatKhau.Location = new System.Drawing.Point(554, 110);
             this.btnHienMatKhau.Name = "btnHienMatKhau";
             this.btnHienMatKhau.Size = new System.Drawing.Size(68, 26);
             this.btnHienMatKhau.TabIndex = 24;
             this.btnHienMatKhau.Text = "Hiện";
             this.btnHienMatKhau.UseVisualStyleBackColor = true;
-            // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(609, 114);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(142, 26);
-            this.txtMatKhau.TabIndex = 23;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(608, 78);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(78, 19);
-            this.label38.TabIndex = 22;
-            this.label38.Text = "Mật khẩu";
+            this.btnHienMatKhau.Click += new System.EventHandler(this.btnHienMatKhau_Click);
             // 
             // comboBoxGioiTinh
             // 
@@ -1153,7 +1146,7 @@ namespace BookStoreApp
             this.comboBoxGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxGioiTinh.Location = new System.Drawing.Point(409, 113);
+            this.comboBoxGioiTinh.Location = new System.Drawing.Point(705, 36);
             this.comboBoxGioiTinh.Name = "comboBoxGioiTinh";
             this.comboBoxGioiTinh.Size = new System.Drawing.Size(167, 27);
             this.comboBoxGioiTinh.TabIndex = 21;
@@ -1162,39 +1155,58 @@ namespace BookStoreApp
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(319, 116);
+            this.label27.Location = new System.Drawing.Point(615, 39);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(78, 19);
             this.label27.TabIndex = 17;
             this.label27.Text = "Giới tính";
             // 
-            // label26
+            // txtMatKhau
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(319, 78);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(81, 19);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Ngày sinh";
+            this.txtMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Location = new System.Drawing.Point(404, 110);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(142, 26);
+            this.txtMatKhau.TabIndex = 23;
             // 
             // txtDiaChiKH
             // 
             this.txtDiaChiKH.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChiKH.Location = new System.Drawing.Point(409, 37);
+            this.txtDiaChiKH.Location = new System.Drawing.Point(404, 72);
+            this.txtDiaChiKH.Multiline = true;
             this.txtDiaChiKH.Name = "txtDiaChiKH";
-            this.txtDiaChiKH.Size = new System.Drawing.Size(167, 26);
+            this.txtDiaChiKH.Size = new System.Drawing.Size(468, 26);
             this.txtDiaChiKH.TabIndex = 14;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(314, 113);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(78, 19);
+            this.label38.TabIndex = 22;
+            this.label38.Text = "Mật khẩu";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(319, 40);
+            this.label25.Location = new System.Drawing.Point(314, 75);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(62, 19);
             this.label25.TabIndex = 13;
             this.label25.Text = "Địa chỉ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(314, 40);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(81, 19);
+            this.label26.TabIndex = 15;
+            this.label26.Text = "Ngày sinh";
             // 
             // txtSDTKH
             // 
@@ -1277,9 +1289,7 @@ namespace BookStoreApp
             this.CustomerType,
             this.Point,
             this.CreateTime,
-            this.Email,
-            this.tblCustomerEdit,
-            this.tblCustomerRemove});
+            this.Email});
             this.tblKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.tblKhachHang.Location = new System.Drawing.Point(3, 3);
             this.tblKhachHang.Name = "tblKhachHang";
@@ -1289,8 +1299,10 @@ namespace BookStoreApp
             this.tblKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tblKhachHang.RowTemplate.Height = 24;
             this.tblKhachHang.ShowCellToolTips = false;
-            this.tblKhachHang.Size = new System.Drawing.Size(1033, 300);
+            this.tblKhachHang.Size = new System.Drawing.Size(1033, 298);
             this.tblKhachHang.TabIndex = 5;
+            this.tblKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhachHang_CellContentDoubleClick);
+            this.tblKhachHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhachHang_CellContentDoubleClick);
             // 
             // Customer_ID
             // 
@@ -1363,24 +1375,6 @@ namespace BookStoreApp
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             this.Email.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tblCustomerEdit
-            // 
-            this.tblCustomerEdit.HeaderText = "Sửa";
-            this.tblCustomerEdit.MinimumWidth = 6;
-            this.tblCustomerEdit.Name = "tblCustomerEdit";
-            this.tblCustomerEdit.ReadOnly = true;
-            this.tblCustomerEdit.Text = "Sửa";
-            this.tblCustomerEdit.UseColumnTextForButtonValue = true;
-            // 
-            // tblCustomerRemove
-            // 
-            this.tblCustomerRemove.HeaderText = "Xóa";
-            this.tblCustomerRemove.MinimumWidth = 6;
-            this.tblCustomerRemove.Name = "tblCustomerRemove";
-            this.tblCustomerRemove.ReadOnly = true;
-            this.tblCustomerRemove.Text = "Xóa";
-            this.tblCustomerRemove.UseColumnTextForButtonValue = true;
             // 
             // tabDiscount
             // 
@@ -2025,6 +2019,10 @@ namespace BookStoreApp
             this.btnIn.Text = "       Lưu biểu đồ";
             this.btnIn.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -2078,6 +2076,7 @@ namespace BookStoreApp
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tblBaoCao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2139,19 +2138,9 @@ namespace BookStoreApp
         private System.Windows.Forms.Button btnXoaSP;
         private System.Windows.Forms.Button btnSuaSP;
         private System.Windows.Forms.Button btnFreshItem;
+        private ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnThemSP;
         private System.Windows.Forms.DataGridView tblKhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Point;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreateTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewButtonColumn tblCustomerEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn tblCustomerRemove;
         private System.Windows.Forms.Label label_phanTrang;
         private System.Windows.Forms.Button btnNextt;
         private System.Windows.Forms.Button btnPree;
@@ -2243,5 +2232,14 @@ namespace BookStoreApp
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private DataGridViewTextBoxColumn Customer_ID;
+        private DataGridViewTextBoxColumn FullName;
+        private DataGridViewTextBoxColumn BirthDate;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn PhoneNumber;
+        private DataGridViewTextBoxColumn CustomerType;
+        private DataGridViewTextBoxColumn Point;
+        private DataGridViewTextBoxColumn CreateTime;
+        private DataGridViewTextBoxColumn Email;
     }
 }

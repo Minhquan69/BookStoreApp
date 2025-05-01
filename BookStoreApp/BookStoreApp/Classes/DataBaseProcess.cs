@@ -267,6 +267,40 @@ namespace BookStoreApp.Classes
                 }
             }
         }
+        public int GetScalarValue(string query)
+        {
+            int result = 0;
+            using (SqlConnection conn = new SqlConnection(strConnect))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                object obj = cmd.ExecuteScalar();
+                if (obj != null && int.TryParse(obj.ToString(), out int val))
+                {
+                    result = val;
+                }
+            }
+            return result;
+        }
+        public string GetFieldValue(string query)
+        {
+            string result = "";
+            using (SqlConnection conn = new SqlConnection(strConnect))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    object value = cmd.ExecuteScalar();
+                    if (value != null && value != DBNull.Value)
+                    {
+                        result = value.ToString();
+                    }
+                }
+            }
+            return result;
+        }
+
+
 
     }
 }

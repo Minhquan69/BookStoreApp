@@ -636,7 +636,7 @@ namespace BookStoreApp
                 dateTimePickerNgaySinh.Format = DateTimePickerFormat.Custom;
                 dateTimePickerNgaySinh.CustomFormat = "dd/MM/yyyy"; // Chỉ hiển thị ngày/tháng/năm
                 dateTimePickerNgaySinh.Value = DateTime.Now;
-
+                pictureBoxKH.Image = null;
                 btnHienMatKhau.Enabled = true;
                 DisplayCustomers();
             }
@@ -884,5 +884,393 @@ namespace BookStoreApp
                 MessageBox.Show("Không có sản phẩm nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        //KH
+        private void tblKhachHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            comboBoxGioiTinh.SelectedItem = null;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = tblKhachHang.Rows[e.RowIndex];
+                txtMaKH.Text = row.Cells["MaKH"].Value.ToString();
+                txtMaKH.Enabled = false;
+                txtTenKH.Text = row.Cells["TenKhachHang"].Value.ToString();
+                txtDiaChiKH.Text = row.Cells["DiaChi"].Value.ToString();
+                string gt = row.Cells["GioiTinh"].Value.ToString();
+                Console.WriteLine(gt);
+                if (gt == "Nam")
+                {
+                    comboBoxGioiTinh.SelectedItem = comboBoxGioiTinh.Items[0];
+                }
+                if (gt == "Nữ")
+                {
+                    comboBoxGioiTinh.SelectedItem = comboBoxGioiTinh.Items[1];
+                }
+                txtSDTKH.Text = row.Cells["SDT"].Value.ToString();
+                // Xử lý ngày sinh
+                string ngaysinh = row.Cells["NgaySinh"].Value?.ToString();
+                if (!string.IsNullOrEmpty(ngaysinh))
+                {
+                    try
+                    {
+                        DateTime dateTimeNgaySinh = DateTime.ParseExact(ngaysinh, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                        dateTimePickerNgaySinh.Value = dateTimeNgaySinh;
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Ngày sinh không đúng định dạng dd-MM-yyyy.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu ngày sinh bị trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+
+                txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
+                txtMatKhau.PasswordChar = '*'; //hien thi mat khau bang *
+
+                //xu ly anh
+                string imgPath = row.Cells["Anh"].Value.ToString(); ;
+                try
+                {
+                    pictureBoxKH.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\AnhKhachHang\\" + imgPath);
+                }
+                catch (Exception ex)
+                {
+                    pictureBoxKH.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\AnhKhachHang\\" + "avatar.png");
+                }
+                pictureBoxKH.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                btnHienMatKhau.Enabled = true;
+                btnXoaKH.Enabled = true;
+                btnSuaKH.Enabled = true;
+            }
+        }
+
+        private void btnHienMatKhau_Click(object sender, EventArgs e)
+        {
+            if (btnHienMatKhau.Text == "Hiện")
+            {
+                txtMatKhau.PasswordChar = '\0';
+                btnHienMatKhau.Text = "Ẩn";
+                return;
+            }
+            if (btnHienMatKhau.Text == "Ẩn")
+            {
+                txtMatKhau.PasswordChar = '*';
+                btnHienMatKhau.Text = "Hiện";
+                return;
+            }
+
+        }
+        private void btnAnhKH_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = System.Windows.Forms.Application.StartupPath + "\\AnhKhachHang\\";
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+            openFileDialog1.Title = "Chọn hình ảnh";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Đặt hình ảnh đã chọn vào PictureBox
+                pictureBoxKH.Image = Image.FromFile(openFileDialog1.FileName);
+                pictureBoxKH.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+            if (tblKhachHang.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = tblKhachHang.SelectedRows[0];
+
+                // Lấy dữ liệu từ ô trong cột "MaKH"
+                prePathImage = selectedRow.Cells["Anh"].Value.ToString();
+            }
+            anhKHDaThayDoi = true;
+            currentPathImage = openFileDialog1.SafeFileName;
+        }
+
+        private void btnSuaKH_Click(object sender, EventArgs e)
+        {
+            if (txtTenKH.Text == "" || txtDiaChiKH.Text == "" || txtSDTKH.Text == "" || comboBoxGioiTinh.SelectedItem.ToString() == "" || dateTimePickerNgaySinh.Text == "" || txtMatKhau.Text == "")
+            {
+                MessageBox.Show("Bạn không được để trống trường thông tin của khách hàng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (pictureBoxKH.Image == null)
+            {
+                MessageBox.Show("Bạn không được để trống trường ảnh của khách hàng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string tenKH = txtTenKH.Text;
+            string diachi = txtDiaChiKH.Text;
+            string sdt = txtSDTKH.Text;
+            string gt = comboBoxGioiTinh.SelectedItem.ToString();
+            DateTime ngaysinh = dateTimePickerNgaySinh.Value;
+            string ngaysinh2 = ngaysinh.ToString("yyyy-MM-dd");
+            string matkhau = txtMatKhau.Text;
+            string makh = txtMaKH.Text;
+            string anh = "";
+
+            if (anhKHDaThayDoi)
+            {
+                anh = currentPathImage;
+            }
+            else
+            {
+                anh = prePathImage;
+            }
+
+            //kiem tra da co khach hang hay chua ?
+            string kiemtra = $"SELECT COUNT(*) \r\nFROM KhachHang \r\nWHERE TenKhachHang = N'{tenKH}'" +
+                $"AND GioiTinh = N'{gt}'\r\n  " +
+                $"AND DiaChi = N'{diachi}'\r\n  " +
+                $"AND NgaySinh = '{ngaysinh2}'\r\n  " +
+                $"AND SDT = '{sdt}'\r\n  " +
+                $"AND Anh = '{anh}'\r\n  " +
+                $"AND MatKhau = '{matkhau}';";
+            if (!dtBase.Exist(kiemtra))
+            {
+                MessageBox.Show("Da ton tai khach hang nay", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Tạo câu truy vấn SQL để cập nhật thông tin khách hàng
+            string query = $@"UPDATE KhachHang  
+                SET TenKhachHang = N'{tenKH}',  
+                    GioiTinh = '{gt}',  
+                    DiaChi = N'{diachi}',  
+                    NgaySinh = '{ngaysinh2}',  
+                    SDT = '{sdt}',  
+                    Anh = '{anh}',  
+                    MatKhau = '{matkhau}'  
+                WHERE MaKH = '{makh}';
+                ";
+
+            try
+            {
+                dtBase.DataChange(query);
+                DisplayCustomers();
+                MessageBox.Show("Thông tin khách hàng đã sửa thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi sửa thông tin khách hàng: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+            string maKH = txtMaKH.Text.Trim();
+            if (string.IsNullOrEmpty(maKH))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra khách hàng đã từng mua hàng (tồn tại hóa đơn)
+            string checkHoaDon = $"SELECT COUNT(*) FROM HoaDonBan WHERE MaKH = '{maKH}'";
+            int count = dtBase.GetScalarValue(checkHoaDon); // Giả sử hàm này trả về int
+
+            if (count > 0)
+            {
+                MessageBox.Show("Khách hàng này đã từng mua hàng. Không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Lấy MaGH từ bảng GioHang theo MaKH
+                string getMaGHQuery = $"SELECT MaGH FROM GioHang WHERE MaKH = '{maKH}'";
+                string maGH = dtBase.GetFieldValue(getMaGHQuery); // Hàm này trả về string
+
+                // Xóa dữ liệu trong bảng GioSanPham trước
+                if (!string.IsNullOrEmpty(maGH))
+                {
+                    string deleteGioSanPham = $"DELETE FROM GioSanPham WHERE MaGH = '{maGH}'";
+                    dtBase.DataChange(deleteGioSanPham);
+                }
+
+                // Xóa giỏ hàng
+                string deleteGioHang = $"DELETE FROM GioHang WHERE MaKH = '{maKH}'";
+                dtBase.DataChange(deleteGioHang);
+
+                // Xóa khách hàng
+                string deleteKH = $"DELETE FROM KhachHang WHERE MaKH = '{maKH}'";
+                dtBase.DataChange(deleteKH);
+
+                // Kiểm tra lại
+                string truyvan = $"SELECT * FROM KhachHang WHERE MaKH = '{maKH}'";
+                if (!dtBase.Exist(truyvan))
+                {
+                    MessageBox.Show("Xóa Khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DisplayCustomers();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa Khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnAddNewCustomerClick(object sender, EventArgs e)
+        {
+            if (txtTenKH.Text == "" || txtDiaChiKH.Text == "" || txtSDTKH.Text == "" || comboBoxGioiTinh.SelectedItem.ToString() == "" || dateTimePickerNgaySinh.Text == "" || txtMatKhau.Text == "" || pictureBoxKH.Image == null)
+            {
+                MessageBox.Show("Bạn không được để trống trường thông tin của khách hàng", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (pictureBoxKH.Image == null)
+            {
+                errorProvider1.SetError(btnAnhKH, "Chọn ảnh cho khách hàng");
+            }
+
+            string tenKH = txtTenKH.Text;
+            string diachi = txtDiaChiKH.Text;
+            string sdt = txtSDTKH.Text;
+            string gt = comboBoxGioiTinh.SelectedItem.ToString();
+            DateTime ngaysinh = dateTimePickerNgaySinh.Value;
+            string ngaysinh2 = ngaysinh.ToString("yyyy-MM-dd");
+            string matkhau = txtMatKhau.Text;
+
+            string kiemtra = $"select * from KhachHang where SDT = '{sdt}'";
+            DataTable dtcheck = dtBase.DataReader(kiemtra);
+            if (dtcheck.Rows.Count > 0)
+            {
+                MessageBox.Show("Đã tồn tại khách hàng \n Vui lòng nhập số điện thoại mới", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSDTKH.Text = "";
+                errorProvider1.SetError(txtSDTKH, "Nhập số điện thoại mới!");
+                return;
+            }
+
+            // Thực hiện cập nhật trong cơ sở dữ liệu
+
+            string query = $"INSERT INTO KhachHang ( TenKhachHang, GioiTinh, DiaChi, NgaySinh, SDT, Anh, MatKhau)" +
+                $"  \r\nVALUES ( N'{tenKH}', N'{gt}', N'{diachi}', '{ngaysinh2}', '{sdt}', '{currentPathImage}', '{matkhau}');\r\n"; //dg dan anh chua co
+
+            dtBase.DataChange(query);
+            DisplayItems();
+            MessageBox.Show("Thông tin khách hàng này đã them thành công !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DisplayCustomers();
+            return;
+        }
+
+        private void RadioSortCustomerCheckedChanged(object sender, EventArgs e)
+        {
+            if (tblKhachHang.Rows.Count <= 0)
+            {
+                MessageBox.Show("Không có dòng để hiển thị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (radioSortCustomerByName.Checked)
+            {
+                tblKhachHang.Sort(tblKhachHang.Columns["TenKhachHang"], ListSortDirection.Ascending);
+            }
+            else if (radioSortCustomerById.Checked)
+            {
+                tblKhachHang.Sort(tblKhachHang.Columns["MaKH"], ListSortDirection.Ascending);
+            }
+            else if (radioSortCustomerByBirthDate.Checked)
+            {
+                tblKhachHang.Sort(tblKhachHang.Columns["NgaySinh"], ListSortDirection.Ascending);
+            }
+
+        }
+
+        private void btbBoLoc_Click(object sender, EventArgs e)
+        {
+            radioSortCustomerByBirthDate.Checked = false;
+            radioSortCustomerById.Checked = false;
+            radioSortCustomerByName.Checked = false;
+        }
+
+        private void BtnSearchCustomerClick(object sender, EventArgs e)
+        {
+            string sql = "";
+            string name = "";
+            if (comboSearchCustomer.SelectedIndex == -1)
+            {
+                var msg = "Vui lòng chọn tiêu chí tìm kiếm để tiếp tục";
+                var title = "Lỗi dữ liệu";
+                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (comboSearchCustomer.SelectedIndex == 0) // ten khach hang gan dung
+            {
+                name = txtSearchCustomer.Text;
+                sql = $"SELECT * \r\nFROM KhachHang\r\nWHERE TenKhachHang LIKE N'%{name}%';\r\n";
+            }
+            else if (comboSearchCustomer.SelectedIndex == 1) // ma khach hang
+            {
+                name = txtSearchCustomer.Text;
+                sql = $"SELECT * \r\nFROM KhachHang\r\nWHERE MaKH = '{name}';\r\n";
+
+            }
+            else if (comboSearchCustomer.SelectedIndex == 2) // dia chi
+            {
+                name = txtSearchCustomer.Text;
+                sql = $"SELECT * \r\nFROM KhachHang\r\nWHERE DiaChi LIKE N'%{name}%';\r\n";
+
+            }
+            else if (comboSearchCustomer.SelectedIndex == 3) // so dien thoai
+            {
+                name = txtSearchCustomer.Text.Trim();
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(name, @"^\d+$"))
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa các ký tự số.", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                sql = $"SELECT * \r\nFROM KhachHang\r\nWHERE SDT = '{name}';\r\n";
+            }
+            LoadLaiKHCoQuery(sql);
+            RadioSortCustomerCheckedChanged(sender, e);
+        }
+
+        private void LoadLaiKHCoQuery(string sql)
+        {
+            txtMaKH.Text = "";
+            txtMaKH.Enabled = false;
+            txtTenKH.Text = "";
+            txtDiaChiKH.Text = "";
+            comboBoxGioiTinh.Text = "";
+            txtSDTKH.Text = "";
+            dateTimePickerNgaySinh.Text = "";
+            txtMatKhau.Text = "";
+
+            try
+            {
+                // Định nghĩa cấu trúc cột cho DataGridView
+                tblKhachHang.Columns.Clear();
+                tblKhachHang.Rows.Clear();
+
+                tblKhachHang.Columns.Add("MaKH", "Mã Khách hàng");
+                tblKhachHang.Columns.Add("TenKhachHang", "Tên Khách hàng");
+                tblKhachHang.Columns.Add("DiaChi", "Địa chỉ");
+                tblKhachHang.Columns.Add("SDT", "SĐT");
+                tblKhachHang.Columns.Add("GioiTinh", "Giới tính");
+                tblKhachHang.Columns.Add("NgaySinh", "Ngày sinh");
+                tblKhachHang.Columns.Add("MatKhau", "Mật Khẩu");
+                tblKhachHang.Columns["MatKhau"].Visible = false;
+                tblKhachHang.Columns.Add("Anh", "Ảnh");
+                tblKhachHang.Columns["Anh"].Visible = false;
+
+                tblKhachHang.Columns["TenKhachHang"].Width = 180;
+
+                // Lấy dữ liệu từ cơ sở dữ liệu
+                DataTable dtItems = dtBase.DataReader(sql);
+
+                // Phân trang dữ liệu
+                PaginateDataGridViewForCustomers(tblKhachHang, dtItems, pageSize, currentPage, label_phanTrang);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            btnHienMatKhau.Enabled = true;
+            btnSuaKH.Enabled = false;
+            btnXoaKH.Enabled = false;
+        }
+
+
     }
 }
