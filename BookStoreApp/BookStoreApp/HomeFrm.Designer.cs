@@ -1413,6 +1413,7 @@ namespace BookStoreApp
             this.btnSearchDiscount.TabIndex = 6;
             this.btnSearchDiscount.Text = "Tìm kiếm";
             this.btnSearchDiscount.UseVisualStyleBackColor = true;
+            this.btnSearchDiscount.Click += new System.EventHandler(this.BtnSearchDiscountClick);
             // 
             // txtSearchDiscount
             // 
@@ -1420,6 +1421,7 @@ namespace BookStoreApp
             this.txtSearchDiscount.Name = "txtSearchDiscount";
             this.txtSearchDiscount.Size = new System.Drawing.Size(240, 22);
             this.txtSearchDiscount.TabIndex = 5;
+            this.txtSearchDiscount.Visible = false;
             // 
             // label5
             // 
@@ -1430,13 +1432,13 @@ namespace BookStoreApp
             this.label5.Size = new System.Drawing.Size(67, 18);
             this.label5.TabIndex = 2;
             this.label5.Text = "Nội dung";
+            this.label5.Visible = false;
             // 
             // comboSearchDiscount
             // 
             this.comboSearchDiscount.FormattingEnabled = true;
             this.comboSearchDiscount.Items.AddRange(new object[] {
             "Sách trong thời gian khuyến mãi",
-            "",
             "Sách hết thời gian khuyến mãi"});
             this.comboSearchDiscount.Location = new System.Drawing.Point(144, 47);
             this.comboSearchDiscount.Name = "comboSearchDiscount";
@@ -1478,6 +1480,7 @@ namespace BookStoreApp
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoaKM
             // 
@@ -1489,6 +1492,7 @@ namespace BookStoreApp
             this.btnXoaKM.TabIndex = 5;
             this.btnXoaKM.Text = "Xoá";
             this.btnXoaKM.UseVisualStyleBackColor = true;
+            this.btnXoaKM.Click += new System.EventHandler(this.btnXoaKM_Click);
             // 
             // btnSuaKM
             // 
@@ -1500,6 +1504,7 @@ namespace BookStoreApp
             this.btnSuaKM.TabIndex = 4;
             this.btnSuaKM.Text = "Sửa";
             this.btnSuaKM.UseVisualStyleBackColor = true;
+            this.btnSuaKM.Click += new System.EventHandler(this.btnSuaKM_Click);
             // 
             // btnRefreshDiscount
             // 
@@ -1511,6 +1516,7 @@ namespace BookStoreApp
             this.btnRefreshDiscount.TabIndex = 1;
             this.btnRefreshDiscount.Text = "Làm mới";
             this.btnRefreshDiscount.UseVisualStyleBackColor = true;
+            this.btnRefreshDiscount.Click += new System.EventHandler(this.BtnRefreshClick);
             // 
             // btnAddNewDiscount
             // 
@@ -1522,6 +1528,7 @@ namespace BookStoreApp
             this.btnAddNewDiscount.TabIndex = 0;
             this.btnAddNewDiscount.Text = "Thêm mới";
             this.btnAddNewDiscount.UseVisualStyleBackColor = true;
+            this.btnAddNewDiscount.Click += new System.EventHandler(this.BtnAddNewDiscountClick);
             // 
             // groupBox13
             // 
@@ -1653,6 +1660,7 @@ namespace BookStoreApp
             this.tblKhuyenMai.RowTemplate.Height = 24;
             this.tblKhuyenMai.Size = new System.Drawing.Size(1033, 300);
             this.tblKhuyenMai.TabIndex = 9;
+            this.tblKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhuyenMai_CellClick);
             // 
             // NameDiscount
             // 

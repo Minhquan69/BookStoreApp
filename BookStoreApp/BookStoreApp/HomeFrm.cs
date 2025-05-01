@@ -1271,6 +1271,339 @@ namespace BookStoreApp
             btnXoaKH.Enabled = false;
         }
 
+        //KM
+        private void tblKhuyenMai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Đảm bảo dòng được chọn hợp lệ
+            {
+                DataGridViewRow row = tblKhuyenMai.Rows[e.RowIndex];
 
+                // Lấy tên sách từ cột
+                comboBoxTenSach.Text = row.Cells["TenSach"].Value?.ToString() ?? "";
+
+                // Lấy phần trăm khuyến mãi
+                txtKM.Text = row.Cells["KM"].Value?.ToString() ?? "";
+
+                // Lấy thời gian bắt đầu và kết thúc
+                if (DateTime.TryParse(row.Cells["ThoiGianBatDau"].Value?.ToString(), out DateTime thoigianbatdau))
+                {
+                    dateTimePickerTGBD.Value = thoigianbatdau;
+                }
+                else
+                {
+                    // Xử lý nếu dữ liệu thời gian không hợp lệ
+                    dateTimePickerTGBD.Value = DateTime.Now; // Hoặc đặt giá trị mặc định
+                }
+
+                if (DateTime.TryParse(row.Cells["ThoiGianKetThuc"].Value?.ToString(), out DateTime thoigianketthuc))
+                {
+                    dateTimePickerTGKT.Value = thoigianketthuc;
+                }
+                else
+                {
+                    // Xử lý nếu dữ liệu thời gian không hợp lệ
+                    dateTimePickerTGKT.Value = DateTime.Now; // Hoặc đặt giá trị mặc định
+                }
+            }
+            SetControlsState(false);
+        }
+
+        private void BtnSearchDiscountClick(object sender, EventArgs e)
+        {
+            string searchText = txtSearchDiscount.Text.Trim();
+            string searchOption = comboSearchDiscount.SelectedItem?.ToString();
+            string query = string.Empty;
+            DateTime currentDate = DateTime.Now;
+
+            if (string.IsNullOrEmpty(searchOption))
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (searchOption.Equals("Sách trong thời gian khuyến mãi"))
+            {
+                query = $@"
+               SELECT s.TenSach, km.ThoiGianBatDau, km.ThoiGianKetThuc, km.KM
+               FROM Sach s
+               JOIN KhuyenMai km ON s.MaSach = km.MaSach
+               WHERE km.ThoiGianBatDau <= '{currentDate:yyyy-MM-dd}'
+                 AND km.ThoiGianKetThuc >= '{currentDate:yyyy-MM-dd}'
+                 {(string.IsNullOrEmpty(searchText) ? "" : $"AND s.TenSach LIKE N'%{searchText}%'")}";
+            }
+            else if (searchOption.Equals("Sách hết thời gian khuyến mãi"))
+            {
+                query = $@"
+               SELECT s.TenSach, km.ThoiGianBatDau, km.ThoiGianKetThuc, km.KM
+               FROM Sach s
+               JOIN KhuyenMai km ON s.MaSach = km.MaSach
+               WHERE '{currentDate:yyyy-MM-dd}' NOT BETWEEN km.ThoiGianBatDau AND km.ThoiGianKetThuc
+                 {(string.IsNullOrEmpty(searchText) ? "" : $"AND s.TenSach LIKE N'%{searchText}%'")}";
+            }
+
+            // Đọc dữ liệu từ cơ sở dữ liệu
+            if (!string.IsNullOrEmpty(query))
+            {
+                DataTable discounts = dtBase.DataReader(query);
+                DisplayDiscountResults(discounts, searchOption);
+            }
+        }
+        private void DisplayDiscountResults(DataTable discounts, string searchOption)
+        {
+            try
+            {
+                // Xóa các cột và dòng cũ (nếu có)
+                tblKhuyenMai.Columns.Clear();
+                tblKhuyenMai.Rows.Clear();
+
+                // Thêm các cột vào tblKhuyenMai
+                tblKhuyenMai.Columns.Add("TenSach", "Tên Sách");
+                tblKhuyenMai.Columns.Add("ThoiGianBatDau", "Bắt đầu");
+                tblKhuyenMai.Columns.Add("ThoiGianKetThuc", "Kết thúc");
+                tblKhuyenMai.Columns.Add("KM", "Phần trăm KM");
+
+                // Thêm dữ liệu vào tblKhuyenMai
+                foreach (DataRow row in discounts.Rows)
+                {
+                    tblKhuyenMai.Rows.Add(
+                        row["TenSach"],
+                        row["ThoiGianBatDau"] ?? DBNull.Value,
+                        row["ThoiGianKetThuc"] ?? DBNull.Value,
+                        row["KM"] ?? DBNull.Value
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi hiển thị khuyến mãi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            LoadComboBoxSach();
+            SetControlsState(false);
+        }
+
+        string tenSachCu;
+        // Sự kiện btnSuaKM_Click
+        private void btnSuaKM_Click(object sender, EventArgs e)
+        {
+            tenSachCu = comboBoxTenSach.Text;
+
+            if (tblKhuyenMai.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn dòng để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SetControlsState(true); // Chỉ bật trạng thái chỉnh sửa
+        }
+
+        private void btnXoaKM_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu không có dòng nào được chọn
+            if (tblKhuyenMai.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn dòng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Hiển thị hộp thoại xác nhận
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khuyến mãi này?",
+                                                  "Xác nhận",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Lấy thông tin dòng hiện tại
+                DataGridViewRow row = tblKhuyenMai.CurrentRow;
+                string tenSach = row.Cells["TenSach"].Value.ToString();
+
+                // Lấy mã sách từ tên sách
+                string queryMaSach = $"SELECT MaSach FROM Sach WHERE TenSach = N'{tenSach}'";
+                DataTable dtMaSach = dtBase.DataReader(queryMaSach);
+
+                if (dtMaSach.Rows.Count > 0)
+                {
+                    string maSach = dtMaSach.Rows[0]["MaSach"].ToString();
+
+                    // Xóa khuyến mãi
+                    string queryDelete = $"DELETE FROM KhuyenMai WHERE MaSach = '{maSach}'";
+                    dtBase.DataChange(queryDelete);
+
+                    MessageBox.Show("Xóa khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Tải lại DataGridView
+                    DisplayDiscount();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy sách để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnAddNewDiscountClick(object sender, EventArgs e)
+        {
+            SetControlsState(true);
+            comboBoxTenSach.Text = "";
+            txtKM.Text = "";
+            dateTimePickerTGBD.Value = DateTime.Now;
+            dateTimePickerTGKT.Value = DateTime.Now;
+            tenSachCu = null; // Reset tenSachCu khi thêm mới
+        }
+
+        private void BtnRefreshClick(object sender, EventArgs e)
+        {
+            if (sender.Equals(btnFreshItem))
+            {
+                //tblItem.Clear();
+                comboSearchItem.SelectedIndex = -1;
+                numericItemFrom.Value = 0;
+                numericItemTo.Value = 0;
+                txtSearchItem.Text = "";
+                //display items again
+                DisplayItems();
+            }
+            else if (sender.Equals(btnRefreshCustomer))
+            {
+                comboSearchCustomer.SelectedIndex = -1;
+                txtSearchCustomer.Text = "";
+                //display items again
+                DisplayCustomers();
+            }
+            else if (sender.Equals(btnRefreshDiscount))
+            {
+                comboSearchDiscount.SelectedIndex = -1;
+                txtSearchDiscount.Text = "";
+                //display discount again
+                DisplayDiscount();
+            }
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            SaveDiscount();
+        }
+
+        private void SaveDiscount()
+        {
+            string tenSach = comboBoxTenSach.Text;
+            DateTime thoiGianBatDauMoi = dateTimePickerTGBD.Value;
+            DateTime thoiGianKetThucMoi = dateTimePickerTGKT.Value;
+
+            // Kiểm tra input
+            if (string.IsNullOrWhiteSpace(tenSach) || string.IsNullOrWhiteSpace(txtKM.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (thoiGianBatDauMoi >= thoiGianKetThucMoi)
+            {
+                MessageBox.Show("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string formattedStartDate = thoiGianBatDauMoi.ToString("yyyy-MM-dd");
+            string formattedEndDate = thoiGianKetThucMoi.ToString("yyyy-MM-dd");
+
+            // Lấy MaSach mới từ tên sách được chọn
+            string queryMaSachMoi = $"SELECT MaSach FROM Sach WHERE TenSach = N'{tenSach}'";
+            DataTable dtMaSachMoi = dtBase.DataReader(queryMaSachMoi);
+            string maSachMoi = dtMaSachMoi.Rows.Count > 0 ? dtMaSachMoi.Rows[0]["MaSach"].ToString() : string.Empty;
+
+            if (string.IsNullOrEmpty(maSachMoi))
+            {
+                MessageBox.Show("Không tìm thấy sách với tên đã nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (tblKhuyenMai.CurrentRow != null && !string.IsNullOrEmpty(tenSachCu)) // Trường hợp sửa
+            {
+                // Lấy MaSach từ tên sách cũ
+                string queryMaSachCu = $"SELECT MaSach FROM Sach WHERE TenSach = N'{tenSachCu}'";
+                DataTable dtMaSachCu = dtBase.DataReader(queryMaSachCu);
+                string maSachCu = dtMaSachCu.Rows.Count > 0 ? dtMaSachCu.Rows[0]["MaSach"].ToString() : string.Empty;
+
+                // Lấy thời gian cũ
+                string queryOldTime = $"SELECT ThoiGianBatDau, ThoiGianKetThuc FROM KhuyenMai WHERE MaSach = '{maSachCu}'";
+                DataTable dtOldTime = dtBase.DataReader(queryOldTime);
+                DateTime oldStart = Convert.ToDateTime(dtOldTime.Rows[0]["ThoiGianBatDau"]);
+                DateTime oldEnd = Convert.ToDateTime(dtOldTime.Rows[0]["ThoiGianKetThuc"]);
+
+                // Kiểm tra xem ngày có thay đổi không
+                bool isDateChanged = thoiGianBatDauMoi != oldStart || thoiGianKetThucMoi != oldEnd;
+
+                // Nếu ngày có thay đổi thì mới cần kiểm tra chồng chéo
+                if (isDateChanged && !IsTimeValid(maSachMoi, thoiGianBatDauMoi, thoiGianKetThucMoi))
+                {
+                    MessageBox.Show("Thời gian khuyến mãi bị chồng chéo với khuyến mãi hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string queryUpdate = $@"
+        UPDATE KhuyenMai 
+        SET MaSach = '{maSachMoi}', 
+            ThoiGianBatDau = '{formattedStartDate}', 
+            ThoiGianKetThuc = '{formattedEndDate}', 
+            KM = '{txtKM.Text}' 
+        WHERE MaSach = '{maSachCu}'";
+
+                int result = dtBase.DataChange(queryUpdate);
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Cập nhật khuyến mãi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không có bản ghi nào được cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else // Trường hợp thêm mới
+            {
+                // Kiểm tra thời gian chồng chéo
+                if (!IsTimeValid(maSachMoi, thoiGianBatDauMoi, thoiGianKetThucMoi))
+                {
+                    MessageBox.Show("Thời gian khuyến mãi bị chồng chéo với khuyến mãi hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string queryInsert = $@"
+            INSERT INTO KhuyenMai (MaSach, ThoiGianBatDau, ThoiGianKetThuc, KM) 
+            VALUES ('{maSachMoi}', '{formattedStartDate}', '{formattedEndDate}', '{txtKM.Text}')";
+
+                int result = dtBase.DataChange(queryInsert);
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Thêm khuyến mãi mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm khuyến mãi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            DisplayDiscount();
+            SetControlsState(false);
+        }
+
+
+        private bool IsTimeValid(string maSach, DateTime thoiGianBatDauMoi, DateTime thoiGianKetThucMoi)
+        {
+            string query = $@"
+               SELECT COUNT(*) 
+               FROM KhuyenMai 
+               WHERE MaSach = '{maSach}' 
+                 AND (
+                     (ThoiGianBatDau <= '{thoiGianKetThucMoi:yyyy-MM-dd}' AND ThoiGianKetThuc >= '{thoiGianBatDauMoi:yyyy-MM-dd}')
+                 )";
+
+            // Kiểm tra nếu có bản ghi chồng chéo
+            int count = Convert.ToInt32(dtBase.DataReader(query).Rows[0][0]);
+            return count == 0; // Nếu không có chồng chéo, trả về true
+        }
     }
 }
