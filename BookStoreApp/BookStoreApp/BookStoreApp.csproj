@@ -184,6 +184,8 @@
     <None Include="Images\MinhQuanlibrary.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\background.jpg" />
+    <None Include="Images\backgr.png" />
     <None Include="bin\Debug\Button\mat.jpg" />
     <None Include="bin\Debug\Button\mat1.jpg" />
     <Content Include="Images\anhsp\1984.jpg" />
