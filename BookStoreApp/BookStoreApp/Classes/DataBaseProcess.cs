@@ -7,7 +7,7 @@ namespace BookStoreApp.Classes
 {
     public class DataBaseProcess
     {
-        public static string strConnect = "Data Source=DESKTOP-FTUKUSM;Initial Catalog=BookStoreApp;Integrated Security=True";
+        public static string strConnect = "Data Source=DESKTOP-FTUKUSM;Initial Catalog=;Integrated Security=True";
 
         SqlConnection sqlConnect = null;
 
