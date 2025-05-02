@@ -311,12 +311,9 @@ namespace BookStoreApp.Sign
 
         private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+                e.Handled = true;
         }
 
-        private void btnHuy_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
