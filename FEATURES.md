@@ -21,6 +21,8 @@
 - Báo cáo sách bán chạy, khách hàng mua nhiều, hiển thị dưới dạng biểu đồ cột, biểu đồ tròn.
 - Báo cáo linh hoạt theo ngày, tháng, năm.
 
+(Hoàn thiện: 02/05/2025)
+ 
 ## 5. Trải nghiệm người dùng
 - Giao diện thân thiện, dễ sử dụng với WinForms (C#).
 - Hiển thị các sản phẩm nổi bật theo nhiều tiêu chí: Sách mới, Sắp phát hành, Sách miễn phí, Bán chạy,...
