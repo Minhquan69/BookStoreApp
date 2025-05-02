@@ -1543,12 +1543,12 @@ namespace BookStoreApp
                 }
 
                 string queryUpdate = $@"
-        UPDATE KhuyenMai 
-        SET MaSach = '{maSachMoi}', 
-            ThoiGianBatDau = '{formattedStartDate}', 
-            ThoiGianKetThuc = '{formattedEndDate}', 
-            KM = '{txtKM.Text}' 
-        WHERE MaSach = '{maSachCu}'";
+                    UPDATE KhuyenMai 
+                    SET MaSach = '{maSachMoi}', 
+                        ThoiGianBatDau = '{formattedStartDate}', 
+                        ThoiGianKetThuc = '{formattedEndDate}', 
+                        KM = '{txtKM.Text}' 
+                    WHERE MaSach = '{maSachCu}'";
 
                 int result = dtBase.DataChange(queryUpdate);
 
@@ -1571,8 +1571,8 @@ namespace BookStoreApp
                 }
 
                 string queryInsert = $@"
-            INSERT INTO KhuyenMai (MaSach, ThoiGianBatDau, ThoiGianKetThuc, KM) 
-            VALUES ('{maSachMoi}', '{formattedStartDate}', '{formattedEndDate}', '{txtKM.Text}')";
+                    INSERT INTO KhuyenMai (MaSach, ThoiGianBatDau, ThoiGianKetThuc, KM) 
+                    VALUES ('{maSachMoi}', '{formattedStartDate}', '{formattedEndDate}', '{txtKM.Text}')";
 
                 int result = dtBase.DataChange(queryInsert);
 
@@ -1590,7 +1590,6 @@ namespace BookStoreApp
             SetControlsState(false);
         }
 
-
         private bool IsTimeValid(string maSach, DateTime thoiGianBatDauMoi, DateTime thoiGianKetThucMoi)
         {
             string query = $@"
@@ -1605,5 +1604,567 @@ namespace BookStoreApp
             int count = Convert.ToInt32(dtBase.DataReader(query).Rows[0][0]);
             return count == 0; // Nếu không có chồng chéo, trả về true
         }
+
+        private void BtnSearchStatClick(object sender, EventArgs e)
+        {
+            DateTime batdau = tuNgay.Value;
+            DateTime ketthuc = denNgay.Value;
+
+            string ngaydau = batdau.ToString("yyyy-MM-dd");
+            string ngaycuoi = ketthuc.ToString("yyyy-MM-dd");
+
+            clearTblThongKe();
+
+            string query = $"";
+            bool checkTime = checkBoxTime.Checked;
+            if (checkTime)
+            {
+                if (batdau > ketthuc)
+                {
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu nhỏ hơn !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (comboStat.SelectedIndex == 0) //            Các sách có danh thu tốt nhất
+            {
+                if (!checkTime) // check time
+                {
+                    query = $"select Sach.MaSach, TenSach, isnull(sum(ChiTietHDB.SoLuong * Sach.DonGia - ChiTietHDB.KhuyenMai), 0) DoanhThu\r\nfrom Sach left join ChiTietHDB on Sach.MaSach = ChiTietHDB.MaSach\r\njoin HoaDonBan on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\n" +
+                        $"where Ngayban between '{ngaydau}' and '{ngaycuoi}'\r\ngroup by Sach.MaSach, TenSach\r\norder by sum(ChiTietHDB.SoLuong * Sach.DonGia) desc";
+                }
+                else
+                {
+                    query = "select Sach.MaSach, TenSach, isnull(sum(ChiTietHDB.SoLuong * Sach.DonGia - ChiTietHDB.KhuyenMai), 0) DoanhThu\r\nfrom Sach left join ChiTietHDB on Sach.MaSach = ChiTietHDB.MaSach\r\ngroup by Sach.MaSach, TenSach\r\norder by sum(ChiTietHDB.SoLuong * Sach.DonGia) desc";
+                }
+
+            }
+            else if (comboStat.SelectedIndex == 1)//Các sách có nhiều lượt mua nhất
+            {
+                if (!checkTime)
+                {
+                    query = $"select Sach.MaSach, TenSach, isnull(sum(ChiTietHDB.SoLuong), 0) as LuotMua\r\nfrom Sach left join ChiTietHDB on Sach.MaSach = ChiTietHDB.MaSach\r\njoin HoaDonBan on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\n" +
+                        $"where Ngayban between '{ngaydau}' and '{ngaycuoi}'\r\ngroup by Sach.MaSach, TenSach\r\norder by count(ChiTietHDB.SoLuong) desc";
+                }
+                else
+                {
+                    query = "select Sach.MaSach, TenSach, count(ChiTietHDB.SoLuong) LuotMua\r\nfrom Sach left join ChiTietHDB on Sach.MaSach = ChiTietHDB.MaSach\r\ngroup by Sach.MaSach, TenSach\r\norder by count(ChiTietHDB.SoLuong) desc";
+                }
+            }
+            else if (comboStat.SelectedIndex == 2)//Các khách hàng mua nhiều hàng nhất
+            {
+                if (!checkTime)
+                {
+                    query = $"select KhachHang.MaKH, KhachHang.TenKhachHang, isnull(sum(ChiTietHDB.SoLuong), 0 ) SoLuongDaMua\r\nfrom KhachHang left join HoaDonBan on KhachHang.MaKH = HoaDonBan.MaKH\r\njoin ChiTietHDB on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\n" +
+                        $"where Ngayban between '{ngaydau}' and '{ngaycuoi}'\r\ngroup by KhachHang.MaKH, KhachHang.TenKhachHang\r\norder by count(ChiTietHDB.SoLuong) desc";
+                }
+                else
+                {
+                    query = "select KhachHang.MaKH, KhachHang.TenKhachHang, isnull(sum(ChiTietHDB.SoLuong), 0 ) SoLuongDaMua\r\nfrom KhachHang left join HoaDonBan on KhachHang.MaKH = HoaDonBan.MaKH\r\njoin ChiTietHDB on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\ngroup by KhachHang.MaKH, KhachHang.TenKhachHang\r\norder by count(ChiTietHDB.SoLuong) desc";
+                }
+            }
+            else if (comboStat.SelectedIndex == 3)//Các khách hàng chi nhiều tiền nhất
+            {
+                if (!checkTime)
+                {
+                    query = $"select KhachHang.MaKH, KhachHang.TenKhachHang, \r\n\tisnull(sum(ChiTietHDB.SoLuong*Sach.DonGia - ChiTietHDB.KhuyenMai), 0 ) as TongChiTieu\r\nfrom KhachHang left join HoaDonBan on KhachHang.MaKH = HoaDonBan.MaKH\r\njoin ChiTietHDB on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\njoin Sach on Sach.MaSach = ChiTietHDB.MaSach\r\n" +
+                        $"where HoaDonBan.Ngayban between '{ngaydau}' and '{ngaycuoi}'\r\ngroup by KhachHang.MaKH, KhachHang.TenKhachHang\r\norder by TongChiTieu desc";
+                }
+                else
+                {
+                    query = "select KhachHang.MaKH, KhachHang.TenKhachHang, \r\n\tisnull(sum(ChiTietHDB.SoLuong*Sach.DonGia - ChiTietHDB.KhuyenMai), 0 ) as TongChiTieu\r\nfrom KhachHang left join HoaDonBan on KhachHang.MaKH = HoaDonBan.MaKH\r\njoin ChiTietHDB on HoaDonBan.MaHDB = ChiTietHDB.MaHDB\r\njoin Sach on Sach.MaSach = ChiTietHDB.MaSach\r\ngroup by KhachHang.MaKH, KhachHang.TenKhachHang\r\norder by TongChiTieu desc";
+                }
+            }
+            else if (comboStat.SelectedIndex == 4)//Doanh thu theo từng tháng
+            {
+                if (!checkTime)
+                {
+
+                    query = $"DECLARE @NgayBatDau DATE = '{ngaydau}'; -- Thay đổi giá trị này\r\nDECLARE @NgayKetThuc DATE = '{ngaycuoi}'; -- Thay đổi giá trị này\r\n\r\nWITH ThangNamList AS (\r\n    SELECT \r\n        YEAR(Ngay) AS Nam, \r\n        MONTH(Ngay) AS Thang\r\n    FROM (\r\n        SELECT DATEADD(MONTH, v.number, @NgayBatDau) AS Ngay\r\n        FROM master.dbo.spt_values v\r\n        WHERE v.type = 'P' AND DATEADD(MONTH, v.number, @NgayBatDau) <= @NgayKetThuc\r\n    ) AS GeneratedDates\r\n)\r\nSELECT \r\n    T.Nam, \r\n    T.Thang, \r\n    ISNULL(SUM(ct.SoLuong * s.DonGia - ct.KhuyenMai), 0) AS DoanhThu\r\nFROM \r\n    ThangNamList T\r\nLEFT JOIN \r\n    HoaDonBan HDB \r\n    ON T.Thang = MONTH(HDB.NgayBan) AND T.Nam = YEAR(HDB.NgayBan)\r\nLEFT JOIN \r\n    ChiTietHDB ct \r\n    ON HDB.MaHDB = ct.MaHDB\r\nLEFT JOIN \r\n    Sach s \r\n    ON ct.MaSach = s.MaSach\r\nGROUP BY \r\n    T.Nam, T.Thang\r\nORDER BY \r\n    T.Nam, T.Thang;\r\n";
+                }
+                else
+                {
+                    query = "with ThangList as (\r\n\tselect 1 as Thang union all select 2 union all select 3 union all\r\n\tselect 4  union all select 5 union all select 6 union all\r\n\tselect 7  union all select 8 union all select 9 union all\r\n\tselect 10  union all select 11 union all select 12 )\r\nselect T.Thang, isnull(sum(ct.SoLuong*s.DonGia - ct.KhuyenMai), 0) as DoanhThu\r\nfrom Thanglist T left join HoaDonBan HDB on T.Thang = MONTH(HDB.NgayBan) AND YEAR(HDB.NgayBan) = 2024\r\nleft join ChiTietHDB ct on HDB.MaHDB = ct.MaHDB\r\nleft join Sach s on ct.MaSach = s.MaSach\r\ngroup by T.Thang";
+                }
+
+            }
+            else if (comboStat.SelectedIndex == 5)//Danh thu theo từng ngày
+            {
+                if (!checkTime)
+                {
+
+                    query = $"WITH NgayList AS (  SELECT CONVERT(DATE, '{ngaydau}') AS Ngay    UNION ALL   SELECT DATEADD(DAY, 1, Ngay) FROM NgayList    WHERE Ngay < '{ngaycuoi}') SELECT  N.Ngay, ISNULL(SUM(ct.SoLuong * s.DonGia - ct.KhuyenMai), 0) AS DoanhThu FROM NgayList N LEFT JOIN HoaDonBan HDB ON N.Ngay = CAST(HDB.NgayBan AS DATE) LEFT JOIN ChiTietHDB ct ON HDB.MaHDB = ct.MaHDB LEFT JOIN Sach s ON ct.MaSach = s.MaSach GROUP BY N.Ngay OPTION (MAXRECURSION 0)";
+                }
+                else
+                {
+                    query = "WITH NgayList AS (\r\n    SELECT CONVERT(DATE, '2024-09-15') AS Ngay\r\n    UNION ALL\r\n    SELECT DATEADD(DAY, 1, Ngay)\r\n    FROM NgayList\r\n    WHERE Ngay < '2024-11-30'\r\n)\r\nSELECT  N.Ngay, ISNULL(SUM(ct.SoLuong * s.DonGia - ct.KhuyenMai), 0) AS DoanhThu\r\nFROM NgayList N\r\nLEFT JOIN HoaDonBan HDB ON N.Ngay = CAST(HDB.NgayBan AS DATE)\r\nLEFT JOIN ChiTietHDB ct ON HDB.MaHDB = ct.MaHDB\r\nLEFT JOIN Sach s ON ct.MaSach = s.MaSach\r\nGROUP BY N.Ngay\r\nOPTION (MAXRECURSION 0)";
+
+                }
+            }
+            else if (comboStat.SelectedIndex == 6)//Danh thu theo từng năm
+            {
+                if (!checkTime)
+                {
+                    string nam1 = batdau.ToString("yyyy");
+                    string nam2 = ketthuc.ToString("yyyy");
+                    query = $"DECLARE @NamBatDau INT = {nam1}; -- Thay đổi năm bắt đầu\r\nDECLARE @NamKetThuc INT = {nam2}; -- Thay đổi năm kết thúc\r\n\r\nWITH DanhSachNam AS (\r\n    SELECT @NamBatDau AS Nam\r\n    UNION ALL\r\n    SELECT Nam + 1\r\n    FROM DanhSachNam\r\n    WHERE Nam < @NamKetThuc\r\n)\r\nSELECT \r\n    ds.Nam, \r\n    ISNULL(SUM(ct.SoLuong * s.DonGia - ct.KhuyenMai), 0) AS DoanhThu\r\nFROM \r\n    DanhSachNam ds\r\nLEFT JOIN \r\n    HoaDonBan HDB \r\n    ON ds.Nam = YEAR(HDB.NgayBan)\r\nLEFT JOIN \r\n    ChiTietHDB ct \r\n    ON HDB.MaHDB = ct.MaHDB\r\nLEFT JOIN \r\n    Sach s \r\n    ON ct.MaSach = s.MaSach\r\nGROUP BY \r\n    ds.Nam\r\nORDER BY \r\n    ds.Nam;\r\n";
+                }
+                else
+                {
+                    query = "SELECT \r\n    YEAR(HDB.NgayBan) AS Nam, \r\n    ISNULL(SUM(ct.SoLuong * s.DonGia - ct.KhuyenMai), 0) AS DoanhThu\r\nFROM \r\n    HoaDonBan HDB\r\nLEFT JOIN \r\n    ChiTietHDB ct \r\n    ON HDB.MaHDB = ct.MaHDB\r\nLEFT JOIN \r\n    Sach s \r\n    ON ct.MaSach = s.MaSach\r\nGROUP BY \r\n    YEAR(HDB.NgayBan)\r\nORDER BY \r\n    Nam;\r\n";
+                }
+            }
+            else if (comboStat.Text != "")
+            {
+                MessageBox.Show("Vui lòng chọn đúng điều kiện để thống kê !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (comboStat.Text == "")
+            {
+                MessageBox.Show("Vui lòng không để trống tiêu chí thống kê !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DataTable dt = dtBase.DataReader(query);
+            tblThongKe.DataSource = dt;
+            return;
+        }
+
+        private void clearTblThongKe()
+        {
+            tblThongKe.DataSource = null;
+            tblThongKe.Rows.Clear();
+            tblThongKe.Columns.Clear();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (tblThongKe.Rows.Count > 0)
+            {
+                Excel.Application excelApp = new Excel.Application();
+                Excel.Workbook workbook = excelApp.Workbooks.Add();
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
+
+                // Thiết lập phần đầu (Thông tin trường đại học và đề tài)
+                worksheet.Cells[1, 1] = "Của hàng bán Sách - Minh Quân";
+                worksheet.Cells[2, 1] = "Chi nhánh: Hà Nội";
+                worksheet.Cells[3, 1] = "";  // Dòng trống
+                if (comboStat.SelectedIndex == 0)
+                    worksheet.Cells[4, 1] = "Thông kê sách có danh thu tốt nhất";
+                if (comboStat.SelectedIndex == 1)
+                    worksheet.Cells[4, 1] = "Thông kê sách có nhiều lượt mua nhất";
+                if (comboStat.SelectedIndex == 2)
+                    worksheet.Cells[4, 1] = "Thông kê sách có nhiều lượt mua nhất";
+                if (comboStat.SelectedIndex == 3)
+                    worksheet.Cells[4, 1] = "Thông kê khách hàng chi nhiều tiền nhất";
+                if (comboStat.SelectedIndex == 4)
+                    worksheet.Cells[4, 1] = "Thông kê Doanh thu theo từng tháng";
+                if (comboStat.SelectedIndex == 5)
+                    worksheet.Cells[4, 1] = "Thông kê Doanh thu theo từng ngày";
+                if (comboStat.SelectedIndex == 6)
+                    worksheet.Cells[4, 1] = "Thông kê Doanh thu theo từng năm";
+
+                // Định dạng cho phần đầu
+                worksheet.Range["A1"].Font.Bold = true;
+                worksheet.Range["A1"].Font.Size = 14;
+                worksheet.Range["A1"].Font.Color = Excel.XlRgbColor.rgbBlue;
+
+                worksheet.Range["A2"].Font.Bold = true;
+                worksheet.Range["A2"].Font.Size = 12;
+
+                worksheet.Range["A4"].Font.Bold = true;
+                worksheet.Range["A4"].Font.Size = 12;
+                worksheet.Range["A4"].Font.Color = Excel.XlRgbColor.rgbRed;
+
+                // Dòng trống trước khi thêm bảng dữ liệu
+                worksheet.Cells[5, 1] = "";  // Dòng trống
+
+                // Thêm tiêu đề cột từ DataGridView vào Excel
+                for (int col = 0; col < tblThongKe.Columns.Count; col++)
+                {
+                    worksheet.Cells[6, col + 1] = tblThongKe.Columns[col].HeaderText;
+                }
+
+                // Định dạng tiêu đề bảng
+                worksheet.Range["A6:" + (char)(64 + tblThongKe.Columns.Count) + "6"].Font.Bold = true;
+                worksheet.Range["A6:" + (char)(64 + tblThongKe.Columns.Count) + "6"].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                worksheet.Range["A6:" + (char)(64 + tblThongKe.Columns.Count) + "6"].Interior.Color = Excel.XlRgbColor.rgbGray;
+
+                // Xuất dữ liệu từng dòng từ DataGridView vào Excel
+                for (int row = 0; row < tblThongKe.Rows.Count; row++)
+                {
+                    for (int col = 0; col < tblThongKe.Columns.Count; col++)
+                    {
+                        var cellValue = tblThongKe.Rows[row].Cells[col].Value;
+                        worksheet.Cells[row + 7, col + 1] = (cellValue != null) ? cellValue.ToString() : ""; // Kiểm tra và thay thế ô trống bằng ""
+                    }
+                }
+
+                // Lưu file Excel
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                saveFileDialog.FileName = "ExportedData.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    MessageBox.Show("Dữ liệu đã được xuất ra Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Đóng workbook và ứng dụng Excel
+                workbook.Close(false);
+                excelApp.Quit();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu bạn cần !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void btnTaoBaoCao_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "" || txtTop.Text == "" || LoaiBieuDoCB.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đủ điều kiện để tạo bảng !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string top = txtTop.Text;
+            DateTime tu = TuNgayPicker.Value;
+            DateTime den = denNgayPicker.Value;
+            if (tu >= den)
+            {
+                MessageBox.Show("Date Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //dinh dang lai bang
+            tblBaoCao.DataSource = null;
+            tblBaoCao.Rows.Clear();
+
+            if (comboBox1.SelectedIndex == 0)
+            {
+                chart2.Visible = false;
+                //bao cao theo san pham               
+                tblBaoCao.Columns.Clear();
+                string tuNgay = tu.ToString("yyyy-MM-dd");
+                string denNgay = den.ToString("yyyy-MM-dd");
+
+                string query = $"SELECT TOP {top} \r\n    Sach.TenSach,\r\n" +
+                   $"    SUM(ChiTietHDB.SoLuong) AS TongSoLuongBan,\r\n " +
+                   $"   SUM((ChiTietHDB.SoLuong * Sach.DonGia)- ChiTietHDB.KhuyenMai) AS TongDoanhThu\r\n" +
+                   $"FROM ChiTietHDB\r\nINNER JOIN HoaDonBan ON HoaDonBan.MaHDB = ChiTietHDB.MaHDB \r\n" +
+                   $" JOIN Sach ON Sach.MaSach = ChiTietHDB.MaSach\r\n" +
+                   $"WHERE HoaDonBan.Ngayban >= '{tuNgay}'\r\n  AND HoaDonBan.Ngayban < '{denNgay}'" +
+                   $"\r\nGROUP BY Sach.TenSach\r\nORDER BY TongSoLuongBan DESC;\r\n";
+
+                DataTable tblsach = dtBase.DataReader(query);
+                tblBaoCao.DataSource = tblsach;
+                if (tblsach.Rows.Count == 0)
+                {
+                    chart1.Titles.Clear();
+                    chart1.Titles.Add("Không có dữ liệu để hiển thị !");
+                    chart1.Series.Clear();
+                    return;
+                }
+
+                if (LoaiBieuDoCB.SelectedIndex == 0)
+                {
+                    chart1.Series.Clear(); // Xóa các series cũ
+
+                    // Tạo danh sách lưu trữ tên sản phẩm và tổng số lượng bán
+                    List<string> productNames = new List<string>();
+                    List<double> totalSales = new List<double>();
+
+                    double maxValue = 0;
+
+                    // Duyệt qua dữ liệu và thêm vào danh sách
+                    foreach (DataRow row in tblsach.Rows)
+                    {
+                        string tenSach = row["TenSach"].ToString();
+                        double tongSoLuongBan = Convert.ToDouble(row["TongSoLuongBan"]);
+
+                        productNames.Add(tenSach); // Lưu tên sản phẩm
+                        totalSales.Add(tongSoLuongBan); // Lưu số lượng bán
+
+                        if (tongSoLuongBan > maxValue)
+                            maxValue = tongSoLuongBan; // Tìm giá trị lớn nhất
+                    }
+
+                    // Tạo series cho biểu đồ cột
+                    var seriesSanPham = new System.Windows.Forms.DataVisualization.Charting.Series
+                    {
+                        Name = "Sản Phẩm Bán Chạy",
+                        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column,
+                        XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String,
+                        YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double
+                    };
+
+                    // Thêm dữ liệu từ danh sách vào series
+                    for (int i = 0; i < productNames.Count; i++)
+                    {
+                        seriesSanPham.Points.AddXY(productNames[i], totalSales[i]);
+                    }
+
+                    chart1.Series.Add(seriesSanPham);
+
+                    chart1.Titles.Clear();
+                    chart1.Titles.Add("Top Sản Phẩm Bán Chạy Nhất");
+                    chart1.Width = 400;
+                    chart1.Height = 250;
+                }
+                if (LoaiBieuDoCB.SelectedIndex == 1)//bieu do tron 
+                {
+                    chart1.Series.Clear();
+
+                    // Tạo một series mới cho biểu đồ tròn
+                    var seriesSanPham = new System.Windows.Forms.DataVisualization.Charting.Series
+                    {
+                        Name = "Sản Phẩm Bán Chạy",
+                        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie, // Đặt loại biểu đồ là tròn (Pie chart)
+                        XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String, // Trục X có giá trị chuỗi
+                        YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double  // Trục Y có giá trị số thực
+                    };
+
+                    // Thêm dữ liệu vào biểu đồ từ bảng tblsach (bảng sản phẩm)
+                    foreach (DataRow row in tblsach.Rows)
+                    {
+                        string tenSach = row["TenSach"].ToString();
+                        double tongSoLuongBan = Convert.ToDouble(row["TongSoLuongBan"]);
+
+                        seriesSanPham.Points.AddXY(tenSach, tongSoLuongBan);
+                    }
+
+                    // Thêm series vào biểu đồ
+                    chart1.Series.Add(seriesSanPham);
+
+                    // Cấu hình tiêu đề và các thuộc tính khác của biểu đồ
+                    chart1.Titles.Clear();
+                    chart1.Titles.Add("Top Sản Phẩm Bán Chạy Nhất");
+                    chart1.Width = 400;
+                    chart1.Height = 250;
+
+                }
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                //bao cao theo khach hang
+
+                string query = $"SELECT TOP {top} \r\n    KhachHang.MaKH,\r\n    KhachHang.TenKhachHang,\r\n " +
+                   $"   SUM(HoaDonBan.TongTien) AS TongChiTieu\r\n" +
+                   $"FROM \r\n    KhachHang\r\nINNER JOIN \r\n    HoaDonBan ON KhachHang.MaKH = HoaDonBan.MaKH\r\n\t" +
+                   $"WHERE HoaDonBan.Ngayban BETWEEN '{tu}' AND '{den}'\r\n" +
+                   $"GROUP BY \r\n    KhachHang.MaKH, KhachHang.TenKhachHang\r\n" +
+                   $"ORDER BY \r\n    TongChiTieu DESC;";
+                DataTable tblKH = dtBase.DataReader(query);
+                tblBaoCao.DataSource = tblKH;
+                chart2.Visible = true;
+                if (tblKH.Rows.Count == 0)
+                {
+                    chart2.Titles.Clear();
+                    chart2.Titles.Add("Không có dữ liệu để hiển thị !");
+                    chart2.Series.Clear();
+                    return;
+                }
+                chart2.Series.Clear();
+                List<string> customerNames = new List<string>();
+                List<double> totalSpending = new List<double>();
+
+                foreach (DataRow row in tblKH.Rows)
+                {
+                    string tenKH = row["TenKhachHang"].ToString();
+                    double tongChiTieu = Convert.ToDouble(row["TongChiTieu"]);
+
+                    customerNames.Add(tenKH);
+                    totalSpending.Add(tongChiTieu);
+                }
+                if (LoaiBieuDoCB.SelectedIndex == 0)
+                {
+                    double maxValue = 0;
+                    var series = new System.Windows.Forms.DataVisualization.Charting.Series
+                    {
+                        Name = "Tổng chi tiêu",
+                        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column, // Loại biểu đồ
+                        XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String, // Trục X có giá trị là chuỗi
+                        YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double  // Trục Y có giá trị là số thực
+                    };
+
+                    for (int i = 0; i < customerNames.Count; i++)
+                    {
+                        series.Points.AddXY(customerNames[i], totalSpending[i]);  // Thêm tên khách hàng và tổng chi tiêu vào biểu đồ
+                        if (totalSpending[i] > maxValue)
+                            maxValue = totalSpending[i];
+                    }
+
+                    chart2.Series.Add(series);
+                    AdjustYAxis(chart1.ChartAreas[0], maxValue);
+                    chart2.ChartAreas[0].AxisX.Title = "Khách Hàng";
+                    chart2.ChartAreas[0].AxisY.Title = "Tổng Chi Tiêu (VND)";
+                    chart2.Titles.Clear();
+                    chart2.Titles.Add("Top Khách Hàng Theo Tổng Chi Tiêu");
+
+                    chart2.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                    chart2.ChartAreas[0].AxisX.LabelStyle.Angle = 45;
+
+                    series["PointWidth"] = "0.8";
+                    chart2.Width = 400;
+                    chart2.Height = 250;
+                }
+                if (LoaiBieuDoCB.SelectedIndex == 1)
+                {
+                    chart2.Series.Clear();
+
+                    var seriesKhachHang = new System.Windows.Forms.DataVisualization.Charting.Series
+                    {
+                        Name = "Khách Hàng",
+                        ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie,
+                        XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String,
+                        YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double
+                    };
+
+                    foreach (DataRow row in tblKH.Rows)
+                    {
+                        string tenKhachHang = row["TenKhachHang"].ToString();
+                        double tongChiTieu = Convert.ToDouble(row["TongChiTieu"]);
+
+                        seriesKhachHang.Points.AddXY(tenKhachHang, tongChiTieu);
+                    }
+
+                    chart2.Series.Add(seriesKhachHang);
+                    chart2.Titles.Clear();
+                    chart2.Titles.Add("Top Khách Hàng Theo Tổng Chi Tiêu");
+                    foreach (var point in seriesKhachHang.Points)
+                    {
+                        point.Label = ""; // Xóa nhãn (tên hoặc tỷ lệ phần trăm) trên từng phần tử
+                    }
+                    chart2.Width = 400;
+                    chart2.Height = 250;
+                }
+            }
+        }
+
+        private void AdjustYAxis(System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, double maxValue)
+        {
+            if (maxValue <= 10)
+                chartArea.AxisY.Interval = 1; // Nếu giá trị nhỏ, chia từng đơn vị
+            else if (maxValue <= 100)
+                chartArea.AxisY.Interval = 10; // Nếu giá trị vừa, chia mỗi 10
+            else if (maxValue <= 1000)
+                chartArea.AxisY.Interval = 100; // Nếu giá trị lớn hơn
+            else if (maxValue <= 10000)
+                chartArea.AxisY.Interval = 1000; // Với giá trị cực lớn
+            else if (maxValue <= 900000)
+                chartArea.AxisX.Interval = 10000;
+            else
+                chartArea.AxisY.Interval = Math.Ceiling(maxValue / 10); // Chia thành 10 phần
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            string defaultFolder = @"C:";
+
+            if (chart2.Visible == false)
+            {
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "PNG Image|*.png",
+                    Title = "Lưu biểu đồ dưới dạng hình ảnh",
+                    FileName = "BieuDo.png",
+                    InitialDirectory = defaultFolder
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    // Đảm bảo file có phần mở rộng .png
+                    if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        filePath += ".png";
+                    }
+
+                    // Đặt kích thước ảnh đầu ra (bạn có thể thay đổi giá trị này cho phù hợp)
+                    int outputWidth = 1200; // Chiều rộng ảnh đầu ra
+                    int outputHeight = 800; // Chiều cao ảnh đầu ra
+
+                    // Tạo Bitmap với kích thước gốc của biểu đồ
+                    Bitmap bitmap = new Bitmap(chart1.Width, chart1.Height);
+                    chart1.DrawToBitmap(bitmap, new Rectangle(0, 0, chart1.Width, chart1.Height));
+
+                    // Tính tỷ lệ để giữ nguyên tỷ lệ gốc
+                    float ratioX = (float)outputWidth / chart1.Width;
+                    float ratioY = (float)outputHeight / chart1.Height;
+                    float ratio = Math.Min(ratioX, ratioY); // Chọn tỷ lệ nhỏ hơn để giữ tỷ lệ của biểu đồ
+
+                    // Tạo ảnh Bitmap mới với tỷ lệ đúng
+                    int newWidth = (int)(chart1.Width * ratio);
+                    int newHeight = (int)(chart1.Height * ratio);
+                    Bitmap resizedBitmap = new Bitmap(bitmap, new Size(newWidth, newHeight));
+
+                    // Lưu ảnh đã thay đổi kích thước
+                    resizedBitmap.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                    // Giải phóng bộ nhớ
+                    bitmap.Dispose();
+                    resizedBitmap.Dispose();
+
+                    MessageBox.Show("Biểu đồ đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+            else
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "PNG Image|*.png",
+                    Title = "Lưu biểu đồ dưới dạng hình ảnh",
+                    FileName = "BieuDo.png",
+                    InitialDirectory = defaultFolder
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    // Đảm bảo file có phần mở rộng .png
+                    if (!filePath.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        filePath += ".png";
+                    }
+
+                    // Đặt kích thước ảnh đầu ra (bạn có thể thay đổi giá trị này cho phù hợp)
+                    int outputWidth = 1200; // Chiều rộng ảnh đầu ra
+                    int outputHeight = 800; // Chiều cao ảnh đầu ra
+
+                    // Tạo Bitmap với kích thước gốc của biểu đồ
+                    Bitmap bitmap = new Bitmap(chart2.Width, chart2.Height);
+                    chart2.DrawToBitmap(bitmap, new Rectangle(0, 0, chart2.Width, chart2.Height));
+
+                    // Tính tỷ lệ để giữ nguyên tỷ lệ gốc
+                    float ratioX = (float)outputWidth / chart2.Width;
+                    float ratioY = (float)outputHeight / chart2.Height;
+                    float ratio = Math.Min(ratioX, ratioY); // Chọn tỷ lệ nhỏ hơn để giữ tỷ lệ của biểu đồ
+
+                    // Tạo ảnh Bitmap mới với tỷ lệ đúng
+                    int newWidth = (int)(chart2.Width * ratio);
+                    int newHeight = (int)(chart2.Height * ratio);
+                    Bitmap resizedBitmap = new Bitmap(bitmap, new Size(newWidth, newHeight));
+
+                    // Lưu ảnh đã thay đổi kích thước
+                    resizedBitmap.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                    // Giải phóng bộ nhớ
+                    bitmap.Dispose();
+                    resizedBitmap.Dispose();
+
+                    MessageBox.Show("Biểu đồ đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        
     }
 }
