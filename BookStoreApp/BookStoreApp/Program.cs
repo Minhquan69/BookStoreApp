@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStoreApp.Classes.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,10 @@ namespace BookStoreApp
     {
         /// <summary>
         /// The main entry point for the application.
-        /// </summary>
+        /// </summary
+        /// 
+        public static UserInfo currentUser = new UserInfo();
+        public static DanhSachSanPham danhSachSP = new DanhSachSanPham();
         [STAThread]
         static void Main()
         {

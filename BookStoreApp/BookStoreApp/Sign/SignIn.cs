@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStoreApp.ViewNguoiMua;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -86,9 +87,9 @@ namespace BookStoreApp.Sign
                     userName = makh; // Gán giá trị vào userName
                 }
 
-                //HomeView home = new HomeView(Program.currentUser.TenUser);
+                HomeView home = new HomeView(Program.currentUser.TenUser);
                 this.Hide();
-                //home.ShowDialog();
+                home.ShowDialog();
             }
             else
             {
@@ -131,8 +132,8 @@ namespace BookStoreApp.Sign
             if (dt.Rows.Count > 0)
             {
                 check = true;
-                //Program.currentUser.TenUser = dt.Rows[0]["TenKhachHang"].ToString();
-                //Program.currentUser.MaUser = dt.Rows[0]["MaKH"].ToString();
+                Program.currentUser.TenUser = dt.Rows[0]["TenKhachHang"].ToString();
+                Program.currentUser.MaUser = dt.Rows[0]["MaKH"].ToString();
             }
             return check;
         }

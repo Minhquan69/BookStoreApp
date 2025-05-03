@@ -129,6 +129,18 @@
     <Compile Include="Sign\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewNguoiMua\ChiTietSanPhamView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\ChiTietSanPhamView.Designer.cs">
+      <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HomeFrm.resx">
       <DependentUpon>HomeFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sign\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\ChiTietSanPhamView.resx">
+      <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -184,6 +202,8 @@
     <None Include="Images\MinhQuanlibrary.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\logo2.png" />
+    <None Include="Images\logo.png" />
     <None Include="Resources\background.jpg" />
     <None Include="Images\backgr.png" />
     <None Include="bin\Debug\Button\mat.jpg" />
@@ -254,5 +274,6 @@
     <Content Include="Images\anhsp\ve_que.jpg" />
     <Content Include="Images\anhsp\vo-chong-a-phu.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
