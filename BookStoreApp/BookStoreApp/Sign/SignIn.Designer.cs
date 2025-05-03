@@ -99,7 +99,6 @@ namespace BookStoreApp.Sign
             this.txtPassword.Size = new System.Drawing.Size(283, 36);
             this.txtPassword.TabIndex = 3;
             // btnSignIn
-            this.btnSignIn = new Guna.UI2.WinForms.Guna2Button();
             this.btnSignIn.AutoRoundedCorners = true;
             this.btnSignIn.BorderRadius = 21; // Chiều cao = 43 => BorderRadius = 21
             this.btnSignIn.FillColor = System.Drawing.Color.FromArgb(0, 122, 204);
@@ -127,7 +126,6 @@ namespace BookStoreApp.Sign
             // 
             // button1
             // 
-            this.button1 = new Guna.UI2.WinForms.Guna2Button();
             this.button1.AutoRoundedCorners = true;
             this.button1.BorderRadius = 21; // Chiều cao = 43 => BorderRadius = 21
             this.button1.FillColor = System.Drawing.Color.FromArgb(0, 122, 204);
