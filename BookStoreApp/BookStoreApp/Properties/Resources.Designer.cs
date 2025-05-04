@@ -103,6 +103,16 @@ namespace BookStoreApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chup_anh_the_tha_toc_3007 {
+            get {
+                object obj = ResourceManager.GetObject("chup-anh-the-tha-toc-3007", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dx {
             get {
                 object obj = ResourceManager.GetObject("dx", resourceCulture);
@@ -246,6 +256,16 @@ namespace BookStoreApp.Properties {
         internal static System.Drawing.Bitmap MinhQuanlibrary {
             get {
                 object obj = ResourceManager.GetObject("MinhQuanlibrary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MQ {
+            get {
+                object obj = ResourceManager.GetObject("MQ", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

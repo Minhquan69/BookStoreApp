@@ -202,6 +202,7 @@
     <None Include="Images\MinhQuanlibrary.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\chup-anh-the-tha-toc-3007.jpg" />
     <None Include="Images\dx2.png" />
     <None Include="Images\pngtree-universal-user-account-role-account-my-icon-icon-png-image_6679911-removebg-preview.png" />
     <None Include="Images\dx1-removebg-preview.png" />
@@ -219,6 +220,7 @@
     <None Include="bin\Debug\Button\mat.jpg" />
     <None Include="bin\Debug\Button\mat1.jpg" />
     <None Include="bin\Debug\AnhKhachHang\avatar.png" />
+    <None Include="bin\Debug\AnhKhachHang\MQ.jpg" />
     <Content Include="Images\anhsp\1984.jpg" />
     <Content Include="Images\anhsp\2020_11_17_15_30_41_1-390x510.jpg" />
     <Content Include="Images\anhsp\anna.jpg" />

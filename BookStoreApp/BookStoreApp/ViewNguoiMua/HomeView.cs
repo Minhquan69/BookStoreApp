@@ -253,90 +253,101 @@ namespace BookStoreApp.ViewNguoiMua
         }
 
         public void AddProductPanel(TableLayoutPanel tableSanPhams, string tenfileanh, string label1Text,
-     string label2Text, string masp, bool dangGiamGia, decimal giaGoc)
+                    string label2Text, string masp, bool dangGiamGia, decimal giaGoc)
         {
             TableLayoutPanel innerTable = new TableLayoutPanel
             {
                 ColumnCount = 2,
                 RowCount = 3,
-                Size = new Size(161, 231)
+                Size = new Size(170, 240),
+                BackColor = Color.AliceBlue,
+                Margin = new Padding(10),
             };
 
             innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
             innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40));
 
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 161));
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 150));
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
 
+            // Ảnh sản phẩm
             PictureBox pictureBox = new PictureBox
             {
                 Dock = DockStyle.Fill,
                 BackColor = Color.LightGray,
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Margin = new Padding(0),
+                Padding = new Padding(0)
             };
 
-            string imagePath = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + tenfileanh;
-
+            string imagePath = Application.StartupPath + "\\AnhSP\\" + tenfileanh;
             try
             {
                 pictureBox.Image = Image.FromFile(imagePath);
             }
-            catch (Exception ex)
-            {
-                //   MessageBox.Show($"Lỗi tải ảnh: {ex.Message}\nĐường dẫn: {imagePath}");
-            }
+            catch { /* Không làm gì nếu lỗi ảnh */ }
+
             innerTable.Controls.Add(pictureBox, 0, 0);
             innerTable.SetColumnSpan(pictureBox, 2);
 
-
+            // Tên sản phẩm
             Label label1 = new Label
             {
                 Text = label1Text,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
-                BackColor = Color.LightYellow
+                BackColor = Color.Transparent,
+                Font = new Font("Segoe UI", 9.75F, FontStyle.Bold),
+                ForeColor = Color.Black,
+                Padding = new Padding(3)
             };
             innerTable.Controls.Add(label1, 0, 1);
             innerTable.SetColumnSpan(label1, 2);
 
-
-
+            // Giá sản phẩm
             Label label2 = new Label
             {
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
-                BackColor = Color.LightYellow
+                Font = new Font("Segoe UI", 9F, FontStyle.Regular),
+                ForeColor = Color.DarkGreen,
+                BackColor = Color.Transparent
             };
 
             if (dangGiamGia)
             {
-                label2.Text = $"{decimal.Parse(label2Text):F2} VND\n VND)";
-
+                label2.Text = $"{decimal.Parse(label2Text):N0} VND\n(Giảm giá)";
+                label2.ForeColor = Color.OrangeRed;
             }
             else
             {
-                label2.Text = $"{giaGoc:F2} VND";
+                label2.Text = $"{giaGoc:N0} VND";
             }
 
             innerTable.Controls.Add(label2, 0, 2);
 
+            // Nút "Mua ngay"
             Label buyNowLabel = new Label
             {
                 Text = "Mua ngay",
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
-                ForeColor = Color.Red,
-                BackColor = Color.LightYellow
+                ForeColor = Color.White,
+                BackColor = Color.RoyalBlue,
+                Cursor = Cursors.Hand,
+                Font = new Font("Segoe UI", 9F, FontStyle.Bold)
             };
+
+            buyNowLabel.MouseEnter += (s, e) => buyNowLabel.BackColor = Color.DodgerBlue;
+            buyNowLabel.MouseLeave += (s, e) => buyNowLabel.BackColor = Color.RoyalBlue;
             buyNowLabel.Click += (sender, e) => BuyNowLabel_Click(sender, e, label1Text, label2Text, tenfileanh, masp);
 
             innerTable.Controls.Add(buyNowLabel, 1, 2);
 
-
-
             tableSanPhams.Controls.Add(innerTable);
         }
+
 
         private void BuyNowLabel_Click(object sender, EventArgs e, string label1Text, string label2Text, string anh, string masp)
         {
@@ -442,7 +453,8 @@ namespace BookStoreApp.ViewNguoiMua
                 string gia = dr.Table.Columns.Contains("GiaMoi") ? dr["GiaMoi"].ToString() : dr["DonGia"].ToString();
 
                 string masp = dr["MaSach"].ToString();
-                bool dangGiamGia = dr.Table.Columns.Contains("GiaMoi") && dr["GiaMoi"] != DBNull.Value;
+                bool dangGiamGia = dr.Table.Columns.Contains("DangGiamGia") && Convert.ToInt32(dr["DangGiamGia"]) == 1;
+
                 decimal giaGoc = Convert.ToDecimal(dr["DonGia"]);
 
                 AddProductPanel(table, linksp, tensp, gia, masp, dangGiamGia, giaGoc);
@@ -507,18 +519,36 @@ namespace BookStoreApp.ViewNguoiMua
         private void LoadSachBanChay()
         {
             string querySachBanChay = @"
-                        SELECT top 25
-                         Sach.MaSach, Sach.TenSach, Sach.DonGia, Sach.Anh, 
-                         A.GiaMoi,SUM(ChiTietHDB.SoLuong) AS SoLuongBan 
-                    From (select Sach.MaSach, CASE 
-                             WHEN km.MaSach IS NOT NULL AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc THEN (Sach.DonGia - (Sach.DonGia * km.KM / 100))
-			                    ELSE Sach.DonGia 
-		                    END AS GiaMoi
-		                    from Sach join KhuyenMai km on km.MaSach = Sach.MaSach) A 
-                    join Sach on A.MaSach = Sach.MaSach
-                    JOIN ChiTietHDB ON Sach.MaSach = ChiTietHDB.MaSach
-                    GROUP BY Sach.MaSach, Sach.TenSach, Sach.DonGia, Sach.Anh,A.GiaMoi
-                    ORDER BY SUM(ChiTietHDB.SoLuong) DESC"
+                            SELECT TOP 25
+                                Sach.MaSach,
+                                Sach.TenSach,
+                                Sach.DonGia,
+                                Sach.Anh, 
+                                A.GiaMoi,
+                                A.DangGiamGia,
+                                SUM(ChiTietHDB.SoLuong) AS SoLuongBan
+                            FROM (
+                                SELECT 
+                                    Sach.MaSach,
+                                    CASE 
+                                        WHEN km.MaSach IS NOT NULL 
+                                             AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+                                        THEN (Sach.DonGia - (Sach.DonGia * km.KM / 100))
+                                        ELSE Sach.DonGia 
+                                    END AS GiaMoi,
+                                    CASE 
+                                        WHEN km.MaSach IS NOT NULL 
+                                             AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+                                        THEN 1 
+                                        ELSE 0 
+                                    END AS DangGiamGia
+                                FROM Sach
+                                LEFT JOIN KhuyenMai km ON km.MaSach = Sach.MaSach
+                            ) A
+                            JOIN Sach ON A.MaSach = Sach.MaSach
+                            JOIN ChiTietHDB ON Sach.MaSach = ChiTietHDB.MaSach
+                            GROUP BY Sach.MaSach, Sach.TenSach, Sach.DonGia, Sach.Anh, A.GiaMoi, A.DangGiamGia
+                            ORDER BY SUM(ChiTietHDB.SoLuong) DESC"
                 ;
 
 
@@ -687,7 +717,7 @@ namespace BookStoreApp.ViewNguoiMua
                     queryBuilder.Append($" AND (s.DonGia - (s.DonGia * ISNULL(km.KM, 0) / 100)) <= {giaMax}");
                 if (!string.IsNullOrEmpty(trangThaiGiamGia))
                 {
-                    if (trangThaiGiamGia == "Đang diễn ra giảm giá")
+                    if (trangThaiGiamGia == "Đang giảm giá")
                     {
                         queryBuilder.Append(@" AND km.MaSach IS NOT NULL 
                                      AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc");
@@ -977,7 +1007,7 @@ namespace BookStoreApp.ViewNguoiMua
                     queryBuilder.Append($" AND (s.DonGia - (s.DonGia * km.KM / 100)) <= {giaMax}");
                 if (!string.IsNullOrEmpty(trangThaiGiamGia))
                 {
-                    if (trangThaiGiamGia == "Đang diễn ra giảm giá")
+                    if (trangThaiGiamGia == "Đang giảm giá")
                     {
                         queryBuilder.Append(@" AND km.MaSach IS NOT NULL 
                                      AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc");
@@ -1059,7 +1089,7 @@ where 1=1
                 if (!string.IsNullOrEmpty(trangThaiGiamGia))
                 {
 
-                    if (trangThaiGiamGia == "Đang diễn ra giảm giá")
+                    if (trangThaiGiamGia == "Đang giảm giá")
                         queryBuilder.Append(@"  and GETDATE() BETWEEN A.ThoigianBatDau AND A.ThoiGianKetThuc ");
                     else if (trangThaiGiamGia == "Không giảm giá")
                         queryBuilder.Append(@" and GETDATE() not BETWEEN A.ThoigianBatDau AND A.ThoiGianKetThuc  ");
@@ -1067,9 +1097,9 @@ where 1=1
                 if (!string.IsNullOrEmpty(nhaXuatBan))
                     queryBuilder.Append($" AND NhaXuatBan.TenNXB LIKE N'%{nhaXuatBan}%'");
                 queryBuilder.Append(@"
- GROUP BY Sach.MaSach, Sach.TenSach, Sach.DonGia, Sach.Anh, 
-                         A.GiaMoi
- ORDER BY SUM(ChiTietHDB.SoLuong) DESC");
+                     GROUP BY Sach.MaSach, Sach.TenSach, Sach.DonGia, Sach.Anh, 
+                                             A.GiaMoi
+                     ORDER BY SUM(ChiTietHDB.SoLuong) DESC");
             }
 
             DataTable dt = db.DataReader(queryBuilder.ToString());
@@ -1232,6 +1262,18 @@ where 1=1
             this.Close();
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtTensanpham.Clear();
+            txtTentacgia.Clear();
+            txtGiatu.Clear();
+            txtGiaden.Clear();
+            txtNXB.Clear();
+            cbTheloai.SelectedIndex = -1;
+            cbTrangthaigiamgia.SelectedIndex = -1;
+        }
+
         
+
     }
 }
