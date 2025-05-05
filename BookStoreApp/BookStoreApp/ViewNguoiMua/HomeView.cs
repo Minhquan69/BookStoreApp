@@ -1179,7 +1179,39 @@ where 1=1
 
         private void ShowProductDetails_thongtinkh(string tenkh1)
         {
-            
+            var thongtinkh = new ThongTinKH(tenkh1);
+
+            thongtinkh.OnNameUpdated += (updatedName) =>
+            {
+
+                if (pictureBox1.Image == null)
+                {
+                    pictureBox3.Image.Dispose();
+                    pictureBox1 = pictureBox3;
+                    pictureBox1.Image = null;
+                }
+
+
+                string imagePath = Application.StartupPath + "\\AnhKhachHang\\" + updatedName;
+                if (File.Exists(imagePath) && !string.IsNullOrEmpty(updatedName))
+                {
+                    pictureBox1.Image = Image.FromFile(imagePath);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "\\AnhKhachHang\\" + "avatar.png");
+
+
+
+            };
+
+
+            splitContainer3.Panel1Collapsed = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(thongtinkh);
+            thongtinkh.Dock = DockStyle.Fill;
+            panel1.Visible = true;
+            thongtinkh.Show();
         }
 
 
