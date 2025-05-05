@@ -135,6 +135,18 @@
     <Compile Include="ViewNguoiMua\ChiTietSanPhamView.Designer.cs">
       <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewNguoiMua\GioHangView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\GioHangView.Designer.cs">
+      <DependentUpon>GioHangView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HoaDonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HoaDonView.Designer.cs">
+      <DependentUpon>HoaDonView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewNguoiMua\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNguoiMua\ChiTietSanPhamView.resx">
       <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\GioHangView.resx">
+      <DependentUpon>GioHangView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\HoaDonView.resx">
+      <DependentUpon>HoaDonView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNguoiMua\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>

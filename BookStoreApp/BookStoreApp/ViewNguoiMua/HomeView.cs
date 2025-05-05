@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using BookStoreApp.ViewNguoiMua;
 
 namespace BookStoreApp.ViewNguoiMua
 {
@@ -1184,7 +1185,21 @@ where 1=1
 
         private void ShowProductDetails_giohang()
         {
-            
+            var giohang = new GioHangView();
+
+            giohang.OnBackButtonClicked += () =>
+            {
+                panel1.Controls.Clear();
+                panel1.Visible = false;
+                ShowTabControl();
+                splitContainer3.Panel1Collapsed = false;
+            };
+            splitContainer3.Panel1Collapsed = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(giohang);
+            giohang.Dock = DockStyle.Fill;
+            panel1.Visible = true;
+            giohang.Show();
         }
 
         private void btnGioHang_Click(object sender, EventArgs e)

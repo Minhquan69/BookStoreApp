@@ -357,9 +357,9 @@ namespace BookStoreApp.ViewNguoiMua
             
             string queryMaGH = "SELECT magh FROM giohang WHERE makh = @manguoidung";
             var parametersMaGH = new Dictionary<string, object>
-{
-    { "@manguoidung", userName } // Thay thế bằng mã người dùng thực tế
-};
+                    {
+                        { "@manguoidung", userName }
+                    };
 
             DataTable dtMaGH = db.ExecuteSelectQuery(queryMaGH, parametersMaGH);
 
@@ -370,10 +370,10 @@ namespace BookStoreApp.ViewNguoiMua
             // Kiểm tra sản phẩm đã tồn tại trong giỏ hàng chưa
             string queryCheckExist = "SELECT soluong FROM giosanpham WHERE magh = @magh AND masach = @masp";
             var parametersCheckExist = new Dictionary<string, object>
-{
-    { "@magh", magh },
-    { "@masp", masp }
-};
+                {
+                    { "@magh", magh },
+                    { "@masp", masp }
+                };
 
             DataTable dtCheckExist = db.ExecuteSelectQuery(queryCheckExist, parametersCheckExist);
 
@@ -382,10 +382,10 @@ namespace BookStoreApp.ViewNguoiMua
                 // Nếu sản phẩm đã tồn tại, thực hiện UPDATE
                 string queryUpdate = "UPDATE giosanpham SET soluong = soluong + 1 WHERE magh = @magh AND masach = @masp";
                 var parametersUpdate = new Dictionary<string, object>
-    {
-        { "@magh", magh },
-        { "@masp", masp }
-    };
+                    {
+                        { "@magh", magh },
+                        { "@masp", masp }
+                    };
 
                 int rowsUpdated = db.ExecuteUpdateQuery(queryUpdate, parametersUpdate);
 
@@ -395,11 +395,11 @@ namespace BookStoreApp.ViewNguoiMua
              
                 string queryInsert = "INSERT INTO giosanpham (magh, masach, soluong) VALUES (@magh, @masp, @soLuong)";
                 var parametersInsert = new Dictionary<string, object>
-    {
-        { "@magh", magh },
-        { "@masp", masp },
-        { "@soLuong", 1 }  
-    };
+                    {
+                        { "@magh", magh },
+                        { "@masp", masp },
+                        { "@soLuong", 1 }  
+                    };
 
                 int rowsInserted = db.ExecuteUpdateQuery(queryInsert, parametersInsert);
 
@@ -423,8 +423,9 @@ namespace BookStoreApp.ViewNguoiMua
                 List<string> selectedMasach = new List<string> { masp }; // Thêm mã sản phẩm hiện tại vào danh sách
                 // Mở form hóa đơn và truyền danh sách mã sách đã chọn
                 Form parentForm = this.FindForm(); 
-                parentForm?.Close(); 
-                
+                parentForm?.Close();
+                HoaDonView hoaDonView = new HoaDonView(selectedMasach);
+                hoaDonView.Show();
 
 
 
