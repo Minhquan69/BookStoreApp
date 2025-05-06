@@ -153,6 +153,12 @@
     <Compile Include="ViewNguoiMua\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewNguoiMua\LichSuMua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\LichSuMua.Designer.cs">
+      <DependentUpon>LichSuMua.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewNguoiMua\ThongTinKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNguoiMua\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\LichSuMua.resx">
+      <DependentUpon>LichSuMua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNguoiMua\ThongTinKH.resx">
       <DependentUpon>ThongTinKH.cs</DependentUpon>

@@ -378,12 +378,12 @@ namespace BookStoreApp
             this.numericItemTo.AutoRoundedCorners = true;
             this.numericItemTo.BackColor = System.Drawing.Color.Transparent;
             this.numericItemTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numericItemTo.BorderRadius = 14;
+            this.numericItemTo.BorderRadius = 18;
             this.numericItemTo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericItemTo.Enabled = false;
             this.numericItemTo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.numericItemTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.numericItemTo.Location = new System.Drawing.Point(463, 146);
+            this.numericItemTo.Location = new System.Drawing.Point(463, 142);
             this.numericItemTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericItemTo.Maximum = new decimal(new int[] {
             99999999,
@@ -391,7 +391,7 @@ namespace BookStoreApp
             0,
             0});
             this.numericItemTo.Name = "numericItemTo";
-            this.numericItemTo.Size = new System.Drawing.Size(66, 30);
+            this.numericItemTo.Size = new System.Drawing.Size(66, 38);
             this.numericItemTo.TabIndex = 8;
             // 
             // numericItemFrom
@@ -399,12 +399,12 @@ namespace BookStoreApp
             this.numericItemFrom.AutoRoundedCorners = true;
             this.numericItemFrom.BackColor = System.Drawing.Color.Transparent;
             this.numericItemFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.numericItemFrom.BorderRadius = 14;
+            this.numericItemFrom.BorderRadius = 18;
             this.numericItemFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericItemFrom.Enabled = false;
             this.numericItemFrom.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.numericItemFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.numericItemFrom.Location = new System.Drawing.Point(463, 99);
+            this.numericItemFrom.Location = new System.Drawing.Point(463, 97);
             this.numericItemFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericItemFrom.Maximum = new decimal(new int[] {
             99999999,
@@ -412,7 +412,7 @@ namespace BookStoreApp
             0,
             0});
             this.numericItemFrom.Name = "numericItemFrom";
-            this.numericItemFrom.Size = new System.Drawing.Size(66, 30);
+            this.numericItemFrom.Size = new System.Drawing.Size(66, 38);
             this.numericItemFrom.TabIndex = 7;
             // 
             // btnSearchItem
@@ -702,7 +702,7 @@ namespace BookStoreApp
             this.labelPhanTrang.AutoSize = true;
             this.labelPhanTrang.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelPhanTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
-            this.labelPhanTrang.Location = new System.Drawing.Point(587, 315);
+            this.labelPhanTrang.Location = new System.Drawing.Point(573, 309);
             this.labelPhanTrang.Name = "labelPhanTrang";
             this.labelPhanTrang.Size = new System.Drawing.Size(35, 23);
             this.labelPhanTrang.TabIndex = 56;

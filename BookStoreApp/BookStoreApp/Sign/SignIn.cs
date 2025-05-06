@@ -89,7 +89,6 @@ namespace BookStoreApp.Sign
 
                 HomeView home = new HomeView(Program.currentUser.TenUser);
                 this.Hide();
-                home.WindowState = FormWindowState.Maximized;
                 home.ShowDialog();
                 this.Show();
 

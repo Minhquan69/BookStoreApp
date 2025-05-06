@@ -45,6 +45,7 @@ namespace BookStoreApp.ViewNguoiMua
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnXoaAnh = new Guna.UI2.WinForms.Guna2Button();
             this.ptbAnh = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@ namespace BookStoreApp.ViewNguoiMua
             this.panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnh)).BeginInit();
             this.panel2.SuspendLayout();
@@ -277,6 +277,16 @@ namespace BookStoreApp.ViewNguoiMua
             this.panel1.Size = new System.Drawing.Size(1160, 400);
             this.panel1.TabIndex = 2;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1160, 25);
+            this.toolStrip1.TabIndex = 119;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
             // btnXoaAnh
             // 
             this.btnXoaAnh.BorderRadius = 10;
@@ -432,16 +442,6 @@ namespace BookStoreApp.ViewNguoiMua
             this.button1.TabIndex = 121;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1160, 25);
-            this.toolStrip1.TabIndex = 119;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // ThongTinKH
             // 

@@ -1139,9 +1139,20 @@ where 1=1
 
         private void ShowProductDetails_lichsumua(string tenkh)
         {
-            
-
-
+            var lichsumua = new LichSuMua(tenkh);
+            lichsumua.OnBackButtonClicked += () =>
+            {
+                panel1.Controls.Clear();
+                panel1.Visible = false;
+                ShowTabControl();
+                splitContainer3.Panel1Collapsed = false;
+            };
+            splitContainer3.Panel1Collapsed = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(lichsumua);
+            lichsumua.Dock = DockStyle.Fill;
+            panel1.Visible = true;
+            lichsumua.Show();
         }
 
 
