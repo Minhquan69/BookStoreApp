@@ -34,8 +34,17 @@ namespace BookStoreApp.ViewNguoiMua
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btLichsumua = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
+            this.btThongtinKH = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGioHang = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtNXB = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,6 +59,8 @@ namespace BookStoreApp.ViewNguoiMua
             this.label2 = new System.Windows.Forms.Label();
             this.txtTensanpham = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbTheloai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btTimkiem1 = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabSanPham = new System.Windows.Forms.TabPage();
@@ -69,39 +80,28 @@ namespace BookStoreApp.ViewNguoiMua
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btLichsumua = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.btThongtinKH = new Guna.UI2.WinForms.Guna2Button();
-            this.btnGioHang = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSanPham = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btTimkiem1 = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabSanPham.SuspendLayout();
             this.tabMoiphathanh.SuspendLayout();
             this.tabSapphathanh.SuspendLayout();
             this.tabSachmienphi.SuspendLayout();
             this.tabSachbanchay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -136,6 +136,16 @@ namespace BookStoreApp.ViewNguoiMua
             this.label1.TabIndex = 1;
             this.label1.Text = "CHÀO MỪNG BẠN ĐẾN VỚI CỬA HÀNG";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(1700, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,6 +171,122 @@ namespace BookStoreApp.ViewNguoiMua
             this.splitContainer2.SplitterDistance = 136;
             this.splitContainer2.SplitterWidth = 2;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btLichsumua
+            // 
+            this.btLichsumua.BackColor = System.Drawing.Color.AliceBlue;
+            this.btLichsumua.BorderRadius = 5;
+            this.btLichsumua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btLichsumua.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLichsumua.ForeColor = System.Drawing.Color.White;
+            this.btLichsumua.Image = global::BookStoreApp.Properties.Resources.bill;
+            this.btLichsumua.Location = new System.Drawing.Point(11, 336);
+            this.btLichsumua.Margin = new System.Windows.Forms.Padding(2);
+            this.btLichsumua.Name = "btLichsumua";
+            this.btLichsumua.Size = new System.Drawing.Size(108, 53);
+            this.btLichsumua.TabIndex = 11;
+            this.btLichsumua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btLichsumua.TextFormatNoPrefix = true;
+            this.toolTip4.SetToolTip(this.btLichsumua, "LỊCH SỬ MUA HÀNG");
+            this.btLichsumua.Click += new System.EventHandler(this.btLichsumua_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BorderRadius = 47;
+            this.pictureBox3.Image = global::BookStoreApp.Properties.Resources.MQ;
+            this.pictureBox3.ImageRotate = 0F;
+            this.pictureBox3.Location = new System.Drawing.Point(5, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBox3.Size = new System.Drawing.Size(127, 127);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.UseTransparentBackground = true;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnDangXuat.BorderRadius = 5;
+            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = global::BookStoreApp.Properties.Resources.dx21;
+            this.btnDangXuat.Location = new System.Drawing.Point(12, 402);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(108, 53);
+            this.btnDangXuat.TabIndex = 9;
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDangXuat.TextFormatNoPrefix = true;
+            this.toolTip5.SetToolTip(this.btnDangXuat, "ĐĂNG XUẤT");
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
+            // 
+            // btThongtinKH
+            // 
+            this.btThongtinKH.BackColor = System.Drawing.Color.AliceBlue;
+            this.btThongtinKH.BorderRadius = 5;
+            this.btThongtinKH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btThongtinKH.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThongtinKH.ForeColor = System.Drawing.Color.White;
+            this.btThongtinKH.Image = global::BookStoreApp.Properties.Resources.pngtree_universal_user_account_role_account_my_icon_icon_png_image_6679911_removebg_preview;
+            this.btThongtinKH.Location = new System.Drawing.Point(12, 274);
+            this.btThongtinKH.Margin = new System.Windows.Forms.Padding(2);
+            this.btThongtinKH.Name = "btThongtinKH";
+            this.btThongtinKH.Size = new System.Drawing.Size(107, 53);
+            this.btThongtinKH.TabIndex = 8;
+            this.btThongtinKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btThongtinKH.TextFormatNoPrefix = true;
+            this.toolTip3.SetToolTip(this.btThongtinKH, "THÔNG TIN TÀI KHOẢN");
+            this.btThongtinKH.Click += new System.EventHandler(this.btThongtinKH_Click);
+            // 
+            // btnGioHang
+            // 
+            this.btnGioHang.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnGioHang.BorderRadius = 5;
+            this.btnGioHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGioHang.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGioHang.ForeColor = System.Drawing.Color.White;
+            this.btnGioHang.Image = global::BookStoreApp.Properties.Resources.trolley;
+            this.btnGioHang.Location = new System.Drawing.Point(12, 211);
+            this.btnGioHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGioHang.Name = "btnGioHang";
+            this.btnGioHang.Size = new System.Drawing.Size(107, 53);
+            this.btnGioHang.TabIndex = 7;
+            this.btnGioHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGioHang.TextFormatNoPrefix = true;
+            this.toolTip2.SetToolTip(this.btnGioHang, "GIỎ HÀNG");
+            this.btnGioHang.Click += new System.EventHandler(this.btnGioHang_Click);
+            // 
+            // btnSanPham
+            // 
+            this.btnSanPham.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnSanPham.BorderRadius = 5;
+            this.btnSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham.ForeColor = System.Drawing.Color.White;
+            this.btnSanPham.Image = global::BookStoreApp.Properties.Resources.home_removebg_preview1;
+            this.btnSanPham.Location = new System.Drawing.Point(11, 144);
+            this.btnSanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.Size = new System.Drawing.Size(108, 53);
+            this.btnSanPham.TabIndex = 6;
+            this.btnSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSanPham.TextFormatNoPrefix = true;
+            this.toolTip1.SetToolTip(this.btnSanPham, "TRANG CHỦ");
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 532);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // splitContainer3
             // 
@@ -196,6 +322,23 @@ namespace BookStoreApp.ViewNguoiMua
             this.splitContainer3.Size = new System.Drawing.Size(1562, 532);
             this.splitContainer3.SplitterDistance = 106;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = global::BookStoreApp.Properties.Resources.refresh;
+            this.guna2Button1.Location = new System.Drawing.Point(1069, 47);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(71, 55);
+            this.guna2Button1.TabIndex = 46;
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextFormatNoPrefix = true;
+            this.toolTip7.SetToolTip(this.guna2Button1, "LÀM MỚI");
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txtNXB
             // 
@@ -437,6 +580,33 @@ namespace BookStoreApp.ViewNguoiMua
             this.cbTheloai.TabIndex = 30;
             this.cbTheloai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTheloai_KeyPress);
             // 
+            // btTimkiem1
+            // 
+            this.btTimkiem1.BorderRadius = 5;
+            this.btTimkiem1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btTimkiem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTimkiem1.ForeColor = System.Drawing.Color.White;
+            this.btTimkiem1.Image = global::BookStoreApp.Properties.Resources.search;
+            this.btTimkiem1.Location = new System.Drawing.Point(977, 47);
+            this.btTimkiem1.Margin = new System.Windows.Forms.Padding(2);
+            this.btTimkiem1.Name = "btTimkiem1";
+            this.btTimkiem1.Size = new System.Drawing.Size(71, 55);
+            this.btTimkiem1.TabIndex = 29;
+            this.btTimkiem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btTimkiem1.TextFormatNoPrefix = true;
+            this.toolTip6.SetToolTip(this.btTimkiem1, "TÌM KIẾM");
+            this.btTimkiem1.Click += new System.EventHandler(this.btTimkiem1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1562, 106);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -621,176 +791,6 @@ namespace BookStoreApp.ViewNguoiMua
             this.tableSachbanchay.Size = new System.Drawing.Size(1175, 384);
             this.tableSachbanchay.TabIndex = 5;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(1700, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
-            // btLichsumua
-            // 
-            this.btLichsumua.BackColor = System.Drawing.Color.AliceBlue;
-            this.btLichsumua.BorderRadius = 5;
-            this.btLichsumua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btLichsumua.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLichsumua.ForeColor = System.Drawing.Color.White;
-            this.btLichsumua.Image = global::BookStoreApp.Properties.Resources.bill;
-            this.btLichsumua.Location = new System.Drawing.Point(11, 336);
-            this.btLichsumua.Margin = new System.Windows.Forms.Padding(2);
-            this.btLichsumua.Name = "btLichsumua";
-            this.btLichsumua.Size = new System.Drawing.Size(108, 53);
-            this.btLichsumua.TabIndex = 11;
-            this.btLichsumua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btLichsumua.TextFormatNoPrefix = true;
-            this.toolTip4.SetToolTip(this.btLichsumua, "LỊCH SỬ MUA HÀNG");
-            this.btLichsumua.Click += new System.EventHandler(this.btLichsumua_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BorderRadius = 47;
-            this.pictureBox3.Image = global::BookStoreApp.Properties.Resources.MQ;
-            this.pictureBox3.ImageRotate = 0F;
-            this.pictureBox3.Location = new System.Drawing.Point(5, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBox3.Size = new System.Drawing.Size(127, 127);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.UseTransparentBackground = true;
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnDangXuat.BorderRadius = 5;
-            this.btnDangXuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Image = global::BookStoreApp.Properties.Resources.dx21;
-            this.btnDangXuat.Location = new System.Drawing.Point(12, 402);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(108, 53);
-            this.btnDangXuat.TabIndex = 9;
-            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.TextFormatNoPrefix = true;
-            this.toolTip5.SetToolTip(this.btnDangXuat, "ĐĂNG XUẤT");
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
-            // 
-            // btThongtinKH
-            // 
-            this.btThongtinKH.BackColor = System.Drawing.Color.AliceBlue;
-            this.btThongtinKH.BorderRadius = 5;
-            this.btThongtinKH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btThongtinKH.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThongtinKH.ForeColor = System.Drawing.Color.White;
-            this.btThongtinKH.Image = global::BookStoreApp.Properties.Resources.pngtree_universal_user_account_role_account_my_icon_icon_png_image_6679911_removebg_preview;
-            this.btThongtinKH.Location = new System.Drawing.Point(12, 274);
-            this.btThongtinKH.Margin = new System.Windows.Forms.Padding(2);
-            this.btThongtinKH.Name = "btThongtinKH";
-            this.btThongtinKH.Size = new System.Drawing.Size(107, 53);
-            this.btThongtinKH.TabIndex = 8;
-            this.btThongtinKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btThongtinKH.TextFormatNoPrefix = true;
-            this.toolTip3.SetToolTip(this.btThongtinKH, "THÔNG TIN TÀI KHOẢN");
-            this.btThongtinKH.Click += new System.EventHandler(this.btThongtinKH_Click);
-            // 
-            // btnGioHang
-            // 
-            this.btnGioHang.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnGioHang.BorderRadius = 5;
-            this.btnGioHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGioHang.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGioHang.ForeColor = System.Drawing.Color.White;
-            this.btnGioHang.Image = global::BookStoreApp.Properties.Resources.trolley;
-            this.btnGioHang.Location = new System.Drawing.Point(12, 211);
-            this.btnGioHang.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGioHang.Name = "btnGioHang";
-            this.btnGioHang.Size = new System.Drawing.Size(107, 53);
-            this.btnGioHang.TabIndex = 7;
-            this.btnGioHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnGioHang.TextFormatNoPrefix = true;
-            this.toolTip2.SetToolTip(this.btnGioHang, "GIỎ HÀNG");
-            this.btnGioHang.Click += new System.EventHandler(this.btnGioHang_Click);
-            // 
-            // btnSanPham
-            // 
-            this.btnSanPham.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnSanPham.BorderRadius = 5;
-            this.btnSanPham.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnSanPham.Image = global::BookStoreApp.Properties.Resources.home_removebg_preview1;
-            this.btnSanPham.Location = new System.Drawing.Point(11, 144);
-            this.btnSanPham.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(108, 53);
-            this.btnSanPham.TabIndex = 6;
-            this.btnSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSanPham.TextFormatNoPrefix = true;
-            this.toolTip1.SetToolTip(this.btnSanPham, "TRANG CHỦ");
-            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 532);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.guna2Button1.Location = new System.Drawing.Point(1069, 47);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(71, 55);
-            this.guna2Button1.TabIndex = 46;
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextFormatNoPrefix = true;
-            this.toolTip7.SetToolTip(this.guna2Button1, "LÀM MỚI");
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // btTimkiem1
-            // 
-            this.btTimkiem1.BorderRadius = 5;
-            this.btTimkiem1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btTimkiem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTimkiem1.ForeColor = System.Drawing.Color.White;
-            this.btTimkiem1.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btTimkiem1.Location = new System.Drawing.Point(977, 47);
-            this.btTimkiem1.Margin = new System.Windows.Forms.Padding(2);
-            this.btTimkiem1.Name = "btTimkiem1";
-            this.btTimkiem1.Size = new System.Drawing.Size(71, 55);
-            this.btTimkiem1.TabIndex = 29;
-            this.btTimkiem1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btTimkiem1.TextFormatNoPrefix = true;
-            this.toolTip6.SetToolTip(this.btTimkiem1, "TÌM KIẾM");
-            this.btTimkiem1.Click += new System.EventHandler(this.btTimkiem1_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1562, 106);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -808,15 +808,19 @@ namespace BookStoreApp.ViewNguoiMua
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabSanPham.ResumeLayout(false);
             this.tabSanPham.PerformLayout();
@@ -828,10 +832,6 @@ namespace BookStoreApp.ViewNguoiMua
             this.tabSachmienphi.PerformLayout();
             this.tabSachbanchay.ResumeLayout(false);
             this.tabSachbanchay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Guna.UI2.WinForms;
+using System.Windows.Forms;
 
 namespace BookStoreApp
 {
@@ -39,6 +40,8 @@ namespace BookStoreApp
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -46,57 +49,57 @@ namespace BookStoreApp
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeFrm));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabItem = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.LocPhanLoai = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.LocPhanLoai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelTimKiem = new System.Windows.Forms.Label();
-            this.numericItemTo = new System.Windows.Forms.NumericUpDown();
-            this.numericItemFrom = new System.Windows.Forms.NumericUpDown();
-            this.btnSearchItem = new System.Windows.Forms.Button();
-            this.txtSearchItem = new System.Windows.Forms.TextBox();
+            this.numericItemTo = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.numericItemFrom = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.btnSearchItem = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearchItem = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboSearchItem = new System.Windows.Forms.ComboBox();
+            this.comboSearchItem = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBoLoc = new System.Windows.Forms.Button();
-            this.radioSortItemByTonKho = new System.Windows.Forms.RadioButton();
-            this.radioSortItemByName = new System.Windows.Forms.RadioButton();
-            this.radioSortItemByPriceDESC = new System.Windows.Forms.RadioButton();
-            this.radioSortItemByPriceASC = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnXoaSP = new System.Windows.Forms.Button();
-            this.btnSuaSP = new System.Windows.Forms.Button();
-            this.btnFreshItem = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
+            this.groupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnBoLoc = new Guna.UI2.WinForms.Guna2Button();
+            this.radioSortItemByTonKho = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioSortItemByName = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioSortItemByPriceDESC = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioSortItemByPriceASC = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.groupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnXoaSP = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSuaSP = new Guna.UI2.WinForms.Guna2Button();
+            this.btnFreshItem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemSP = new Guna.UI2.WinForms.Guna2Button();
             this.labelPhanTrang = new System.Windows.Forms.Label();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.comboBoxNXB = new System.Windows.Forms.ComboBox();
-            this.txtFileXemThu = new System.Windows.Forms.TextBox();
-            this.btnFileXemThu = new System.Windows.Forms.Button();
-            this.txtFileSach = new System.Windows.Forms.TextBox();
-            this.btnFileSach = new System.Windows.Forms.Button();
-            this.txtMoTa = new System.Windows.Forms.TextBox();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBoxNXB = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtFileXemThu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnFileXemThu = new Guna.UI2.WinForms.Guna2Button();
+            this.txtFileSach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnFileSach = new Guna.UI2.WinForms.Guna2Button();
+            this.txtMoTa = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBoxPhanLoai = new System.Windows.Forms.ComboBox();
-            this.txtSoTrang = new System.Windows.Forms.TextBox();
+            this.comboBoxPhanLoai = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSoTrang = new Guna.UI2.WinForms.Guna2TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnAnh = new System.Windows.Forms.Button();
+            this.btnAnh = new Guna.UI2.WinForms.Guna2Button();
             this.picAnh = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtTenSach = new System.Windows.Forms.TextBox();
+            this.txtTenSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtTenTG = new System.Windows.Forms.TextBox();
+            this.txtTenTG = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.tblDuLieu = new System.Windows.Forms.DataGridView();
+            this.tblDuLieu = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabCustomer = new System.Windows.Forms.TabPage();
             this.label_phanTrang = new System.Windows.Forms.Label();
             this.btnNextt = new System.Windows.Forms.Button();
@@ -241,17 +244,36 @@ namespace BookStoreApp
             // 
             // tabControl1
             // 
+            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.Controls.Add(this.tabItem);
             this.tabControl1.Controls.Add(this.tabCustomer);
             this.tabControl1.Controls.Add(this.tabDiscount);
             this.tabControl1.Controls.Add(this.tabStat);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(-2, 2);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ItemSize = new System.Drawing.Size(140, 50);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1224, 774);
+            this.tabControl1.Size = new System.Drawing.Size(1413, 774);
+            this.tabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.tabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.tabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.tabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.tabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(100)))));
+            this.tabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.tabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.tabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.tabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.tabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.tabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.tabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.tabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.tabControl1.TabButtonSize = new System.Drawing.Size(140, 50);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             // 
             // tabItem
             // 
@@ -284,17 +306,18 @@ namespace BookStoreApp
             this.tabItem.Controls.Add(this.txtMaSach);
             this.tabItem.Controls.Add(this.label15);
             this.tabItem.Controls.Add(this.tblDuLieu);
-            this.tabItem.Location = new System.Drawing.Point(4, 31);
+            this.tabItem.Location = new System.Drawing.Point(144, 4);
             this.tabItem.Name = "tabItem";
             this.tabItem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabItem.Size = new System.Drawing.Size(1216, 739);
+            this.tabItem.Size = new System.Drawing.Size(1265, 766);
             this.tabItem.TabIndex = 0;
             this.tabItem.Text = "QL Sản Phẩm";
             this.tabItem.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox3.BorderRadius = 10;
             this.groupBox3.Controls.Add(this.LocPhanLoai);
             this.groupBox3.Controls.Add(this.labelTimKiem);
             this.groupBox3.Controls.Add(this.numericItemTo);
@@ -306,122 +329,171 @@ namespace BookStoreApp
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.comboSearchItem);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(659, 540);
+            this.groupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.groupBox3.Location = new System.Drawing.Point(656, 526);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(551, 189);
+            this.groupBox3.Size = new System.Drawing.Size(545, 234);
             this.groupBox3.TabIndex = 59;
-            this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
             // 
             // LocPhanLoai
             // 
+            this.LocPhanLoai.AutoRoundedCorners = true;
+            this.LocPhanLoai.BackColor = System.Drawing.Color.Transparent;
+            this.LocPhanLoai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.LocPhanLoai.BorderRadius = 14;
+            this.LocPhanLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.LocPhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LocPhanLoai.Enabled = false;
-            this.LocPhanLoai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocPhanLoai.FormattingEnabled = true;
+            this.LocPhanLoai.FocusedColor = System.Drawing.Color.Empty;
+            this.LocPhanLoai.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.LocPhanLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.LocPhanLoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.LocPhanLoai.ItemHeight = 25;
             this.LocPhanLoai.Items.AddRange(new object[] {
             "Đồ Ăn",
             "Đồ Uống",
             "Snack"});
-            this.LocPhanLoai.Location = new System.Drawing.Point(97, 107);
+            this.LocPhanLoai.Location = new System.Drawing.Point(116, 142);
             this.LocPhanLoai.Name = "LocPhanLoai";
-            this.LocPhanLoai.Size = new System.Drawing.Size(291, 27);
+            this.LocPhanLoai.Size = new System.Drawing.Size(278, 31);
             this.LocPhanLoai.TabIndex = 10;
             // 
             // labelTimKiem
             // 
             this.labelTimKiem.AutoSize = true;
-            this.labelTimKiem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTimKiem.Location = new System.Drawing.Point(19, 110);
+            this.labelTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.labelTimKiem.Location = new System.Drawing.Point(21, 150);
             this.labelTimKiem.Name = "labelTimKiem";
-            this.labelTimKiem.Size = new System.Drawing.Size(76, 20);
+            this.labelTimKiem.Size = new System.Drawing.Size(81, 23);
             this.labelTimKiem.TabIndex = 9;
             this.labelTimKiem.Text = "Phân loại";
             // 
             // numericItemTo
             // 
+            this.numericItemTo.AutoRoundedCorners = true;
+            this.numericItemTo.BackColor = System.Drawing.Color.Transparent;
+            this.numericItemTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numericItemTo.BorderRadius = 14;
+            this.numericItemTo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericItemTo.Enabled = false;
-            this.numericItemTo.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericItemTo.Location = new System.Drawing.Point(465, 110);
+            this.numericItemTo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.numericItemTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.numericItemTo.Location = new System.Drawing.Point(463, 146);
+            this.numericItemTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericItemTo.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.numericItemTo.Name = "numericItemTo";
-            this.numericItemTo.Size = new System.Drawing.Size(66, 26);
+            this.numericItemTo.Size = new System.Drawing.Size(66, 30);
             this.numericItemTo.TabIndex = 8;
             // 
             // numericItemFrom
             // 
+            this.numericItemFrom.AutoRoundedCorners = true;
+            this.numericItemFrom.BackColor = System.Drawing.Color.Transparent;
+            this.numericItemFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.numericItemFrom.BorderRadius = 14;
+            this.numericItemFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericItemFrom.Enabled = false;
-            this.numericItemFrom.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericItemFrom.Location = new System.Drawing.Point(465, 76);
+            this.numericItemFrom.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.numericItemFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.numericItemFrom.Location = new System.Drawing.Point(463, 99);
+            this.numericItemFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericItemFrom.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.numericItemFrom.Name = "numericItemFrom";
-            this.numericItemFrom.Size = new System.Drawing.Size(66, 26);
+            this.numericItemFrom.Size = new System.Drawing.Size(66, 30);
             this.numericItemFrom.TabIndex = 7;
             // 
             // btnSearchItem
             // 
-            this.btnSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchItem.BorderRadius = 10;
+            this.btnSearchItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnSearchItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSearchItem.ForeColor = System.Drawing.Color.White;
+            this.btnSearchItem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
             this.btnSearchItem.Image = global::BookStoreApp.Properties.Resources.search;
-            this.btnSearchItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchItem.Location = new System.Drawing.Point(203, 138);
+            this.btnSearchItem.Location = new System.Drawing.Point(206, 187);
             this.btnSearchItem.Name = "btnSearchItem";
-            this.btnSearchItem.Size = new System.Drawing.Size(142, 45);
+            this.btnSearchItem.Size = new System.Drawing.Size(142, 34);
             this.btnSearchItem.TabIndex = 6;
             this.btnSearchItem.Text = "Tìm kiếm";
-            this.btnSearchItem.UseVisualStyleBackColor = true;
             this.btnSearchItem.Click += new System.EventHandler(this.BtnSearchItemClick);
             // 
             // txtSearchItem
             // 
+            this.txtSearchItem.AutoRoundedCorners = true;
+            this.txtSearchItem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtSearchItem.BorderRadius = 15;
+            this.txtSearchItem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchItem.DefaultText = "";
             this.txtSearchItem.Enabled = false;
-            this.txtSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchItem.Location = new System.Drawing.Point(96, 74);
+            this.txtSearchItem.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtSearchItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtSearchItem.Location = new System.Drawing.Point(116, 97);
+            this.txtSearchItem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchItem.Name = "txtSearchItem";
-            this.txtSearchItem.Size = new System.Drawing.Size(292, 26);
+            this.txtSearchItem.PlaceholderText = "";
+            this.txtSearchItem.SelectedText = "";
+            this.txtSearchItem.Size = new System.Drawing.Size(279, 32);
             this.txtSearchItem.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(411, 112);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label4.Location = new System.Drawing.Point(412, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 20);
+            this.label4.Size = new System.Drawing.Size(45, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "Đến:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(412, 79);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label3.Location = new System.Drawing.Point(412, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 20);
+            this.label3.Size = new System.Drawing.Size(33, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Từ:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 77);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label2.Location = new System.Drawing.Point(21, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(82, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nội dung";
             // 
             // comboSearchItem
             // 
-            this.comboSearchItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSearchItem.FormattingEnabled = true;
+            this.comboSearchItem.AutoRoundedCorners = true;
+            this.comboSearchItem.BackColor = System.Drawing.Color.Transparent;
+            this.comboSearchItem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.comboSearchItem.BorderRadius = 14;
+            this.comboSearchItem.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboSearchItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSearchItem.FocusedColor = System.Drawing.Color.Empty;
+            this.comboSearchItem.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.comboSearchItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.comboSearchItem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.comboSearchItem.ItemHeight = 25;
             this.comboSearchItem.Items.AddRange(new object[] {
             "Tìm theo tên sách",
             "Tìm theo tên tác giả",
@@ -429,304 +501,415 @@ namespace BookStoreApp
             "Tìm theo nhà xuất bản",
             "Theo khoảng số lượng ",
             "Tìm theo khoảng giá "});
-            this.comboSearchItem.Location = new System.Drawing.Point(97, 41);
+            this.comboSearchItem.Location = new System.Drawing.Point(116, 51);
             this.comboSearchItem.Name = "comboSearchItem";
-            this.comboSearchItem.Size = new System.Drawing.Size(291, 27);
+            this.comboSearchItem.Size = new System.Drawing.Size(279, 31);
             this.comboSearchItem.TabIndex = 1;
             this.comboSearchItem.SelectedIndexChanged += new System.EventHandler(this.ComboSearchItemSelectefIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 46);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label1.Location = new System.Drawing.Point(21, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.Size = new System.Drawing.Size(69, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tiêu chí";
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox2.BorderRadius = 10;
             this.groupBox2.Controls.Add(this.btnBoLoc);
             this.groupBox2.Controls.Add(this.radioSortItemByTonKho);
             this.groupBox2.Controls.Add(this.radioSortItemByName);
             this.groupBox2.Controls.Add(this.radioSortItemByPriceDESC);
             this.groupBox2.Controls.Add(this.radioSortItemByPriceASC);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(334, 540);
+            this.groupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.groupBox2.Location = new System.Drawing.Point(331, 526);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(319, 189);
+            this.groupBox2.Size = new System.Drawing.Size(319, 234);
             this.groupBox2.TabIndex = 58;
-            this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sắp xếp theo";
             // 
             // btnBoLoc
             // 
-            this.btnBoLoc.Location = new System.Drawing.Point(114, 138);
+            this.btnBoLoc.BorderRadius = 10;
+            this.btnBoLoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnBoLoc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBoLoc.ForeColor = System.Drawing.Color.White;
+            this.btnBoLoc.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnBoLoc.Location = new System.Drawing.Point(119, 183);
             this.btnBoLoc.Name = "btnBoLoc";
-            this.btnBoLoc.Size = new System.Drawing.Size(97, 45);
+            this.btnBoLoc.Size = new System.Drawing.Size(97, 38);
             this.btnBoLoc.TabIndex = 4;
             this.btnBoLoc.Text = "Bỏ lọc";
-            this.btnBoLoc.UseVisualStyleBackColor = true;
             this.btnBoLoc.Click += new System.EventHandler(this.btnBoLoc_Click);
             // 
             // radioSortItemByTonKho
             // 
             this.radioSortItemByTonKho.AutoSize = true;
-            this.radioSortItemByTonKho.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortItemByTonKho.Location = new System.Drawing.Point(15, 65);
+            this.radioSortItemByTonKho.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByTonKho.CheckedState.BorderThickness = 0;
+            this.radioSortItemByTonKho.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByTonKho.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radioSortItemByTonKho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.radioSortItemByTonKho.Location = new System.Drawing.Point(15, 77);
             this.radioSortItemByTonKho.Name = "radioSortItemByTonKho";
-            this.radioSortItemByTonKho.Size = new System.Drawing.Size(162, 24);
+            this.radioSortItemByTonKho.Size = new System.Drawing.Size(170, 27);
             this.radioSortItemByTonKho.TabIndex = 3;
-            this.radioSortItemByTonKho.TabStop = true;
             this.radioSortItemByTonKho.Text = "Tồn kho giảm dần";
-            this.radioSortItemByTonKho.UseVisualStyleBackColor = true;
+            this.radioSortItemByTonKho.UncheckedState.BorderThickness = 0;
             this.radioSortItemByTonKho.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByName
             // 
             this.radioSortItemByName.AutoSize = true;
-            this.radioSortItemByName.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortItemByName.Location = new System.Drawing.Point(15, 109);
+            this.radioSortItemByName.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByName.CheckedState.BorderThickness = 0;
+            this.radioSortItemByName.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByName.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radioSortItemByName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.radioSortItemByName.Location = new System.Drawing.Point(15, 146);
             this.radioSortItemByName.Name = "radioSortItemByName";
-            this.radioSortItemByName.Size = new System.Drawing.Size(157, 24);
+            this.radioSortItemByName.Size = new System.Drawing.Size(169, 27);
             this.radioSortItemByName.TabIndex = 2;
-            this.radioSortItemByName.TabStop = true;
-            this.radioSortItemByName.Text = "Tên mặt hàng a-z";
-            this.radioSortItemByName.UseVisualStyleBackColor = true;
+            this.radioSortItemByName.Text = "Tên mặt hàng A-Z";
+            this.radioSortItemByName.UncheckedState.BorderThickness = 0;
             this.radioSortItemByName.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByPriceDESC
             // 
             this.radioSortItemByPriceDESC.AutoSize = true;
-            this.radioSortItemByPriceDESC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSortItemByPriceDESC.Location = new System.Drawing.Point(15, 87);
+            this.radioSortItemByPriceDESC.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByPriceDESC.CheckedState.BorderThickness = 0;
+            this.radioSortItemByPriceDESC.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByPriceDESC.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radioSortItemByPriceDESC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.radioSortItemByPriceDESC.Location = new System.Drawing.Point(15, 110);
             this.radioSortItemByPriceDESC.Name = "radioSortItemByPriceDESC";
-            this.radioSortItemByPriceDESC.Size = new System.Drawing.Size(196, 24);
+            this.radioSortItemByPriceDESC.Size = new System.Drawing.Size(208, 27);
             this.radioSortItemByPriceDESC.TabIndex = 1;
-            this.radioSortItemByPriceDESC.TabStop = true;
             this.radioSortItemByPriceDESC.Text = "Giá niêm yếu giảm dần";
-            this.radioSortItemByPriceDESC.UseVisualStyleBackColor = true;
+            this.radioSortItemByPriceDESC.UncheckedState.BorderThickness = 0;
             this.radioSortItemByPriceDESC.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // radioSortItemByPriceASC
             // 
             this.radioSortItemByPriceASC.AutoSize = true;
-            this.radioSortItemByPriceASC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSortItemByPriceASC.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByPriceASC.CheckedState.BorderThickness = 0;
+            this.radioSortItemByPriceASC.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.radioSortItemByPriceASC.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.radioSortItemByPriceASC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
             this.radioSortItemByPriceASC.Location = new System.Drawing.Point(15, 44);
             this.radioSortItemByPriceASC.Name = "radioSortItemByPriceASC";
-            this.radioSortItemByPriceASC.Size = new System.Drawing.Size(188, 24);
+            this.radioSortItemByPriceASC.Size = new System.Drawing.Size(201, 27);
             this.radioSortItemByPriceASC.TabIndex = 0;
-            this.radioSortItemByPriceASC.TabStop = true;
             this.radioSortItemByPriceASC.Text = "Giá niêm yết tăng dần";
-            this.radioSortItemByPriceASC.UseVisualStyleBackColor = true;
+            this.radioSortItemByPriceASC.UncheckedState.BorderThickness = 0;
             this.radioSortItemByPriceASC.CheckedChanged += new System.EventHandler(this.SortItemHandler);
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox1.BorderRadius = 10;
             this.groupBox1.Controls.Add(this.btnXoaSP);
             this.groupBox1.Controls.Add(this.btnSuaSP);
             this.groupBox1.Controls.Add(this.btnFreshItem);
             this.groupBox1.Controls.Add(this.btnThemSP);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 540);
+            this.groupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.groupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.groupBox1.Location = new System.Drawing.Point(3, 526);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 189);
+            this.groupBox1.Size = new System.Drawing.Size(322, 234);
             this.groupBox1.TabIndex = 57;
-            this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hành động";
             // 
             // btnXoaSP
             // 
-            this.btnXoaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSP.BorderRadius = 10;
+            this.btnXoaSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnXoaSP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnXoaSP.ForeColor = System.Drawing.Color.White;
+            this.btnXoaSP.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.btnXoaSP.Image = global::BookStoreApp.Properties.Resources.remove;
-            this.btnXoaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaSP.Location = new System.Drawing.Point(172, 49);
+            this.btnXoaSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXoaSP.Location = new System.Drawing.Point(172, 77);
             this.btnXoaSP.Name = "btnXoaSP";
             this.btnXoaSP.Size = new System.Drawing.Size(131, 44);
             this.btnXoaSP.TabIndex = 3;
             this.btnXoaSP.Text = "Xoá";
-            this.btnXoaSP.UseVisualStyleBackColor = true;
             this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // btnSuaSP
             // 
-            this.btnSuaSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaSP.BorderRadius = 10;
+            this.btnSuaSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnSuaSP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSuaSP.ForeColor = System.Drawing.Color.White;
+            this.btnSuaSP.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
             this.btnSuaSP.Image = global::BookStoreApp.Properties.Resources.loop;
-            this.btnSuaSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaSP.Location = new System.Drawing.Point(26, 49);
+            this.btnSuaSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSuaSP.Location = new System.Drawing.Point(26, 77);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(131, 44);
             this.btnSuaSP.TabIndex = 2;
             this.btnSuaSP.Text = "Sửa";
-            this.btnSuaSP.UseVisualStyleBackColor = true;
             this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
             // btnFreshItem
             // 
-            this.btnFreshItem.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFreshItem.BorderRadius = 10;
+            this.btnFreshItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnFreshItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnFreshItem.ForeColor = System.Drawing.Color.White;
+            this.btnFreshItem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
             this.btnFreshItem.Image = global::BookStoreApp.Properties.Resources.refresh;
-            this.btnFreshItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFreshItem.Location = new System.Drawing.Point(172, 121);
+            this.btnFreshItem.Location = new System.Drawing.Point(172, 156);
             this.btnFreshItem.Name = "btnFreshItem";
             this.btnFreshItem.Size = new System.Drawing.Size(131, 47);
             this.btnFreshItem.TabIndex = 1;
             this.btnFreshItem.Text = "   Làm mới";
-            this.btnFreshItem.UseVisualStyleBackColor = true;
             this.btnFreshItem.Click += new System.EventHandler(this.btnFresh_Click);
             // 
             // btnThemSP
             // 
-            this.btnThemSP.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemSP.BorderRadius = 10;
+            this.btnThemSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnThemSP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnThemSP.ForeColor = System.Drawing.Color.White;
+            this.btnThemSP.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
             this.btnThemSP.Image = global::BookStoreApp.Properties.Resources.plus;
-            this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSP.Location = new System.Drawing.Point(26, 121);
+            this.btnThemSP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThemSP.Location = new System.Drawing.Point(26, 156);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(131, 47);
             this.btnThemSP.TabIndex = 0;
-            this.btnThemSP.Text = "     Thêm mới";
-            this.btnThemSP.UseVisualStyleBackColor = true;
+            this.btnThemSP.Text = "Thêm mới";
+            this.btnThemSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // labelPhanTrang
             // 
             this.labelPhanTrang.AutoSize = true;
+            this.labelPhanTrang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelPhanTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
             this.labelPhanTrang.Location = new System.Drawing.Point(587, 315);
             this.labelPhanTrang.Name = "labelPhanTrang";
-            this.labelPhanTrang.Size = new System.Drawing.Size(36, 22);
+            this.labelPhanTrang.Size = new System.Drawing.Size(35, 23);
             this.labelPhanTrang.TabIndex = 56;
             this.labelPhanTrang.Text = "0/0";
             // 
             // btnNext
             // 
+            this.btnNext.BorderRadius = 10;
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
             this.btnNext.Location = new System.Drawing.Point(681, 309);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(74, 28);
             this.btnNext.TabIndex = 55;
             this.btnNext.Text = "Sau";
-            this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(497, 308);
+            this.btnPrevious.BorderRadius = 10;
+            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrevious.ForeColor = System.Drawing.Color.White;
+            this.btnPrevious.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnPrevious.Location = new System.Drawing.Point(465, 309);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(74, 30);
+            this.btnPrevious.Size = new System.Drawing.Size(89, 30);
             this.btnPrevious.TabIndex = 54;
             this.btnPrevious.Text = "Trước";
-            this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // comboBoxNXB
             // 
-            this.comboBoxNXB.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxNXB.FormattingEnabled = true;
-            this.comboBoxNXB.Location = new System.Drawing.Point(452, 363);
+            this.comboBoxNXB.AutoRoundedCorners = true;
+            this.comboBoxNXB.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxNXB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.comboBoxNXB.BorderRadius = 14;
+            this.comboBoxNXB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxNXB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNXB.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBoxNXB.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.comboBoxNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.comboBoxNXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.comboBoxNXB.ItemHeight = 25;
+            this.comboBoxNXB.Location = new System.Drawing.Point(466, 361);
             this.comboBoxNXB.Name = "comboBoxNXB";
-            this.comboBoxNXB.Size = new System.Drawing.Size(280, 27);
+            this.comboBoxNXB.Size = new System.Drawing.Size(280, 31);
             this.comboBoxNXB.TabIndex = 53;
             // 
             // txtFileXemThu
             // 
-            this.txtFileXemThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileXemThu.Location = new System.Drawing.Point(799, 479);
+            this.txtFileXemThu.AutoRoundedCorners = true;
+            this.txtFileXemThu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtFileXemThu.BorderRadius = 15;
+            this.txtFileXemThu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFileXemThu.DefaultText = "";
+            this.txtFileXemThu.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtFileXemThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtFileXemThu.Location = new System.Drawing.Point(799, 487);
+            this.txtFileXemThu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFileXemThu.Name = "txtFileXemThu";
-            this.txtFileXemThu.Size = new System.Drawing.Size(205, 26);
+            this.txtFileXemThu.PlaceholderText = "";
+            this.txtFileXemThu.SelectedText = "";
+            this.txtFileXemThu.Size = new System.Drawing.Size(205, 32);
             this.txtFileXemThu.TabIndex = 52;
             // 
             // btnFileXemThu
             // 
-            this.btnFileXemThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileXemThu.Location = new System.Drawing.Point(799, 437);
+            this.btnFileXemThu.BorderRadius = 10;
+            this.btnFileXemThu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnFileXemThu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnFileXemThu.ForeColor = System.Drawing.Color.White;
+            this.btnFileXemThu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnFileXemThu.Location = new System.Drawing.Point(799, 442);
             this.btnFileXemThu.Name = "btnFileXemThu";
-            this.btnFileXemThu.Size = new System.Drawing.Size(115, 34);
+            this.btnFileXemThu.Size = new System.Drawing.Size(142, 34);
             this.btnFileXemThu.TabIndex = 51;
             this.btnFileXemThu.Text = "File xem thử";
-            this.btnFileXemThu.UseVisualStyleBackColor = true;
+            this.btnFileXemThu.TextFormatNoPrefix = true;
             this.btnFileXemThu.Click += new System.EventHandler(this.btnFileSach_Click);
             // 
             // txtFileSach
             // 
-            this.txtFileSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileSach.Location = new System.Drawing.Point(799, 399);
+            this.txtFileSach.AutoRoundedCorners = true;
+            this.txtFileSach.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtFileSach.BorderRadius = 15;
+            this.txtFileSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFileSach.DefaultText = "";
+            this.txtFileSach.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtFileSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtFileSach.Location = new System.Drawing.Point(799, 403);
+            this.txtFileSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFileSach.Name = "txtFileSach";
-            this.txtFileSach.Size = new System.Drawing.Size(205, 26);
+            this.txtFileSach.PlaceholderText = "";
+            this.txtFileSach.SelectedText = "";
+            this.txtFileSach.Size = new System.Drawing.Size(205, 32);
             this.txtFileSach.TabIndex = 50;
             // 
             // btnFileSach
             // 
-            this.btnFileSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFileSach.Location = new System.Drawing.Point(799, 358);
+            this.btnFileSach.BorderRadius = 10;
+            this.btnFileSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnFileSach.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnFileSach.ForeColor = System.Drawing.Color.White;
+            this.btnFileSach.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnFileSach.Location = new System.Drawing.Point(799, 360);
             this.btnFileSach.Name = "btnFileSach";
-            this.btnFileSach.Size = new System.Drawing.Size(115, 31);
+            this.btnFileSach.Size = new System.Drawing.Size(115, 34);
             this.btnFileSach.TabIndex = 49;
             this.btnFileSach.Text = "File sách";
-            this.btnFileSach.UseVisualStyleBackColor = true;
             this.btnFileSach.Click += new System.EventHandler(this.btnFileSach_Click);
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTa.Location = new System.Drawing.Point(452, 442);
+            this.txtMoTa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtMoTa.BorderRadius = 20;
+            this.txtMoTa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMoTa.DefaultText = "";
+            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtMoTa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtMoTa.Location = new System.Drawing.Point(466, 447);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.PlaceholderText = "";
             this.txtMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMoTa.SelectedText = "";
             this.txtMoTa.Size = new System.Drawing.Size(280, 64);
             this.txtMoTa.TabIndex = 48;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(370, 445);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label13.Location = new System.Drawing.Point(370, 453);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 19);
+            this.label13.Size = new System.Drawing.Size(57, 23);
             this.label13.TabIndex = 47;
             this.label13.Text = "Mô tả";
             // 
             // comboBoxPhanLoai
             // 
-            this.comboBoxPhanLoai.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxPhanLoai.FormattingEnabled = true;
-            this.comboBoxPhanLoai.Location = new System.Drawing.Point(109, 478);
+            this.comboBoxPhanLoai.AutoRoundedCorners = true;
+            this.comboBoxPhanLoai.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxPhanLoai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.comboBoxPhanLoai.BorderRadius = 14;
+            this.comboBoxPhanLoai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxPhanLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPhanLoai.FocusedColor = System.Drawing.Color.Empty;
+            this.comboBoxPhanLoai.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.comboBoxPhanLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.comboBoxPhanLoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.comboBoxPhanLoai.ItemHeight = 25;
+            this.comboBoxPhanLoai.Location = new System.Drawing.Point(137, 485);
             this.comboBoxPhanLoai.Name = "comboBoxPhanLoai";
-            this.comboBoxPhanLoai.Size = new System.Drawing.Size(206, 27);
+            this.comboBoxPhanLoai.Size = new System.Drawing.Size(206, 31);
             this.comboBoxPhanLoai.TabIndex = 46;
             // 
             // txtSoTrang
             // 
-            this.txtSoTrang.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTrang.Location = new System.Drawing.Point(452, 399);
+            this.txtSoTrang.AutoRoundedCorners = true;
+            this.txtSoTrang.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtSoTrang.BorderRadius = 15;
+            this.txtSoTrang.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoTrang.DefaultText = "";
+            this.txtSoTrang.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtSoTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtSoTrang.Location = new System.Drawing.Point(466, 407);
+            this.txtSoTrang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoTrang.Name = "txtSoTrang";
-            this.txtSoTrang.Size = new System.Drawing.Size(61, 26);
+            this.txtSoTrang.PlaceholderText = "";
+            this.txtSoTrang.SelectedText = "";
+            this.txtSoTrang.Size = new System.Drawing.Size(77, 32);
             this.txtSoTrang.TabIndex = 45;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(370, 407);
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label21.Location = new System.Drawing.Point(370, 412);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(71, 19);
+            this.label21.Size = new System.Drawing.Size(79, 23);
             this.label21.TabIndex = 44;
             this.label21.Text = "Số trang";
             // 
             // btnAnh
             // 
-            this.btnAnh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnh.Location = new System.Drawing.Point(1074, 476);
+            this.btnAnh.BorderRadius = 10;
+            this.btnAnh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnAnh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAnh.ForeColor = System.Drawing.Color.White;
+            this.btnAnh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnAnh.Location = new System.Drawing.Point(1063, 477);
             this.btnAnh.Name = "btnAnh";
-            this.btnAnh.Size = new System.Drawing.Size(73, 30);
+            this.btnAnh.Size = new System.Drawing.Size(73, 34);
             this.btnAnh.TabIndex = 43;
             this.btnAnh.Text = "Ảnh";
-            this.btnAnh.UseVisualStyleBackColor = true;
             this.btnAnh.Click += new System.EventHandler(this.btnAnh_Click);
             // 
             // picAnh
             // 
-            this.picAnh.Location = new System.Drawing.Point(1050, 333);
+            this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picAnh.Location = new System.Drawing.Point(1039, 332);
             this.picAnh.Name = "picAnh";
             this.picAnh.Size = new System.Drawing.Size(125, 138);
             this.picAnh.TabIndex = 42;
@@ -735,110 +918,193 @@ namespace BookStoreApp
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(34, 481);
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label20.Location = new System.Drawing.Point(39, 488);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(69, 19);
+            this.label20.Size = new System.Drawing.Size(73, 23);
             this.label20.TabIndex = 41;
             this.label20.Text = "Thể loại";
             // 
             // txtGia
             // 
-            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.Location = new System.Drawing.Point(585, 401);
+            this.txtGia.AutoRoundedCorners = true;
+            this.txtGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtGia.BorderRadius = 15;
+            this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGia.DefaultText = "";
+            this.txtGia.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtGia.Location = new System.Drawing.Point(599, 408);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(147, 26);
+            this.txtGia.PlaceholderText = "";
+            this.txtGia.SelectedText = "";
+            this.txtGia.Size = new System.Drawing.Size(147, 32);
             this.txtGia.TabIndex = 40;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(528, 406);
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label19.Location = new System.Drawing.Point(557, 412);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 19);
+            this.label19.Size = new System.Drawing.Size(36, 23);
             this.label19.TabIndex = 39;
             this.label19.Text = "Giá";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(370, 366);
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label18.Location = new System.Drawing.Point(370, 369);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 19);
+            this.label18.Size = new System.Drawing.Size(45, 23);
             this.label18.TabIndex = 38;
             this.label18.Text = "NXB";
             // 
             // txtTenSach
             // 
-            this.txtTenSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSach.Location = new System.Drawing.Point(109, 403);
+            this.txtTenSach.AutoRoundedCorners = true;
+            this.txtTenSach.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtTenSach.BorderRadius = 15;
+            this.txtTenSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenSach.DefaultText = "";
+            this.txtTenSach.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtTenSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtTenSach.Location = new System.Drawing.Point(137, 405);
+            this.txtTenSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(206, 26);
+            this.txtTenSach.PlaceholderText = "";
+            this.txtTenSach.SelectedText = "";
+            this.txtTenSach.Size = new System.Drawing.Size(206, 32);
             this.txtTenSach.TabIndex = 37;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(34, 404);
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label17.Location = new System.Drawing.Point(39, 408);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 19);
+            this.label17.Size = new System.Drawing.Size(76, 23);
             this.label17.TabIndex = 36;
             this.label17.Text = "Tên sách";
             // 
             // txtTenTG
             // 
-            this.txtTenTG.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenTG.Location = new System.Drawing.Point(109, 439);
+            this.txtTenTG.AutoRoundedCorners = true;
+            this.txtTenTG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtTenTG.BorderRadius = 15;
+            this.txtTenTG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenTG.DefaultText = "";
+            this.txtTenTG.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtTenTG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtTenTG.Location = new System.Drawing.Point(137, 445);
+            this.txtTenTG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenTG.Name = "txtTenTG";
-            this.txtTenTG.Size = new System.Drawing.Size(206, 26);
+            this.txtTenTG.PlaceholderText = "";
+            this.txtTenTG.SelectedText = "";
+            this.txtTenTG.Size = new System.Drawing.Size(206, 32);
             this.txtTenTG.TabIndex = 35;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(34, 442);
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label16.Location = new System.Drawing.Point(39, 445);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 19);
+            this.label16.Size = new System.Drawing.Size(63, 23);
             this.label16.TabIndex = 34;
             this.label16.Text = "Tên TG";
             // 
             // txtMaSach
             // 
+            this.txtMaSach.AutoRoundedCorners = true;
+            this.txtMaSach.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtMaSach.BorderRadius = 15;
+            this.txtMaSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaSach.DefaultText = "";
             this.txtMaSach.Enabled = false;
-            this.txtMaSach.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSach.Location = new System.Drawing.Point(109, 362);
+            this.txtMaSach.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtMaSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.txtMaSach.Location = new System.Drawing.Point(137, 364);
+            this.txtMaSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.Size = new System.Drawing.Size(206, 26);
+            this.txtMaSach.PlaceholderText = "";
+            this.txtMaSach.SelectedText = "";
+            this.txtMaSach.Size = new System.Drawing.Size(206, 32);
             this.txtMaSach.TabIndex = 33;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(34, 363);
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
+            this.label15.Location = new System.Drawing.Point(39, 369);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 19);
+            this.label15.Size = new System.Drawing.Size(74, 23);
             this.label15.TabIndex = 32;
             this.label15.Text = "Mã sách";
             // 
             // tblDuLieu
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tblDuLieu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tblDuLieu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tblDuLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblDuLieu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblDuLieu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tblDuLieu.ColumnHeadersHeight = 40;
+            this.tblDuLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblDuLieu.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblDuLieu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblDuLieu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.tblDuLieu.Location = new System.Drawing.Point(3, 3);
             this.tblDuLieu.Name = "tblDuLieu";
             this.tblDuLieu.ReadOnly = true;
+            this.tblDuLieu.RowHeadersVisible = false;
             this.tblDuLieu.RowHeadersWidth = 92;
             this.tblDuLieu.RowTemplate.Height = 37;
-            this.tblDuLieu.Size = new System.Drawing.Size(1210, 300);
+            this.tblDuLieu.Size = new System.Drawing.Size(1259, 300);
             this.tblDuLieu.TabIndex = 5;
+            this.tblDuLieu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.tblDuLieu.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tblDuLieu.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.tblDuLieu.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.tblDuLieu.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.tblDuLieu.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.tblDuLieu.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.tblDuLieu.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.tblDuLieu.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.tblDuLieu.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tblDuLieu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.tblDuLieu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.tblDuLieu.ThemeStyle.HeaderStyle.Height = 40;
+            this.tblDuLieu.ThemeStyle.ReadOnly = true;
+            this.tblDuLieu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tblDuLieu.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tblDuLieu.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tblDuLieu.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.tblDuLieu.ThemeStyle.RowsStyle.Height = 37;
+            this.tblDuLieu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tblDuLieu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tblDuLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblDuLieu_CellDoubleClick);
             // 
             // tabCustomer
@@ -851,10 +1117,10 @@ namespace BookStoreApp
             this.tabCustomer.Controls.Add(this.groupBox6);
             this.tabCustomer.Controls.Add(this.groupBox12);
             this.tabCustomer.Controls.Add(this.tblKhachHang);
-            this.tabCustomer.Location = new System.Drawing.Point(4, 31);
+            this.tabCustomer.Location = new System.Drawing.Point(144, 4);
             this.tabCustomer.Name = "tabCustomer";
             this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomer.Size = new System.Drawing.Size(1216, 739);
+            this.tabCustomer.Size = new System.Drawing.Size(1265, 766);
             this.tabCustomer.TabIndex = 1;
             this.tabCustomer.Text = "QL Khách Hàng";
             this.tabCustomer.UseVisualStyleBackColor = true;
@@ -864,7 +1130,7 @@ namespace BookStoreApp
             this.label_phanTrang.AutoSize = true;
             this.label_phanTrang.Location = new System.Drawing.Point(575, 314);
             this.label_phanTrang.Name = "label_phanTrang";
-            this.label_phanTrang.Size = new System.Drawing.Size(36, 22);
+            this.label_phanTrang.Size = new System.Drawing.Size(39, 25);
             this.label_phanTrang.TabIndex = 15;
             this.label_phanTrang.Text = "0/0";
             // 
@@ -1281,18 +1547,18 @@ namespace BookStoreApp
             // 
             this.tblKhachHang.AllowUserToAddRows = false;
             this.tblKhachHang.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tblKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tblKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customer_ID,
@@ -1309,11 +1575,11 @@ namespace BookStoreApp
             this.tblKhachHang.Name = "tblKhachHang";
             this.tblKhachHang.ReadOnly = true;
             this.tblKhachHang.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhachHang.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tblKhachHang.RowTemplate.Height = 24;
             this.tblKhachHang.ShowCellToolTips = false;
-            this.tblKhachHang.Size = new System.Drawing.Size(1210, 298);
+            this.tblKhachHang.Size = new System.Drawing.Size(1259, 298);
             this.tblKhachHang.TabIndex = 5;
             this.tblKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhachHang_CellContentDoubleClick);
             this.tblKhachHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhachHang_CellContentDoubleClick);
@@ -1396,10 +1662,10 @@ namespace BookStoreApp
             this.tabDiscount.Controls.Add(this.groupBox9);
             this.tabDiscount.Controls.Add(this.groupBox13);
             this.tabDiscount.Controls.Add(this.tblKhuyenMai);
-            this.tabDiscount.Location = new System.Drawing.Point(4, 31);
+            this.tabDiscount.Location = new System.Drawing.Point(144, 4);
             this.tabDiscount.Name = "tabDiscount";
             this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiscount.Size = new System.Drawing.Size(1216, 739);
+            this.tabDiscount.Size = new System.Drawing.Size(1265, 766);
             this.tabDiscount.TabIndex = 2;
             this.tabDiscount.Text = "QL Khuyến mãi";
             this.tabDiscount.UseVisualStyleBackColor = true;
@@ -1651,18 +1917,18 @@ namespace BookStoreApp
             // 
             this.tblKhuyenMai.AllowUserToAddRows = false;
             this.tblKhuyenMai.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblKhuyenMai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblKhuyenMai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.tblKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblKhuyenMai.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tblKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameDiscount,
@@ -1675,7 +1941,7 @@ namespace BookStoreApp
             this.tblKhuyenMai.ReadOnly = true;
             this.tblKhuyenMai.RowHeadersWidth = 51;
             this.tblKhuyenMai.RowTemplate.Height = 24;
-            this.tblKhuyenMai.Size = new System.Drawing.Size(1210, 300);
+            this.tblKhuyenMai.Size = new System.Drawing.Size(1259, 300);
             this.tblKhuyenMai.TabIndex = 9;
             this.tblKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKhuyenMai_CellClick);
             // 
@@ -1715,9 +1981,9 @@ namespace BookStoreApp
             // 
             this.tabStat.Controls.Add(this.tblThongKe);
             this.tabStat.Controls.Add(this.groupBox11);
-            this.tabStat.Location = new System.Drawing.Point(4, 31);
+            this.tabStat.Location = new System.Drawing.Point(144, 4);
             this.tabStat.Name = "tabStat";
-            this.tabStat.Size = new System.Drawing.Size(1216, 739);
+            this.tabStat.Size = new System.Drawing.Size(1265, 766);
             this.tabStat.TabIndex = 3;
             this.tabStat.Text = "Thống kê";
             this.tabStat.UseVisualStyleBackColor = true;
@@ -1727,15 +1993,15 @@ namespace BookStoreApp
             this.tblThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tblThongKe.BackgroundColor = System.Drawing.Color.White;
             this.tblThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblThongKe.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblThongKe.DefaultCellStyle = dataGridViewCellStyle9;
             this.tblThongKe.Location = new System.Drawing.Point(10, 146);
             this.tblThongKe.Name = "tblThongKe";
             this.tblThongKe.RowHeadersWidth = 51;
@@ -1880,9 +2146,9 @@ namespace BookStoreApp
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.btnIn);
             this.tabPage1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(144, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1216, 739);
+            this.tabPage1.Size = new System.Drawing.Size(1265, 766);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Báo cáo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2091,7 +2357,7 @@ namespace BookStoreApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 776);
+            this.ClientSize = new System.Drawing.Size(1415, 776);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeFrm";
@@ -2144,64 +2410,61 @@ namespace BookStoreApp
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabItem;
         private System.Windows.Forms.TabPage tabCustomer;
         private System.Windows.Forms.TabPage tabDiscount;
-        private System.Windows.Forms.DataGridView tblDuLieu;
         private System.Windows.Forms.TabPage tabStat;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label labelPhanTrang;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.ComboBox comboBoxNXB;
-        private System.Windows.Forms.TextBox txtFileXemThu;
-        private System.Windows.Forms.Button btnFileXemThu;
-        private System.Windows.Forms.TextBox txtFileSach;
-        private System.Windows.Forms.Button btnFileSach;
-        private System.Windows.Forms.TextBox txtMoTa;
+        private Guna2Button btnNext;
+        private Guna2Button btnPrevious;
+        private Guna2ComboBox comboBoxNXB;
+        private Guna2TextBox txtFileXemThu;
+        private Guna2Button btnFileXemThu;
+        private Guna2TextBox txtFileSach;
+        private Guna2Button btnFileSach;
+        private Guna2TextBox txtMoTa;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBoxPhanLoai;
+        private Guna2ComboBox comboBoxPhanLoai;
         private OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox txtSoTrang;
+        private Guna2TextBox txtSoTrang;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button btnAnh;
+        private Guna2Button btnAnh;
         private System.Windows.Forms.PictureBox picAnh;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtGia;
+        private Guna2TextBox txtGia;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtTenSach;
+        private Guna2TextBox txtTenSach;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtTenTG;
+        private Guna2TextBox txtTenTG;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtMaSach;
+        private Guna2TextBox txtMaSach;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox LocPhanLoai;
+        private Guna2GroupBox groupBox3;
+        private Guna2ComboBox LocPhanLoai;
         private System.Windows.Forms.Label labelTimKiem;
-        private System.Windows.Forms.NumericUpDown numericItemTo;
-        private System.Windows.Forms.NumericUpDown numericItemFrom;
-        private System.Windows.Forms.Button btnSearchItem;
-        private System.Windows.Forms.TextBox txtSearchItem;
+        private Guna2NumericUpDown numericItemTo;
+        private Guna2NumericUpDown numericItemFrom;
+        private Guna2Button btnSearchItem;
+        private Guna2TextBox txtSearchItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboSearchItem;
+        private Guna2ComboBox comboSearchItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnBoLoc;
-        private System.Windows.Forms.RadioButton radioSortItemByTonKho;
-        private System.Windows.Forms.RadioButton radioSortItemByName;
-        private System.Windows.Forms.RadioButton radioSortItemByPriceDESC;
-        private System.Windows.Forms.RadioButton radioSortItemByPriceASC;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnXoaSP;
-        private System.Windows.Forms.Button btnSuaSP;
-        private System.Windows.Forms.Button btnFreshItem;
+        private Guna2GroupBox groupBox2;
+        private Guna2Button btnBoLoc;
+        private Guna2RadioButton radioSortItemByTonKho;
+        private Guna2RadioButton radioSortItemByName;
+        private Guna2RadioButton radioSortItemByPriceDESC;
+        private Guna2RadioButton radioSortItemByPriceASC;
+        private Guna2GroupBox groupBox1;
+        private Guna2Button btnXoaSP;
+        private Guna2Button btnSuaSP;
+        private Guna2Button btnFreshItem;
         private ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnThemSP;
+        private Guna2Button btnThemSP;
         private System.Windows.Forms.DataGridView tblKhachHang;
         private System.Windows.Forms.Label label_phanTrang;
         private System.Windows.Forms.Button btnNextt;
@@ -2305,5 +2568,7 @@ namespace BookStoreApp
         private GroupBox groupBox15;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Guna.UI2.WinForms.Guna2TabControl tabControl1;
+        private Guna2DataGridView tblDuLieu;
     }
 }
