@@ -1617,7 +1617,7 @@ namespace BookStoreApp
 
             string query = $"";
             bool checkTime = checkBoxTime.Checked;
-            if (checkTime)
+            if (!checkTime)
             {
                 if (batdau > ketthuc)
                 {
