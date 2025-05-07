@@ -2,7 +2,6 @@
 
 ## Mục Lục
 - [Giới Thiệu Về App](#giới-thiệu-về-app)
-- [Video Demo](#video-demo)
 - [Screenshots](#screenshots)
   - [Giao Diện Người Dùng](#giao-diện-người-dùng)
   - [Giao Diện Admin](#giao-diện-admin)
