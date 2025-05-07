@@ -1,14 +1,31 @@
 # BookStoreApp
 
+## Mục Lục
+- [Giới Thiệu Về App](#giới-thiệu-về-app)
+- [Video Demo](#video-demo)
+- [Screenshots](#screenshots)
+  - [Giao Diện Người Dùng](#giao-diện-người-dùng)
+  - [Giao Diện Admin](#giao-diện-admin)
+  - [Database](#database)
+- [Kiến Trúc Ứng Dụng](#kiến-trúc-ứng-dụng)
+- [Chi Tiết Các Module](#chi-tiết-các-module)
+- [Chi Tiết Kỹ Thuật](#chi-tiết-kỹ-thuật)
+- [Tính Năng Bảo Mật](#tính-năng-bảo-mật)
+- [Tối Ưu Hóa](#tối-ưu-hóa)
+- [Công Nghệ Nền Tảng](#công-nghệ-nền-tảng)
+- [Hướng Dẫn Cài Đặt](#hướng-dẫn-cài-đặt)
+
 ## Giới Thiệu Về App
 
 **BookStoreApp** là một ứng dụng quản lý bán sách được phát triển để hỗ trợ quản trị viên và người dùng trong việc quản lý sách, đơn hàng và giao dịch. Với một giao diện người dùng thân thiện và dễ sử dụng, **BookStoreApp** cung cấp các tính năng quản lý hiệu quả cho các cửa hàng bán sách trực tuyến. Người dùng có thể dễ dàng tìm kiếm sách, xem chi tiết, và thực hiện giao dịch, trong khi quản trị viên có thể theo dõi thông tin sản phẩm, đơn hàng và khách hàng.
 
 ## Video Demo
 
-[![Video Demo](https://img.youtube.com/vi/your_video_id/0.jpg)](Demo/Demo_BookStore.mp4)
+[![Video Demo](https://img.youtube.com/vi/your_video_id/0.jpg)](https://www.youtube.com/watch?v=your_video_id)
 
-Xem video demo đầy đủ tại: [Demo BookStore App](Demo/Demo_BookStore.mp4)
+<p align="center">Xem video demo đầy đủ tại: <a href="https://www.youtube.com/watch?v=your_video_id">Demo BookStore App</a></p>
+
+Hoặc tải video demo trực tiếp: [Download Demo Video](Demo/Demo_BookStore.mp4)
 
 ## Screenshots
 
@@ -16,102 +33,102 @@ Xem video demo đầy đủ tại: [Demo BookStore App](Demo/Demo_BookStore.mp4)
 
 #### Trang Chủ
 ![Trang Chủ 1](Demo/Screenshots/Home1.png)
-*Giao diện chính với danh sách sách nổi bật*
+<p align="center">Giao diện chính với danh sách sách nổi bật</p>
 
 ![Trang Chủ 2](Demo/Screenshots/Home2.png)
-*Giao diện chính với tìm kiếm sách*
+<p align="center">Giao diện chính với tìm kiếm sách</p>
 
 #### Chi Tiết Sách
 ![Chi Tiết Sách 1](Demo/Screenshots/BookDetail1.png)
-*Trang chi tiết sách với thông tin cơ bản*
+<p align="center">Trang chi tiết sách với thông tin cơ bản</p>
 
 ![Chi Tiết Sách 2](Demo/Screenshots/BookDetail2.png)
-*Trang chi tiết sách với sách miễn phí*
+<p align="center">Trang chi tiết sách với sách miễn phí</p>
 
 #### Giỏ Hàng
 ![Giỏ Hàng 1](Demo/Screenshots/Cart1.png)
-*Giỏ hàng với danh sách sản phẩm*
+<p align="center">Giỏ hàng với danh sách sản phẩm</p>
 
 ![Giỏ Hàng 2](Demo/Screenshots/Cart2.png)
-*Giỏ hàng với danh sách sản phẩm*
+<p align="center">Giỏ hàng với danh sách sản phẩm</p>
 
 #### Thanh Toán
 ![Thanh Toán 1](Demo/Screenshots/Checkout1.png)
-*Trang thanh toán với thông tin giao hàng, tất cả sản phẩm trong giỏ hàng*
+<p align="center">Trang thanh toán với thông tin giao hàng, tất cả sản phẩm trong giỏ hàng</p>
 
 ![Thanh Toán 2](Demo/Screenshots/Checkout2.png)
-*Trang thanh toán khi mua trực tiếp không qua giỏ hàng*
+<p align="center">Trang thanh toán khi mua trực tiếp không qua giỏ hàng</p>
 
 ![Xuất hóa đơn](Demo/Screenshots/Checkout3.png)
-*Xuất hóa đơn mua hàng ra Excel*
+<p align="center">Xuất hóa đơn mua hàng ra Excel</p>
 
 #### Thông Tin Tài Khoản
 ![Thông Tin TK 1](Demo/Screenshots/Profile1.png)
-*Trang thông tin cá nhân*
+<p align="center">Trang thông tin cá nhân</p>
 
 ![Thông Tin TK 2](Demo/Screenshots/Profile2.png)
-*Trang cập nhật thông tin*
+<p align="center">Trang cập nhật thông tin</p>
 
 #### Lịch Sử Mua Hàng
 ![Lịch Sử 1](Demo/Screenshots/History1.png)
-*Danh sách đơn hàng đã mua*
+<p align="center">Danh sách đơn hàng đã mua</p>
 
 ![Lịch Sử 2](Demo/Screenshots/History2.png)
-*Chi tiết đơn hàng*
+<p align="center">Chi tiết đơn hàng</p>
 
 ![Xuất lịch sử mua hàng ra Excel](Demo/Screenshots/History3.png)
-*Lịch sử mua*
+<p align="center">Lịch sử mua</p>
 
 #### Đăng Nhập/Đăng Ký
 ![Đăng Nhập](Demo/Screenshots/Login.png)
-*Trang đăng nhập*
+<p align="center">Trang đăng nhập</p>
 
 ![Đăng Ký](Demo/Screenshots/Register.png)
-*Trang đăng ký tài khoản mới*
+<p align="center">Trang đăng ký tài khoản mới</p>
 
 ### Giao Diện Admin
 
 #### Quản Lý Sản Phẩm
 ![QL Sản Phẩm 1](Demo/Screenshots/Admin/Product1.png)
-*Danh sách sản phẩm*
+<p align="center">Danh sách sản phẩm</p>
 
 ![QL Sản Phẩm 2](Demo/Screenshots/Admin/Product2.png)
-*Thêm/Sửa sản phẩm*
+<p align="center">Thêm/Sửa sản phẩm</p>
 
 ![QL Sản Phẩm 3](Demo/Screenshots/Admin/Product3.png)
-*Tìm kiếm, lọc sản phẩm*
+<p align="center">Tìm kiếm, lọc sản phẩm</p>
 
 #### Quản Lý Khách Hàng
 ![QL Khách Hàng 1](Demo/Screenshots/Admin/Customer1.png)
-*Danh sách khách hàng*
+<p align="center">Danh sách khách hàng</p>
 
 ![QL Khách Hàng 2](Demo/Screenshots/Admin/Customer2.png)
-*Chi tiết thông tin khách hàng*
+<p align="center">Chi tiết thông tin khách hàng</p>
 
 #### Quản Lý Khuyến Mãi
 ![QL Khuyến Mãi 1](Demo/Screenshots/Admin/Promotion2.png)
-*Danh sách khuyến mãi*
+<p align="center">Danh sách khuyến mãi</p>
 
 ![QL Khuyến Mãi 2](Demo/Screenshots/Admin/Promotion1.png)
-*Thêm/Sửa khuyến mãi*
+<p align="center">Thêm/Sửa khuyến mãi</p>
 
 #### Thống Kê
 ![Thống Kê 1](Demo/Screenshots/Admin/Report1.png)
-*Thống kê doanh thu theo sách*
+<p align="center">Thống kê doanh thu theo sách</p>
 
 ![Thống Kê 2](Demo/Screenshots/Admin/Report2.png)
-*Thống kê doanh thu theo ngày*
+<p align="center">Thống kê doanh thu theo ngày</p>
 
 #### Báo Cáo
 ![Báo cáo 1](Demo/Screenshots/Admin/Report3.png)
-*Báo cáo doanh thu theo sách*
+<p align="center">Báo cáo doanh thu theo sách</p>
 
 ![Báo cáo 2](Demo/Screenshots/Admin/Report4.png)
-*Báo cáo chi tiêu khách hàng*
+<p align="center">Báo cáo chi tiêu khách hàng</p>
 
 ### Database
 ![Database](Database/ERD_Diagram.png)
-*ERD*
+<p align="center">ERD</p>
 
 ## Kiến Trúc Ứng Dụng
 
