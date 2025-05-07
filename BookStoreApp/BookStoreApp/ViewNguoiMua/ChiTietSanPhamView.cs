@@ -425,12 +425,8 @@ namespace BookStoreApp.ViewNguoiMua
                 Form parentForm = this.FindForm(); 
                 parentForm?.Close();
                 HoaDonView hoaDonView = new HoaDonView(selectedMasach);
+                hoaDonView.TopMost = true;
                 hoaDonView.Show();
-
-
-
-
-
             }
             catch (Exception ex)
             {

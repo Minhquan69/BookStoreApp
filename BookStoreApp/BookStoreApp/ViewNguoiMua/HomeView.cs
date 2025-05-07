@@ -1315,9 +1315,6 @@ where 1=1
         {
 
             this.Close();
-            Sign.SignIn signInForm = new Sign.SignIn();
-            signInForm.Show();
-            this.Close();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
