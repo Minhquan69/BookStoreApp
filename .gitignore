@@ -9,7 +9,7 @@ obj/
 *.userprefs
 
 # Build results
-[Dd]ebug/
+
 [Dd]ebugPublic/
 [Dd]evelopment/
 [Dd]eployment/
