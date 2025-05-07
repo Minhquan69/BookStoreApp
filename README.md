@@ -19,13 +19,6 @@
 
 **BookStoreApp** là một ứng dụng quản lý bán sách được phát triển để hỗ trợ quản trị viên và người dùng trong việc quản lý sách, đơn hàng và giao dịch. Với một giao diện người dùng thân thiện và dễ sử dụng, **BookStoreApp** cung cấp các tính năng quản lý hiệu quả cho các cửa hàng bán sách trực tuyến. Người dùng có thể dễ dàng tìm kiếm sách, xem chi tiết, và thực hiện giao dịch, trong khi quản trị viên có thể theo dõi thông tin sản phẩm, đơn hàng và khách hàng.
 
-## Video Demo
-
-[![Video Demo](https://img.youtube.com/vi/your_video_id/0.jpg)](https://www.youtube.com/watch?v=your_video_id)
-
-<p align="center">Xem video demo đầy đủ tại: <a href="https://www.youtube.com/watch?v=your_video_id">Demo BookStore App</a></p>
-
-Hoặc tải video demo trực tiếp: [Download Demo Video](Demo/Demo_BookStore.mp4)
 
 ## Screenshots
 
