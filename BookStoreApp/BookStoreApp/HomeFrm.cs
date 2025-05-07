@@ -1911,8 +1911,8 @@ namespace BookStoreApp
 
                     chart1.Titles.Clear();
                     chart1.Titles.Add("Top Sản Phẩm Bán Chạy Nhất");
-                    chart1.Width = 400;
-                    chart1.Height = 250;
+                    chart1.Width = 500;
+                    chart1.Height = 450;
                 }
                 if (LoaiBieuDoCB.SelectedIndex == 1)//bieu do tron 
                 {
@@ -1942,8 +1942,8 @@ namespace BookStoreApp
                     // Cấu hình tiêu đề và các thuộc tính khác của biểu đồ
                     chart1.Titles.Clear();
                     chart1.Titles.Add("Top Sản Phẩm Bán Chạy Nhất");
-                    chart1.Width = 400;
-                    chart1.Height = 250;
+                    chart1.Width = 500;
+                    chart1.Height = 450;
 
                 }
             }
@@ -2008,8 +2008,8 @@ namespace BookStoreApp
                     chart2.ChartAreas[0].AxisX.LabelStyle.Angle = 45;
 
                     series["PointWidth"] = "0.8";
-                    chart2.Width = 400;
-                    chart2.Height = 250;
+                    chart2.Width = 500;
+                    chart2.Height = 450;
                 }
                 if (LoaiBieuDoCB.SelectedIndex == 1)
                 {
@@ -2038,8 +2038,8 @@ namespace BookStoreApp
                     {
                         point.Label = ""; // Xóa nhãn (tên hoặc tỷ lệ phần trăm) trên từng phần tử
                     }
-                    chart2.Width = 400;
-                    chart2.Height = 250;
+                    chart2.Width = 500;
+                    chart2.Height = 450;
                 }
             }
         }

@@ -1162,9 +1162,9 @@ namespace BookStoreApp
             this.btnPree.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
             this.btnPree.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPree.ForeColor = System.Drawing.Color.Black;
-            this.btnPree.Location = new System.Drawing.Point(471, 318);
+            this.btnPree.Location = new System.Drawing.Point(455, 318);
             this.btnPree.Name = "btnPree";
-            this.btnPree.Size = new System.Drawing.Size(88, 26);
+            this.btnPree.Size = new System.Drawing.Size(104, 26);
             this.btnPree.TabIndex = 13;
             this.btnPree.Text = "Trước";
             this.btnPree.Click += new System.EventHandler(this.btnPree_Click);
@@ -2584,8 +2584,7 @@ namespace BookStoreApp
             this.LoaiBieuDoCB.ItemHeight = 30;
             this.LoaiBieuDoCB.Items.AddRange(new object[] {
             "Cột",
-            "Tròn",
-            "Đường"});
+            "Tròn"});
             this.LoaiBieuDoCB.Location = new System.Drawing.Point(242, 106);
             this.LoaiBieuDoCB.Name = "LoaiBieuDoCB";
             this.LoaiBieuDoCB.Size = new System.Drawing.Size(150, 36);
@@ -2623,7 +2622,7 @@ namespace BookStoreApp
             this.btnTaoBaoCao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
             this.btnTaoBaoCao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnTaoBaoCao.ForeColor = System.Drawing.Color.Black;
-            this.btnTaoBaoCao.Location = new System.Drawing.Point(940, 43);
+            this.btnTaoBaoCao.Location = new System.Drawing.Point(961, 50);
             this.btnTaoBaoCao.Name = "btnTaoBaoCao";
             this.btnTaoBaoCao.Size = new System.Drawing.Size(159, 40);
             this.btnTaoBaoCao.TabIndex = 21;
@@ -2719,7 +2718,7 @@ namespace BookStoreApp
             this.btnIn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnIn.ForeColor = System.Drawing.Color.Black;
             this.btnIn.Image = global::BookStoreApp.Properties.Resources.floppy_disk;
-            this.btnIn.Location = new System.Drawing.Point(940, 99);
+            this.btnIn.Location = new System.Drawing.Point(961, 96);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(159, 40);
             this.btnIn.TabIndex = 26;

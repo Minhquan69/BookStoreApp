@@ -288,6 +288,7 @@ namespace BookStoreApp.ViewNguoiMua
             Form parentForm = this.FindForm(); // Tìm form cha
             parentForm?.Close(); // Đóng form cha nếu tồn tại
             HoaDonView hoaDonView = new HoaDonView(selectedMasach);
+            hoaDonView.TopMost = true;
             hoaDonView.Show();
 
 
