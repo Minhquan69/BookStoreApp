@@ -1,6 +1,15 @@
-# .NET
-bin/
-obj/
+# ===============================
+# .NET build and temp folders
+# ===============================
+
+# Ignore all bin and obj folders
+**/bin/
+**/obj/
+
+# But keep bin/Debug and its contents
+!bin/
+!bin/Debug/
+!bin/Debug/**
 
 # User-specific files
 *.user
@@ -8,8 +17,7 @@ obj/
 *.suo
 *.userprefs
 
-# Build results
-
+# Other build result folders
 [Dd]ebugPublic/
 [Dd]evelopment/
 [Dd]eployment/
@@ -23,18 +31,12 @@ obj/
 *.msm
 *.msp
 
-# VS Code
+# VS Code settings
 .vs/
 .vscode/
 
-# Rider
+# Rider settings
 .idea/
-
-# User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
